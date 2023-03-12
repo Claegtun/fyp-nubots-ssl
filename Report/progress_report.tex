@@ -1,0 +1,93 @@
+% Class:
+\documentclass{report}
+
+% Fonts:
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+% Links:
+\usepackage{hyperref}
+
+% Maths:
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs,amsmath}
+\newcommand{\e}[1]{\times 10^{#1}}
+\usepackage{siunitx}
+
+% Figures:
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\graphicspath{ {./} }
+
+% Footnotes:
+\usepackage[symbol]{footmisc}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+% Others:
+\usepackage{pdfpages}
+%\usepackage[backend=bibtex]{biblatex}
+
+% Title:
+\title{
+	Sound-source Localisation using a Microphone-array for NUbots\\
+	Interim Report
+}
+\author{Clayton Carlon, C3327986}
+\date{\today}
+
+% Document:
+\begin{document}
+
+\maketitle
+
+\chapter{Literature Review}
+
+\section{Methods}
+
+\subsection{Overview}
+
+A survey \cite{Argentieri2015} attempted to give a state of the art of sound-localisation in robotics. It dealt with two main areas, namely binaural approaches and array-based approaches. Since an array of microphones will be used in this project, the latter area is most relevant. All the approaches of which that the survey explored were listed as such:
+\begin{itemize}
+	\item MUSIC,
+	\item correlation, and
+	\item beamforming.
+\end{itemize}
+
+Another review \cite{RASCON2017184} also classified methodologies as:
+\begin{itemize}
+	\item one-dimensional single direction-of-arrival estimation,
+	\item two-dimensional single direction-of-arrival estimation,
+	\item multiple direction-of-arrival estimations, and
+	\item distance-estimation
+\end{itemize}
+Here, the review talks about correlation as a way to estimate a single direction of arrival and about beamforming and MUSIC as a way to estimate multiple directions. It also discusses the potential use of correlation for multiple sources given that other sources are represented as secondary peaks. 
+
+To estimate the distance, the review proposes a number of ways, some of which are:
+\begin{itemize}
+	\item the intersection of hyperbolic curves from multiple estimated TDOA,
+	\item triangulation of multiple DOA at different positions of the robot,
+	\item triangulation of multiple DOA from different sub-arrays,
+\end{itemize} 
+
+\chapter{Simulation}
+
+\nocite{*}
+
+\bibliographystyle{plain}
+\bibliography{./Research/interim}
+
+%\begin{figure}[!h]
+%\includegraphics[width=1\textwidth]{image.png}
+%\centering
+%\caption{Caption,}
+%\label{fig:image}
+%\centering
+%\end{figure}
+
+%\includepdf[pages=-,pagecommand={},angle=90,width=\textwidth]{controller_1.pdf}
+%\includepdf[pages=-,pagecommand={},angle=90,width=\textwidth]{regulator_1.pdf}
+%\includepdf[pages=-,pagecommand={},angle=90,width=\textwidth]{timer_1.pdf}
+
+
+\end{document}
