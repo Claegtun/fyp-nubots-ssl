@@ -3,46 +3,46 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: progress_report.aux
 Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: plain.bst
-Reallocating 'name_of_file' (item size: 1) to 19 items.
-Database file #1: ./Research/interim.bib
-You've used 2 entries,
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+Database file #1: ./zotero.bib
+You've used 25 entries,
             2118 wiz_defined-function locations,
-            513 strings with 4370 characters,
-and the built_in function-call counts, 685 in all, are:
-= -- 65
-> -- 31
-< -- 0
-+ -- 13
-- -- 10
-* -- 53
-:= -- 122
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 11
+            643 strings with 9637 characters,
+and the built_in function-call counts, 11276 in all, are:
+= -- 1159
+> -- 445
+< -- 19
++ -- 178
+- -- 148
+* -- 791
+:= -- 1671
+add.period$ -- 86
+call.type$ -- 25
+change.case$ -- 149
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 22
-empty$ -- 53
-format.name$ -- 10
-if$ -- 139
+cite$ -- 25
+duplicate$ -- 459
+empty$ -- 897
+format.name$ -- 148
+if$ -- 2475
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 2
-newline$ -- 13
-num.names$ -- 4
-pop$ -- 7
+int.to.str$ -- 25
+missing$ -- 25
+newline$ -- 139
+num.names$ -- 50
+pop$ -- 155
 preamble$ -- 1
-purify$ -- 9
+purify$ -- 124
 quote$ -- 0
-skip$ -- 15
+skip$ -- 396
 stack$ -- 0
-substring$ -- 50
-swap$ -- 2
-text.length$ -- 0
+substring$ -- 940
+swap$ -- 188
+text.length$ -- 19
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 8
+type$ -- 100
 warning$ -- 0
-while$ -- 6
-width$ -- 3
-write$ -- 24
+while$ -- 109
+width$ -- 27
+write$ -- 303
