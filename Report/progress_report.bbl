@@ -38,6 +38,12 @@ Anthony Badali, Jean-Marc Valin, François Michaud, and Parham Aarabi.
   {Intelligent} {Robots} and {Systems}}, pages 2033--2038, October 2009.
 \newblock ISSN: 2153-0866.
 
+\bibitem{basiri_-board_2016}
+Meysam Basiri, Felix Schill, Pedro Lima, and Dario Floreano.
+\newblock On-{Board} {Relative} {Bearing} {Estimation} for {Teams} of {Drones}
+  {Using} {Sound}.
+\newblock {\em IEEE Robotics and Automation Letters}, 1(2):820--827, July 2016.
+
 \bibitem{bechler_system_2004}
 D.~Bechler, M.S. Schlosser, and K.~Kroschel.
 \newblock System for robust {3D} speaker tracking using microphone array
@@ -78,14 +84,6 @@ alice clifford and joshua reiss.
 \newblock calculating time delays of multiple active sources in live sound.
 \newblock {\em journal of the audio engineering society}, November 2010.
 
-\bibitem{dey_design_2019}
-Spandan Dey, Srinivas Boppu, and M.~Sabarimalai Manikandan.
-\newblock Design of a {Real}-{Time} {Automatic} {Source} {Monitoring}
-  {Framework} {Based} on {Sound} {Source} {Localization}.
-\newblock In {\em 2019 {Seventh} {International} {Conference} on {Digital}
-  {Information} {Processing} and {Communications} ({ICDIPC})}, pages 35--40,
-  May 2019.
-
 \bibitem{gustafsson_source_2003}
 T.~Gustafsson, B.D. Rao, and M.~Trivedi.
 \newblock Source localization in reverberant environments: modeling and
@@ -120,6 +118,14 @@ A.~Mahajan and M.~Walworth.
 \newblock {\em IEEE Transactions on Robotics and Automation}, 17(1):91--94,
   February 2001.
 
+\bibitem{manamperi_drone_2022}
+Wageesha Manamperi, Thushara~D. Abhayapala, Jihui Zhang, and Prasanga~N.
+  Samarasinghe.
+\newblock Drone {Audition}: {Sound} {Source} {Localization} {Using}
+  {On}-{Board} {Microphones}.
+\newblock {\em IEEE/ACM Transactions on Audio, Speech, and Language
+  Processing}, 30:508--519, 2022.
+
 \bibitem{mattos_passive_2004}
 L.~Mattos and E.~Grant.
 \newblock Passive sonar applications: target tracking and navigation of an
@@ -147,6 +153,12 @@ Saulius Sakavičius, Artūras Serackis, and Vytautas Abromavičius.
   {Post}-{Processing}.
 \newblock {\em IEEE Access}, 10:125707--125722, 2022.
 
+\bibitem{salvati_power_2019}
+Daniele Salvati, Carlo Drioli, and Gian~Luca Foresti.
+\newblock Power {Method} for {Robust} {Diagonal} {Unloading} {Localization}
+  {Beamforming}.
+\newblock {\em IEEE Signal Processing Letters}, 26(5):725--729, May 2019.
+
 \bibitem{tamai_three_2005}
 Y.~Tamai, Y.~Sasaki, S.~Kagami, and H.~Mizoguchi.
 \newblock Three ring microphone array for {3D} sound localization and
@@ -154,15 +166,6 @@ Y.~Tamai, Y.~Sasaki, S.~Kagami, and H.~Mizoguchi.
 \newblock In {\em 2005 {IEEE}/{RSJ} {International} {Conference} on
   {Intelligent} {Robots} and {Systems}}, pages 4172--4177, August 2005.
 \newblock ISSN: 2153-0866.
-
-\bibitem{valin_localization_2004}
-J.-M. Valin, F.~Michaud, B.~Hadjou, and J.~Rouat.
-\newblock Localization of simultaneous moving sound sources for mobile robot
-  using a frequency- domain steered beamformer approach.
-\newblock In {\em {IEEE} {International} {Conference} on {Robotics} and
-  {Automation}, 2004. {Proceedings}. {ICRA} '04. 2004}, volume~1, pages
-  1033--1038 Vol.1, April 2004.
-\newblock ISSN: 1050-4729.
 
 \bibitem{valin_robust_2003}
 J.-M. Valin, F.~Michaud, J.~Rouat, and D.~Letourneau.
@@ -177,5 +180,13 @@ Jean-Marc Valin, François Michaud, and Jean Rouat.
 \newblock Robust {Localization} and {Tracking} of {Simultaneous} {Moving}
   {Sound} {Sources} {Using} {Beamforming} and {Particle} {Filtering}.
 \newblock {\em Robotics and Autonomous Systems}, 55:216--228, March 2007.
+
+\bibitem{zhang_improved_2021}
+Yuting Zhang, Hongwei Zhang, and Honghai Liu.
+\newblock An {Improved} {Multiple} {Sound} {Source} {Localization} {Method}
+  {Using} a {Uniform} {Concentric} {Circular} {Microphone} {Array}.
+\newblock In {\em 2021 11th {International} {Conference} on {Intelligent}
+  {Control} and {Information} {Processing} ({ICICIP})}, pages 392--397,
+  December 2021.
 
 \end{thebibliography}

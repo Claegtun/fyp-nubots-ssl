@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.12.27)  10 APR 2023 18:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.12.27)  25 APR 2023 16:12
 entering extended mode
 **./progress_report.tex
 (progress_report.tex
@@ -604,86 +604,92 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 {C:/Users/Clayton/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
 Chapter 1.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 49.
+(Font)              <10> on input line 51.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 49.
+(Font)              <7> on input line 51.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 49.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
-9.
+(Font)              <5> on input line 51.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
+1.
 (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.51 \chapter
-             {Literature-Review} [1
+l.58 \begin{itemize}
+                     [1
 
-]
+] [2]
 Chapter 2.
-[2
+[3
 
 ]
-Overfull \hbox (14.10892pt too wide) in paragraph at lines 88--89
+Overfull \hbox (14.10892pt too wide) in paragraph at lines 113--114
 \T1/lmr/m/n/10 A sim-ple yet proven way to es-ti-mate the DOA of a sound-source
  us-ing a microphone-
  []
 
-LaTeX Font Info:    Trying to load font information for U+euf on input line 94.
-
-(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueuf.fd
+[4]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 119
+.
+ (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-[3]
-Overfull \hbox (5.33235pt too wide) in paragraph at lines 98--99
+Overfull \hbox (5.33235pt too wide) in paragraph at lines 123--124
 []\T1/lmr/m/n/10 An ad-vanced form of this TDOA es-ti-ma-tion is the gen-er-ali
 sed cross-correlation
  []
 
 
-Overfull \hbox (3.8596pt too wide) in paragraph at lines 118--119
+Overfull \hbox (3.8596pt too wide) in paragraph at lines 143--144
 []\T1/lmr/m/n/10 The for-mer ex-pres-sion is the most ba-sic ap-proach for a si
 m-ple two-dimensional
  []
 
 
-Overfull \hbox (1.49115pt too wide) in paragraph at lines 120--121
+Overfull \hbox (1.49115pt too wide) in paragraph at lines 145--146
 []\T1/lmr/m/n/10 Another im-por-tant con-sid-er-a-tion is the res-o-lu-tion. Si
 nce the cross-correlation
  []
 
-[4] [5] [6] [7] [8]
-Overfull \hbox (6.58345pt too wide) in paragraph at lines 182--183
+[5] [6] [7] [8] [9]
+Overfull \hbox (6.58345pt too wide) in paragraph at lines 236--237
 \T1/lmr/m/n/10 former's en-ergy was cal-cu-lated in the frequency-domain us-ing
  the cross-correlation
  []
 
-[9] [10] [11]
+[10] [11] [12] [13] [14]
 Chapter 3.
-(progress_report.bbl [12
+(progress_report.bbl [15
 
-] [13
+] [16
 
-] [14]) [15] (progress_report.aux)
+]
+Underfull \hbox (badness 1448) in paragraph at lines 122--128
+[]\T1/lmr/m/n/10 Wageesha Man-am-peri, Thushara D. Ab-haya-pala, Ji-hui Zhang, 
+and
+ []
+
+[17]) [18] (progress_report.aux)
 Package rerunfilecheck Info: File `progress_report.out' has not changed.
-(rerunfilecheck)             Checksum: AB88A8F1F89BAC8384F608155E816ABC;918.
+(rerunfilecheck)             Checksum: 64322D75049A015674CEB9C701C19AA6;1102.
  ) 
 Here is how much of TeX's memory you used:
- 16106 strings out of 478907
- 302063 string characters out of 2850943
- 575237 words of memory out of 3000000
- 33680 multiletter control sequences out of 15000+600000
+ 16124 strings out of 478907
+ 302312 string characters out of 2850943
+ 576324 words of memory out of 3000000
+ 33684 multiletter control sequences out of 15000+600000
  480521 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,8n,83p,2317b,895s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 72i,8n,83p,2313b,895s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
 
 {C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C
-:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}
-{C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.en
-c}{C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}
+:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/
+Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C
+:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}
 {C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.en
 c}{C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc
 }<C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/eu
@@ -696,15 +702,16 @@ pe1/public/lm/lmmi7.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/lm/lmr10.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/
 type1/public/lm/lmr12.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/lm/lmr17.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/font
+s/type1/public/lm/lmr5.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/font
 s/type1/public/lm/lmr6.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/font
 s/type1/public/lm/lmr7.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/font
 s/type1/public/lm/lmr8.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/font
 s/type1/public/lm/lmri10.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fo
 nts/type1/public/lm/lmsy10.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/lm/lmsy7.pfb>
-Output written on progress_report.pdf (16 pages, 315911 bytes).
+Output written on progress_report.pdf (19 pages, 354929 bytes).
 PDF statistics:
- 281 PDF objects out of 1000 (max. 8388607)
- 61 named destinations out of 1000 (max. 500000)
- 65 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 333 PDF objects out of 1000 (max. 8388607)
+ 75 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
