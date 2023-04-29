@@ -99,6 +99,22 @@ Jwu-Sheng Hu, Chia-Hsing Yang, and Cheng-Kang Wang.
   {Intelligent} {Robots} and {Systems}}, pages 181--186, October 2009.
 \newblock ISSN: 2153-0866.
 
+\bibitem{ishi_evaluation_2009}
+Carlos~T. Ishi, Olivier Chatot, Hiroshi Ishiguro, and Norihiro Hagita.
+\newblock Evaluation of a {MUSIC}-based real-time sound localization of
+  multiple sound sources in real noisy environments.
+\newblock In {\em 2009 {IEEE}/{RSJ} {International} {Conference} on
+  {Intelligent} {Robots} and {Systems}}, pages 2027--2032, October 2009.
+\newblock ISSN: 2153-0866.
+
+\bibitem{ishi_effects_2011}
+Carlos~T. Ishi, Dong Liang, Hiroshi Ishiguro, and Norihiro Hagita.
+\newblock The effects of microphone array processing on pitch extraction in
+  real noisy environments.
+\newblock In {\em 2011 {IEEE}/{RSJ} {International} {Conference} on
+  {Intelligent} {Robots} and {Systems}}, pages 550--555, September 2011.
+\newblock ISSN: 2153-0866.
+
 \bibitem{kim_robust_2008}
 Cheol-Taek Kim, Tae-Yong Choi, ByongSuk Choi, and Ju-Jang Lee.
 \newblock Robust estimation of sound direction for robot interface.
@@ -134,6 +150,30 @@ L.~Mattos and E.~Grant.
   {Automation}, 2004. {Proceedings}. {ICRA} '04. 2004}, volume~5, pages
   4265--4270 Vol.5, April 2004.
 \newblock ISSN: 1050-4729.
+
+\bibitem{nakamura_intelligent_2009}
+Keisuke Nakamura, Kazuhiro Nakadai, Futoshi Asano, Yuji Hasegawa, and Hiroshi
+  Tsujino.
+\newblock Intelligent sound source localization for dynamic environments.
+\newblock In {\em 2009 {IEEE}/{RSJ} {International} {Conference} on
+  {Intelligent} {Robots} and {Systems}}, pages 664--669, October 2009.
+\newblock ISSN: 2153-0866.
+
+\bibitem{nakamura_intelligent_2011}
+Keisuke Nakamura, Kazuhiro Nakadai, Futoshi Asano, and Gökhan Ince.
+\newblock Intelligent {Sound} {Source} {Localization} and its application to
+  multimodal human tracking.
+\newblock In {\em 2011 {IEEE}/{RSJ} {International} {Conference} on
+  {Intelligent} {Robots} and {Systems}}, pages 143--148, September 2011.
+\newblock ISSN: 2153-0866.
+
+\bibitem{nakamura_real-time_2012}
+Keisuke Nakamura, Kazuhiro Nakadai, and Gökhan Ince.
+\newblock Real-time super-resolution {Sound} {Source} {Localization} for
+  robots.
+\newblock In {\em 2012 {IEEE}/{RSJ} {International} {Conference} on
+  {Intelligent} {Robots} and {Systems}}, pages 694--699, October 2012.
+\newblock ISSN: 2153-0866.
 
 \bibitem{rascon_lightweight_2015}
 Caleb Rascon, Gibran Fuentes-Pineda, and Ivan Meza.

@@ -194,13 +194,13 @@ Even given a method that only locates a single source at a time, one other way t
 
 Beam-forming is a common technique in signal-processing and in many applications for both sound and radio. It is a method of setting many sensors or transmitters in such an array that waves at particular angles and areas constructively interfere to form a beam focused either on a chosen spot or in a chosen direction. Traditionally, it has been used in telecommunications so that multiple radio antennae form a beam that selectively transmits only in one direction. Here, for sound-source-localisation, it is used to steer a beam or a focus in a chosen direction or on a chosen spot so that the energy only from that location is measured. If the beam is steered in enough directions, then an energy map as a function of direction, e.g. azimuth, is made.
 
-The simplest kind of beamforming is delay-and-sum beamforming where the signal from each microphone is delayed such that the overall sum of all the delayed signals corresponds to a steered direction \cite{rascon_localization_2017}. This sum is maximum when it is steered towards the source. The delay-and-sum beamformer's output steered at the position $\vec{r}_0$ for $N$ microphones is given as:
+The simplest kind of beamforming is delay-and-sum beamforming where the signal from each microphone is delayed such that the overall sum of all the delayed signals corresponds to a steered direction \cite{rascon_localization_2017}. This sum is maximum when it is steered towards the source. The delay-and-sum beamformer's output steered at the position $\vec{r}_0$ for $M$ microphones is given as:
 \begin{equation}
-y_{\vec{r}_0}[t] = \sum_{n=1}^N x_n[t-\tau(vec{r}_0)] 
+y_{\vec{r}_0}[t] = \sum_{m=1}^M x_m[t-\tau(vec{r}_0)] 
 \end{equation}
-where $x_n$ is the signal from the $n$-th microphone, and $\tau(\vec{r}_0)$ is the TDOA corresponding at the position $\vec{r}_0$ \cite{argentieri_survey_2015}. In the far field, this output can be simplified to a direction $\theta_0$ instead of a position:
+where $x_n$ is the signal from the $m$-th microphone, and $\tau(\vec{r}_0)$ is the TDOA corresponding at the position $\vec{r}_0$ \cite{argentieri_survey_2015}. In the far field, this output can be simplified to a direction $\theta_0$ instead of a position:
 \begin{equation}
-y_{\theta_0}[t] = \sum_{n=1}^N x_n[t-\tau(\theta_0)] 
+y_{\theta_0}[t] = \sum_{m=1}^M x_m[t-\tau(\theta_0)] 
 \end{equation}
 This output can yield an energy-map as:
 \begin{equation}
@@ -213,9 +213,9 @@ E_{\theta_0} = \sum_{t=1}^T y_{\theta_0}[t]^2
 
 A more general kind of beamforming is filter-and-sum beamforming where the signal from each microphone is filtered by its own linear filter rather than delayed \cite{argentieri_survey_2015}. The beamformer's output is given as:
 \begin{equation}
-y_{\vec{r}_0}[t] = \sum_{n=1}^N w_n(\vec{r}_0)[t]x_n[t]
+y_{\vec{r}_0}[t] = \sum_{m=1}^M w_m(\vec{r}_0)[t]x_m[t]
 \end{equation} 
-where $w_n(\vec{r}_0)[t]$ is the impulse-response of the $n$-th linear filter.
+where $w_m(\vec{r}_0)[t]$ is the impulse-response of the $m$-th linear filter.
 
 One advantage of beamforming over basic localisation through TDOA is that multiple sources can be easily located since the method spatially filters, i.e. it only receives signals from a particular direction or space \cite{rascon_localization_2017}. However, if two sources are near to each other enough, then the resolution of the energy-map may not distinguish the two.
 
@@ -255,17 +255,67 @@ As said before, the beam's shape is affected by the frequency of the received so
 
 \subsection{MUSIC}
 
-Some methods separate the space of signals into subspaces. The most common of which is multiple-signal-classification (MUSIC). This method has a very high resolution but generally has a high computational burden, especially compared to that of cross-correlation or beamforming. Therefore, it is not explored as in depth as before, but the general performance across the literature is given.
+One branch of methods used to analyse and locate sound-sources separates the space of signals into subspaces. The most common kind of which is multiple-signal-classification (MUSIC). This method has a very high resolution but generally has a high computational burden, especially compared to that of TDOA or beamforming. Therefore, it is not explored as in depth as before, but the general performance across the literature is given.
+
+The basic idea behind MUSIC is that the signals received by an array of microphones is split into subspaces, each representing either a signal or a noise. The model for the signal received is:
+\begin{equation}
+X = W_s S + V
+\end{equation}
+where 
+\begin{itemize}
+	\item each row of $X\in \mathbb{C}^{M\times F}$ is the received signal of the $m$-th microphone $x_m$ in the frequency-domain, i.e. $X_m$,
+	\item each row of $S\in \mathbb{C}^{N\times F}$ is the $n$-th source's signal $s_n$ in the frequency-domain, i.e. $S_n$,
+	\item each row of $V\in \mathbb{C}^{M\times F}$ is the noise of the $m$-th microphones in the frequency-domain,
+	\item $W_s\in \mathbb{C}^{M\times S}$ is a weighting that models the TDOAs of each source at each microphone for a given direction or position,
+\end{itemize}
+and where $M$ is the number of microphones, $F$ is the number of frequency-points, $N$ is the number of sources, i.e. signals \cite{rascon_localization_2017}. The weighting is written as:
+\begin{equation}
+W_s[f] = 
+\begin{bmatrix}
+	1 						& 1						& \cdots		& 1						\\
+	e^{-2\pi f\tau_{2,1}}	& e^{-2\pi f\tau_{2,2}}	& \cdots		& e^{-2\pi f\tau_{2,N}}	\\
+	e^{-2\pi f\tau_{3,1}}	& e^{-2\pi f\tau_{3,2}}	& \cdots		& e^{-2\pi f\tau_{3,N}}	\\
+	\vdots					& \vdots					& \ddots		& \vdots					\\
+	e^{-2\pi f\tau_{M,1}}	& e^{-2\pi f\tau_{M,2}}	& \cdots		& e^{-2\pi f\tau_{M,N}}
+\end{bmatrix}
+\end{equation}
+where $\tau_{m,n}$ is the TDOA of the $n$-th source at the $m$-th microphone.
+
+Given this, the overall goal of MUSIC is to split the space of signals into two subspaces, namely one for signals and another for noise. This is done by eigen-decomposition of the sampled covariance matrix $R[f]\in \mathbb{C}^{N\times N}$ for a given frequency $f$.
+
+The most basic form of MUSIC, known as standard eigen-value-decomposition (SEVD), finds the eigen-decomposition of the covariance matrix as the following:
+\begin{equation}
+R[f] = Q[f]\Lambda[f]Q^{-1}[f]
+\end{equation}
+where $\Lambda[f]$ is a diagonal matrix of the $M$ eigenvalues $\lambda_m[f]$, and each column of $Q[f]$ is corresponding eigenvector $q_m[f]$. This matrix of eigenvectors is often split into two subspaces, $Q[f] = [Q_s[f]|Q_n[f]]$, the former for signals, and the latter for noise \cite{rascon_localization_2017}. Thereby, the spatial spectrum is found from the orthogonality between the steered direction and the eigenvectors for noise:
+\begin{equation}
+P(\theta_0, \phi_0)[f] = \frac{\lvert A^*(\theta_0, \phi_0) A(\theta_0, \phi_0) \rvert}
+	{\sum_{m=\tilde{N}+1}^M \lvert A^*(\theta_0, \phi_0) q_m[f] \rvert}
+\end{equation}
+where $\tilde{N}$ is the number of sources considered, and $A(\theta_0, \phi_0)\in \mathbb{C}^{M\times 1}$ is the steering vector of transfer-functions at each microphone for a given three-dimensional direction\footnote{Much like beamforming, a full three-dimensional position can more generally be considered rather than only a direction, but again like before, this only works in the near field. Since the far field is much more relevant to a small array on a robot, only direction has been considered in this example.}, i.e. an azimuth $\theta_0$ and an elevation $\phi_0$ \cite{nakamura_real-time_2012}. More simply, each row is often the lag $e^{-2\pi f\tau_m}$ where $\tau_m$ is the TDOA at the $m$-th microphone corresponding to the given direction \cite{rascon_localization_2017}.
+
+This spatial spectrum however is narrowband for one point or bin of frequency. For a broadband response, the narrowband response is averaged over the given band of frequencies \cite{ishi_effects_2011} \cite{nakamura_real-time_2012}.
+
+An extension of SEVD is general eigen-value-decomposition (GEVD) where the noise is whitened before the decomposition \cite{nakamura_intelligent_2009} \cite{nakamura_intelligent_2011} \cite{nakamura_real-time_2012}. Here, the eigen-decomposition is such:
+\begin{equation}
+K^{-1}[f] R[f] = Q[f] \Lambda[f] Q^{-1}[f]
+\end{equation}
+where $K[f]$ is a freely chosen matrix but is often computed as $N[f]N^*[f]$ where $N[f]$ is the frequency-domain noise recorded when there are no signals. This is shown to be more robust than SEVD for a SNR less than 0 \si{dB}.
 
 \subsubsection{Literature Examples}
 
-One paper \cite{ishi_evaluation_2009} proposed a form of broadband SEVD-MUSIC where the output was the average of all the narrowband responses over a frequency-range. This was done for a small array of fourteen microphones around a robot's neck. This proposed system estimated both the azimuth and the elevation on a discrete spherical grid with a resolution of about 5 \si{\deg}. Since MUSIC needs a known number of sources, the authors proposed a fixed number of sources for the narrowband MUSIC response and a maximum number of sources from the broadband response. They also compare the magnitude against a threshold to find whether the peak was a source or not. Multiple sources were nevertheless found by sequentially subtracting a two-dimensional Gaussian centred where the next highest source was; this approach is similar to others \cite{brutti_multiple_2010}, \citep{basiri_-board_2016}. The paper evaluated this system for a range of parameters, namely number of FFT points, frequency-range, and value of the threshold. The system was tested in a variety of "noisy environments", namely an office where the main sources of noise were an air-conditioner and the robot's hardware and an outdoor shopping mall, but the authors did not tell udner what SNR and reverberation the system was tested. Nevertheless, the authors found that the system could run in real time given 64 FFT points for each frame which was about 4 \si{ms} long. Furthermore, the authors found that a frequency-range from 1 to 6 \si{kHz}, a threshold of 1.7, a fixed number of sources of 2, and a maximum number of sources of 5 were best. In most of the experiments, the accuracy was around 80 \% successful detection-rate.
+One paper \cite{ishi_evaluation_2009} proposed a form of broadband SEVD-MUSIC where the output was the average of all the narrowband responses over a frequency-range. This was done for a small array of fourteen microphones around a robot's neck. This proposed system estimated both the azimuth and the elevation on a discrete spherical grid with a resolution of about 5 \si{\deg}. Since MUSIC needs a known number of sources, the authors proposed a fixed number of sources for the narrowband MUSIC response and a maximum number of sources from the broadband response. They also compare the magnitude against a threshold to find whether the peak was a source or not. Multiple sources were nevertheless found by sequentially subtracting a two-dimensional Gaussian centred where the next highest source was; this approach is similar to others \cite{brutti_multiple_2010}, \cite{basiri_-board_2016}. The paper evaluated this system for a range of parameters, namely number of FFT points, frequency-range, and value of the threshold. The system was tested in a variety of "noisy environments", namely an office where the main sources of noise were an air-conditioner and the robot's hardware and an outdoor shopping mall, but the authors did not tell udner what SNR and reverberation the system was tested. Nevertheless, the authors found that the system could run in real time given 64 FFT points for each frame which was about 4 \si{ms} long. Furthermore, the authors found that a frequency-range from 1 to 6 \si{kHz}, a threshold of 1.7, a fixed number of sources of 2, and a maximum number of sources of 5 were best. In most of the experiments, the accuracy was around 80 \% successful detection-rate.
 
 Another kind of MUSIC is called GEVD-MUSIC which is more robust to noise, especially that more powerful than the wanted signal itself. An early paper \cite{nakamura_intelligent_2009} that first proposed this kind of MUSIC in the context of robotics compared the accuracy of GEVD-MUSIC as a percentage to that of SEVD-MUSIC. The accuracy of the latter dropped below an SNR of around 5 \si{dB} whilst the accuracy of GEVD-MUSIC kept at 100 \% at an SNR of around -7 \si{dB}. In a later paper \cite{nakamura_intelligent_2011}, many of the same authors proposed the same method but with a audio-visual integration with a particle filter for tracking inactive sources and hierarchical Gaussian mixture-models. Again, the accuracy of SEVD-MUSIC dropped at an SNR of around -8 \si{dB}, whilst that of GEVD-MUSIC dropped at an SNR of around -14 \si{dB}. 
 
 To ease the computation, the same authors proposed a new kind of MUSIC called GSVD-MUSIC \cite{nakamura_real-time_2012}. To further lessen computation, the authors proposed a hierarchical search from coarse to fine, and to improve the resolution, they linearly interpolated the transfer-functions in both the frequency- and time-domain. The accuracy of the proposed GSVD-MUSIC only began to drop at an SNR fo around -10 \si{dB}, about 5 \si{dB} less than that of GEVD-MUSIC. The average error in the azimuth was at best about 1 \si{\deg} and at worst about 13 \si{\deg}. The proposed method also worked well for a moving source. The array was a circle of eight microphones embedded in the robot's head. The authors claimed that their new method of GSVD-MUSIC lessened the computational cost by 40.6 \% compared to GEVD-MUSIC and that their design of a hierarchical search lessened it by a further 59.2 \% for a single source. However, the computation was done on a laptop, and no comparison was made with other methods of sound-source-localisation such as SRP-PHAT.
-% array on head
+% conclusion: array on head
 
+\subsection{Discussion of Literature Examples}
+
+\begin{tabular}{c c c c c}
+	
+\end{tabular}
 
 
 \chapter{Simulation}
