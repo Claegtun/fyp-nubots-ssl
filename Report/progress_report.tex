@@ -28,6 +28,7 @@
 \usepackage{pdfpages}
 %\usepackage[backend=bibtex]{biblatex}
 \usepackage{textcomp}
+\usepackage{pdflscape}
 
 % Title:
 \title{
@@ -75,7 +76,7 @@ Although sound-source-localisation will be helpful in a scenario of football-pla
 
 \chapter{Literature-Review}
 
-Since sound-source-localisation is a much widely researched problem, in e.g. robotics, drones, video-conferencing, the military, submarines, hearing aids, etc., the review of the literature can be quite broad. To narrow the search, and to also find examples that are most relevant to this project, especially for computation and dimensions, this review has mostly considered literature with a robotics context, rather than large-scale military outdoor application for example. Indeed, sound-source-localisation for drones shares a good deal with that for robotics, but one important difference is that applications for drones are mostly outdoors rather than indoors where the reverberation is an important factor.
+Since sound-source-localisation is a much widely researched problem, in e.g. robotics, drones, video-conferencing, the military, submarines, hearing aids, etc., the review of the literature can be quite broad. To narrow the search, and to also find examples that are most relevant to this project, especially for computation and dimensions, this review has mostly considered literature with a robotics context, rather than large-scale military outdoor application for example. Indeed, sound-source-localisation for drones shares a good deal with that for robotics, e.g. the influence of motors, but one important difference is the fact that applications for drones are mostly outdoors rather than indoors where the reverberation is an important factor.
 
 To further help narrow the scope of the search, most methods considered are ones that use an array of at least two microphones and use some kind of signal-processing. Other families of methods exist such as binaural approaches with two microphones and head-models \cite{argentieri_survey_2015} and those that use machine-learning, such as convolutional neural networks \cite{sakavicius_multiple_2022}. It is not necessarily that these other approaches will be ignored outright but rather that the scope of the literature-review as well as the project as a whole will be kept relevant in order to ease the search.
 
@@ -148,16 +149,16 @@ Another important consideration is the resolution. Since the cross-correlation i
 
 The usage of TDOA in sound-source-localisation in robotics is a widely researched. Despite the simplicity of estimating the azimuth, there are many more sophisticated methods of estimating the direction or even the position. For example, one method \cite{valin_robust_2003} solves a set of simultaneous equations from at least five microphones using the pseudo-inverse of a matrix; this yields a vector giving the three-dimensional direction. It also uses a different weighting than GCC-PHAT which gives more weight to areas of the spectrum where the SNR is higher. The experiment was performed with eight microphones in an open rectangular prism ($0.5\times 0.4\times 0.36$ \si{m}) on top of a mobile robot "in a room with a relatively high noise level mostly due to several fans in proximity" with "moderate" reverberation. The computation was done on a desktop PC and used about 15\% of the CPU. Three sounds were tested, speech, snap of fingers, and tap of boot. The results showed an estimated direction that degraded as the source got nearer to the array; the mean-square-error was at best 0.6 and at worst 4.9 degrees with the distance being from 0.3 to 5 \si{m}. This degradation was most likely because of the far-field assumption. The system works "properly" between 3 and 5 \si{m} although the authors claimed this as a result of "the noise and reverberation conditions". They also said that broadband signals were detected better than narrowband ones like tones.
 
-A similar approach \cite{hu_estimation_2009} proposed a novel estimation of the TDOA, namely eigenstructure-based GCC (ES-GCC) which can handle an unknown number of multiple sources. This paper could compute as before the three-dimensional bearing but also the distance for the near-field case, i.e. when the source is near enough to the array. The K-means++ algorithm was used to cluster accumulated results. This approach was tested on an array of eight microphones forming a rhomboidal prism; the diagonal distances from the centre were 0.22 and 0.14 \si{m}. This was done in a real room for both a single source and multiple ones that were all 2.4 \si{m} away from the array. The worst SNR was 13.38 \si{dB}. The mean error for all experiments was less than 3 \si{\deg}. The estimation of distance was not evaluated, only the azimuth and elevation. The computation was not discussed nor was reverberation.
+A similar approach \cite{hu_estimation_2009} proposed a novel estimation of the TDOA, namely eigenstructure-based GCC (ES-GCC) which can handle an unknown number of multiple sources. This paper could compute as before the three-dimensional bearing but also the distance for the near-field case, i.e. when the source is near enough to the array. The K-means++ algorithm was used to cluster accumulated results. This approach was tested on an array of eight microphones forming a rhomboidal prism; the diagonal distances from the centre were 0.22 and 0.14 \si{m}. This was done in a real room for both a single source and multiple ones that were all 2.4 \si{m} away from the array. The worst SNR was 14.58 \si{dB}. The mean error for all experiments was less than 3 \si{\deg}. The estimation of distance was not evaluated, only the azimuth and elevation. The computation was not discussed nor was reverberation.
 % multiple sources?
 
 However, the former methods only computes the bearing, at least for the far field which is more relevant for the case with a smaller array. Another example \cite{chen_sound_2019} estimates the full three-dimensional coordinates of the source by an iterative algorithm based on Newton's method to solve a set of spatial coordinate relations. This example also had a few improvements such as a partitioning process, a fast search-strategy of the GCC peak, a screening strategy, and a new weighting function in the GCC that dealt with reverberation. However, this proposed weighting function needed beforehand the parameters of the environment and the rough displacement of the source; the authors have admitted that this limits the universality. In simulations, the improved weighting function gave a better distinct peak in the GCC for a reverberation-time of 300 \si{ms}. This method was tried on an array of five microphones forming a rectangular pyramid 0.25 \si{m} wide and 0.125 \si{m} tall. The performance was tested at different points around the array from 1 to 6 \si{m} and with a SNR of 45 \si{dB}. The error in distance increased as the source was further away; this was observed at best as 0.05 \si{m} and at worst as 0.25 \si{m}. The error in azimuth varied little in both distance and bearing and was observed as being within 1.5 \si{\deg}. The performance was also tested at different levels of SNR, from 40 to 10 \si{dB}. In the worst case of 10 \si{dB}, the error in distance was observed at worst as 0.4 \si{m}. The paper neglected any evaluation of the estimated elevation, considering that the geometry of the array is not symmetrical. Furthermore, the computational needs were not discussed in depth.
 
-A similar paper \cite{bechler_system_2004} solved a similar set of equations but using Lagrange multipliers instead. It also applied tracking filtering such as EKF. This approach was tested on an array of five microphones forming a double equilateral tetrahedron with sides 28 \si{cm} long. The SNR of the room was 15 \si{db}, and the room's reverberation-time from 60 \si{dB} was measured as 0.36 \si{s}. A number of sessions were tried where a speaking person moved along a different path. The mean squared error of the raw estimated position before filtering was observed to be at best 4.957 \si{\e{-3}}{$m^2$} and at worst 27.21 \si{\e{-3}}{$m^2$}. However, all the sessions had the speaker within 1 \si{m} of the array; so, they may be thought of as in the near field. Also, the paper makes no evaluation of the computation.
+A similar paper \cite{bechler_system_2004} solved a similar set of equations but using Lagrange multipliers instead. It also applied tracking filtering such as EKF. This approach was tested on an array of five microphones forming a double equilateral tetrahedron with sides 28 \si{cm} long. The SNR of the room was 15 \si{db}, and the room's reverberation-time at 60 \si{dB} was measured as 0.36 \si{s}. A number of sessions were tried where a speaking person moved along a different path. The mean squared error of the raw estimated position before filtering was observed to be at best 4.957 \si{\e{-3}}{$m^2$} and at worst 27.21 \si{\e{-3}}{$m^2$}. However, all the sessions had the speaker within 1 \si{m} of the array; so, they may be thought of as in the near field. Also, the paper makes no evaluation of the computation.
 
 Likewise, another paper \cite{kim_robust_2008} employed robust spatial filtering, namely a Kalman filter, but only to estimate the azimuth. It used GCC-PHAT to estimate the TDOA but also used a trained feed-forward network of a single hidden layer to quantify the reliability of the estimated TDOA. 
 
-Both two-dimensional and three-dimensional localisation was proposed in a paper \cite{mahajan_3d_2001} where a similar set of equations was solved, and the speed of sound could be estimated as a variable with at least six microphones. Where it was assumed to be constant, at least five microphones were needed instead. Only the two-dimensional case was evaluated in the preliminary testing. In which, the relative error in distance stayed below 1\%, and the worst error was 7.6 \si{mm} at 1 \si{m}, but this experiment was only done in a workspace $1000\times 1000$ \si{mm} and was done with ultrasonic pulses of 75 \si{kHz}. The authors do not reveal the geometry of the array and given how short the tested distances are, it may be assumed that the experiment was in the near field.
+Both two-dimensional and three-dimensional localisation was proposed in a paper \cite{mahajan_3d_2001} where a similar set of equations was solved, and the speed of sound could be estimated as a variable with at least six microphones. Where it was assumed to be constant, at least five microphones were needed instead. Only the two-dimensional case was evaluated in the preliminary testing. In which, the relative error in distance stayed below 1\%, and the worst error was 7.6 \si{mm} at 1 \si{m}, but this experiment was only done in a workspace $1000\times 1000$ \si{mm} and was done with ultrasonic pulses of 75 \si{kHz}. The authors did not reveal the geometry of the array and given how short the tested distances were, it may be assumed that the experiment was in the near field.
 
 Potential unwanted noise from servo-motors, etc., may affect and disrupt how well the system localises wanted sources. A very recent study \cite{manamperi_drone_2022} set out an approach that estimated the azimuth and elevation and mitigated the noise from a drone's motors. Here, the authors computed the GCC-PHAT as an angular spectrum for many pairs of microphones and summed each pair's angular spectra; this method is similar to SRP-PHAT in that the azimuth and the elevation corresponding to the largest sum belong to the estimated direction. In order to mitigate the motors' noise, the authors subtracted the known angular spectrum of the drone's motors from the mixed angular spectrum before summing. This known angular spectrum was computed from noise-only recordings with specific parameters of motor's current and speed. The tested drone had fifteen pairs of microphones and was tested in a semi-anechoic chamber with a reverberation-time of 20 \si{ms} at 20 \si{dB}. The drone was held resting at a height of 1 \si{m} above a circle of twelve sound-sources with a radius of 0.6 \si{m}. The results showed acceptable accuracy of the proposed method compared to that of GCC-PHAT and of MUSIC for a SNR of at least -30 \si{dB}. The experiments were performed for multiple scenarios such as for a single source and for multiple.
 % May be better in beamforming?
@@ -168,7 +169,7 @@ The estimation of distance is not very common in TDOA-based methods. Most exampl
 
 Another way is to use two or more sub-arrays that yield single DOAs and are used to triangulate on a position \cite{rascon_localization_2017}. However, such a method would need sub-arrays that are far apart enough which is hard for a small robot where space is a luxury.
 
-% Rascon has a few examples?
+% The review has a few examples?
 
 \subsubsection{Reverberation}
 
@@ -308,15 +309,269 @@ One paper \cite{ishi_evaluation_2009} proposed a form of broadband SEVD-MUSIC wh
 
 Another kind of MUSIC is called GEVD-MUSIC which is more robust to noise, especially that more powerful than the wanted signal itself. An early paper \cite{nakamura_intelligent_2009} that first proposed this kind of MUSIC in the context of robotics compared the accuracy of GEVD-MUSIC as a percentage to that of SEVD-MUSIC. The accuracy of the latter dropped below an SNR of around 5 \si{dB} whilst the accuracy of GEVD-MUSIC kept at 100 \% at an SNR of around -7 \si{dB}. In a later paper \cite{nakamura_intelligent_2011}, many of the same authors proposed the same method but with a audio-visual integration with a particle filter for tracking inactive sources and hierarchical Gaussian mixture-models. Again, the accuracy of SEVD-MUSIC dropped at an SNR of around -8 \si{dB}, whilst that of GEVD-MUSIC dropped at an SNR of around -14 \si{dB}. 
 
-To ease the computation, the same authors proposed a new kind of MUSIC called GSVD-MUSIC \cite{nakamura_real-time_2012}. To further lessen computation, the authors proposed a hierarchical search from coarse to fine, and to improve the resolution, they linearly interpolated the transfer-functions in both the frequency- and time-domain. The accuracy of the proposed GSVD-MUSIC only began to drop at an SNR fo around -10 \si{dB}, about 5 \si{dB} less than that of GEVD-MUSIC. The average error in the azimuth was at best about 1 \si{\deg} and at worst about 13 \si{\deg}. The proposed method also worked well for a moving source. The array was a circle of eight microphones embedded in the robot's head. The authors claimed that their new method of GSVD-MUSIC lessened the computational cost by 40.6 \% compared to GEVD-MUSIC and that their design of a hierarchical search lessened it by a further 59.2 \% for a single source. However, the computation was done on a laptop, and no comparison was made with other methods of sound-source-localisation such as SRP-PHAT.
-% conclusion: array on head
+To ease the computation, the same authors proposed a new kind of MUSIC called GSVD-MUSIC \cite{nakamura_real-time_2012}. To further lessen computation, the authors proposed a hierarchical search from coarse to fine, and to improve the resolution, they linearly interpolated the transfer-functions in both the frequency- and time-domain. The accuracy of the proposed GSVD-MUSIC only began to drop at an SNR fo around -10 \si{dB}, about 5 \si{dB} less than that of GEVD-MUSIC. The average error in the azimuth was at best about 1 \si{\deg} and at worst about 10 \si{\deg}. The proposed method also worked well for a moving source. The array was a circle of eight microphones embedded in the robot's head. The authors claimed that their new method of GSVD-MUSIC lessened the computational cost by 40.6 \% compared to GEVD-MUSIC and that their design of a hierarchical search lessened it by a further 59.2 \% for a single source. However, the computation was done on a laptop, and no comparison was made with other methods of sound-source-localisation such as SRP-PHAT.
+% discussion: array on head
 
 \subsection{Discussion of Literature Examples}
 
-\begin{tabular}{c c c c c}
-	
-\end{tabular}
+Many examples and methods in the literature have been discussed. Here, a summary of the most relevant examples is given. The following attributes are compared:
+\begin{itemize}
+	\item the kind of method, i.e. one of three categories discussed so far, namely TDOA, beamforming, and MUSIC,
+	\item the specific method,
+	\item the result or output of the algorithm, i.e. the type of localisation whether it is the direction only or the full three-dimensional coordinates (note that some methods could estimate distance but only in the near field; here, only the result of the far field is considered),
+	\item the number of sources detectable, often either single or multiple,
+	\item the accuracy or precision,
+	\item the built-in resolution of the method,
+	\item the number of microphones in the array,
+	\item the array's dimensions (given a complex array, only the widest displacement is given),
+	\item the distances tested,
+	\item the noise under which the method was tested or for which it is rated, often given as the SNR,
+	\item the reverberation under which the method was tested,
+	\item the sampling rate,
+	\item the length of the frame, window, or block of samples (may be in either number of samples or simply time),
+	\item any comments on the computation, e.g. whether the method runs in real-time, what the method was computed on, etc.,
+	\item and any comments about the design or method.
+\end{itemize}
 
+%\begin{landscape}
+%
+%\begin{tabular}{c | c c c c c c c c c c c c c c c}
+%	\hline
+%	Paper		
+%		& Kind	
+%		& Result
+%		& Sources	
+%			& Accuracy	
+%			& Resolution
+%				& Microphones	
+%				& Dimensions	 
+%					& Tested distances
+%					& Noise
+%					& Reverberation
+%						& Sampling rate
+%						& Frame-length
+%						& Computation
+%						& Context	
+%						& Comments \\
+%	\hline
+%	\hline
+%	Valin et al., 2003 \cite{valin_robust_2003}
+%		& TDOA	
+%		& 3D angle	
+%		& single
+%			& 0.6 - 4.9 \si{\deg} (MSE)
+%			& ?
+%				& 8		
+%				& $0.5\times 0.4\times 0.36$ \si{m}
+%					& 0.3 to 5 \si{m}
+%					& "relatively high"
+%					& "moderate"
+%						& ?
+%						& ?
+%						& real-time, desktop computer, Athlon XP 2000+, 15 \% of CPU
+%						& mobile robot
+%						& Uses a modified weighting of GCC-PHAT dependent on SNR. Performs better for broadband signals \\
+%	\hline
+%	Hu et al., 2009 \cite{hu_estimation_2009}
+%		& TDOA	
+%		& 3D angle only in far field		
+%		& multiple
+%			& < 3 \si{\deg} (average error)
+%			& ?
+%				& 8
+%				& rhombic prism 0.22 by 0.1 by 0.1 \si{m} 
+%					& 2.4 \si{m}
+%					& 14.58 \si{dB}
+%					& ?, the room was $10.5 \times 7.2$ \si{m} and 3.6 \si{m} high
+%						& 16 \si{kHz}
+%						& ?
+%						& ?
+%						& mobile robot
+%						& Uses adaptive K-means++ algorithm to track multiple sources. \\
+%	\hline
+%	Chen \& Xu, 2019 \cite{chen_sound_2019}
+%		& TDOA
+%		& full 3D coordinates
+%		& single
+%			& 0.4 \si{m}, 1.9 \si{\deg} \footnote{distance and azimuth respectively at worst at 6 \si{m} and 10 \si{dB}}
+%			& ?
+%				& 5
+%				& rectangular pyramid 0.25 \si{m} wide 0.125 \si{m} tall
+%					& 1 to 6 \si{m}
+%					& 10 to 45 \si{dB}
+%					& at most 300 \si{ms}
+%						& ?
+%						& ?
+%						& real-time
+%						& mobile robot
+%						& Uses a variety of processing techniques such as a PHAT weighting robust to reverberation. \\
+%	\hline
+%	Bechler et al., 2004 \cite{bechler_system_2004}
+%		& TDOA
+%		& full 3D coordinates
+%		& single
+%			& 4.957 - 27.21 \si{\e{-3}}{$m^2$} (MSE)
+%			& ?
+%				& 5
+%				& a double equilateral tetrahedron with sides 28 \si{cm} long
+%					& within about 1 \si{m}
+%					& 15 \si{dB}
+%					& 0.36 \si{s} ($R_{60}$)
+%						& 16 \si{kHz}
+%						& 32 \si{ms}
+%						& real-time
+%						& robot audition
+%						& Uses EKF to track sources. \\
+%	\hline
+%	Manamperi et al., 2022 \cite{manamperi_drone_2022}
+%		& TDOA
+%		& 3D angle
+%		& multiple
+%			& 0.05 - 9.43 \si{\deg}
+%			& ?
+%				& 30
+%				& ?
+%					& about 1.2 \si{m}
+%					& from -15 to -30 \si{dB}
+%					& 20 \si{ms} (at 20 \si{dB})
+%						& 48 \si{kHz}
+%						& 4096 samples
+%						& real-time
+%						& drone-audition
+%						& Subtracts noise from the motors by formerly recorded data. \\
+%	\hline
+%	Valin et al., 2004 \cite{valin_localization_2004}
+%		& Beamforming
+%		& 3D angle
+%		& multiple
+%			& 100 - 42 \% (success-rate) \footnote{The latter is at worst for speech at 7 \si{m}.} 
+%			& 2.5 \si{\deg}
+%				& 8
+%				& $0.5\times 0.4\times 0.36$ \si{m}
+%					& from 3 to 7 \si{m}
+%					& "noisy"
+%					& "moderate"
+%						& 48 \si{kHz}
+%						& 1024 samples (with 50 \% overlap)
+%						& real-time, desktop computer, Athlon XP 2000+, 30 \% of CPU
+%						& mobile robot
+%						& Uses probabilistic post-processing. \\
+%	\hline
+%	Valin et al., 2007 \cite{valin_robust_2007}
+%		& Beamforming
+%		& 3D angle
+%		& multiple
+%			& 1.10 \si{\deg}, 0.89 \si{\deg} (RMSE) \footnote{azimuth and elevation respectively}
+%			& 2.5 \si{\deg}
+%				& 8
+%				& cube 15.5 \si{cm} wide
+%					& from 1 to 7 \si{m}
+%					& ?
+%					& 350 \si{ms} ($R_{60}$)
+%						& 48 \si{kHz}
+%						& 1024 samples (with 50 \% overlap)
+%						& real-time, 48.4 \si{Mflops}, 1.6 \si{GHz} Pentium-M CPU, 30 \% of CPU
+%						& mobile robot
+%						& Uses a particle-filter to track multiple sources. \\
+%	\hline
+%	Salvati et al., 2019 \cite{salvati_power_2019}
+%		& Beamforming
+%		& 3D angle
+%		& multiple
+%			& 2.5 \si{\deg} (RMS) \footnote{at worst for a single source at -10 \si{dB}}
+%			& 5 \si{\deg}
+%				& 8
+%				& circle 40 \si{cm} wide
+%					& ?
+%					& 0 to 20 \si{dB} for a single source
+%					& ?
+%						& 48 \si{kHz}
+%						& 2048 samples
+%						& ? 
+%						& drone
+%						& Uses diagonal unloading to mitigate noise. \\
+%	\hline
+%	Zhang et al., 2021 \cite{zhang_improved_2021}
+%		& Beamforming
+%		& 3D angle
+%		& multiple
+%			& 2 \si{\deg} at worst
+%			& ?
+%				& 16
+%				& two concentric circles, 20 and 40 \si{cm} wide
+%					& about 1 \si{m}
+%					& ?
+%					& ?
+%						& 204.8 \si{kHz}
+%						& 5 \si{s}
+%						& ?
+%						& general
+%						& Uses particle-swarm-optimisation. \\
+%	\hline
+%	Basiri et al., 2016 \cite{basiri_-board_2016}
+%		& Beamforming
+%		& 3D angle
+%		& multiple
+%			& 1.39 \si{\deg} (RMSE) \footnote{for a single source}
+%			& ?
+%				& 4
+%				& T-shape
+%					& ?
+%					& ?
+%					& ?
+%						& 40 \si{kHz}
+%						& 1024 samples
+%						& Atmel AVR32 microcontroller
+%						& drone-audition
+%						& Proposed a modified PHAT to handle noise. \\
+%	\hline
+%	Ishi et al., 2009 \cite{ishi_evaluation_2009}
+%		& MUSIC
+%		& 3D angle
+%		& multiple
+%			& ~80 \% (success-rate)
+%			& 5 \si{\deg}
+%				& 14
+%				& 40 \si{cm} wide overall
+%					& ?
+%					& ?
+%					& ?
+%						& 16 \si{kHz}
+%						& from 64 to 512 samples
+%						& real-time for at most 128 samples
+%						& robot-audition
+%						& Uses a fixed number of expected sources. \\
+%	\hline
+%	Nakamura et al., 2012 \cite{nakamura_real-time_2012}
+%		& MUSIC
+%		& 3D angle
+%		& multiple
+%			& 1 - 10 \si{\deg}
+%			& 1 \si{\deg}
+%				& 8
+%				& circle
+%					& 1 \si{m}
+%					& ?
+%					& 0.2 \si{s}
+%						& 16 \si{kHz}
+%						& 512 samples
+%						& real-time, 2.0 \si{GHz} Intel Core i7 CPU
+%						& robot-audition
+%						& Uses a hierarchical coarse-fine search to reduce computation. \\
+%	\hline
+%\end{tabular}
+%
+%\end{landscape}
+
+Nearly all methods only compute the three-dimensional angle. Only two attempt full three-dimensional position, i.e. direction along with distance. However, only Chen \& Xu in 2019 \cite{chen_sound_2019} seemed to attempt this in the far field for distances more than 1 \si{m}; Bechler et al. in 2004 \cite{bechler_system_2004} only have tested within about 1 \si{m} which may considered to be the near field given the dimensions of their array.
+
+A common theme throughout the literature-review is the inconsistent calculation of accuracy. Some papers used the RMS error (RMSE), the mean-squared error (MSE), or simply the average error itself. Some papers did not even give error but rather the percentage of successful localisation relative to the resolution. Furthermore, it is hard to summarise the accuracy of a method given that it varies depending on noise, distance, etc. Here, the accuracy at best and at worst is given as lower and upper bounds. Nonetheless, most methods tended to have an error of 2 \si{\deg}.
+
+Although some dimensions were not given at all, e.g. Basiri et al. in 2016 \cite{basiri_-board_2016}, the smallest array seemed to be that of Hu et al. in 2009 \cite{hu_estimation_2009}. The biggest was that of Valin et al. in 2003 and 2004 (both papers use the same array but different methods) \cite{valin_robust_2003} \cite{valin_localization_2004}.
+
+As for noise, Manamperi et al. in 2022 \cite{manamperi_drone_2022} tested up to the worst SNR of -30 \si{dB} although this paper was specifically about mitigating noise in the context of drones. Whilst for reverberation, Bechler et al. in 2004 \cite{bechler_system_2004} had the longest reverberation-time of 0.36 \si{ms} at 60 \si{dB}. Again however, many papers neglect any information about noise or reverberation, some albeit with vague descriptions.
+
+Most methods could run in real-time albeit on laptop and desktop computers. However, Basiri et al. in 2016 \cite{basiri_-board_2016} seemed to be the only example implemented on an embedded system on the drone itself, namely an Atmel AVR32 microcontroller. This example is therefore of particular interest to this project given the want for an embedded implementation.
 
 \chapter{Simulation}
 

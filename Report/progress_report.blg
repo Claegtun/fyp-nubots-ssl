@@ -5,44 +5,44 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: plain.bst
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 Database file #1: ./zotero.bib
-You've used 32 entries,
+You've used 33 entries,
             2118 wiz_defined-function locations,
-            682 strings with 11246 characters,
-and the built_in function-call counts, 14502 in all, are:
-= -- 1484
-> -- 601
-< -- 22
-+ -- 241
-- -- 202
-* -- 1026
-:= -- 2162
-add.period$ -- 111
-call.type$ -- 32
-change.case$ -- 197
+            686 strings with 11462 characters,
+and the built_in function-call counts, 15129 in all, are:
+= -- 1549
+> -- 624
+< -- 24
++ -- 250
+- -- 210
+* -- 1072
+:= -- 2247
+add.period$ -- 115
+call.type$ -- 33
+change.case$ -- 204
 chr.to.int$ -- 0
-cite$ -- 32
-duplicate$ -- 586
-empty$ -- 1138
-format.name$ -- 202
-if$ -- 3171
+cite$ -- 33
+duplicate$ -- 611
+empty$ -- 1188
+format.name$ -- 210
+if$ -- 3313
 int.to.chr$ -- 0
-int.to.str$ -- 32
-missing$ -- 32
-newline$ -- 178
-num.names$ -- 64
-pop$ -- 206
+int.to.str$ -- 33
+missing$ -- 33
+newline$ -- 184
+num.names$ -- 66
+pop$ -- 214
 preamble$ -- 1
-purify$ -- 165
+purify$ -- 171
 quote$ -- 0
-skip$ -- 499
+skip$ -- 523
 stack$ -- 0
-substring$ -- 1170
-swap$ -- 236
-text.length$ -- 22
+substring$ -- 1233
+swap$ -- 250
+text.length$ -- 24
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 128
+type$ -- 132
 warning$ -- 0
-while$ -- 141
-width$ -- 34
-write$ -- 387
+while$ -- 146
+width$ -- 35
+write$ -- 401

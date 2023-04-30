@@ -207,6 +207,15 @@ Y.~Tamai, Y.~Sasaki, S.~Kagami, and H.~Mizoguchi.
   {Intelligent} {Robots} and {Systems}}, pages 4172--4177, August 2005.
 \newblock ISSN: 2153-0866.
 
+\bibitem{valin_localization_2004}
+J.-M. Valin, F.~Michaud, B.~Hadjou, and J.~Rouat.
+\newblock Localization of simultaneous moving sound sources for mobile robot
+  using a frequency- domain steered beamformer approach.
+\newblock In {\em {IEEE} {International} {Conference} on {Robotics} and
+  {Automation}, 2004. {Proceedings}. {ICRA} '04. 2004}, volume~1, pages
+  1033--1038 Vol.1, April 2004.
+\newblock ISSN: 1050-4729.
+
 \bibitem{valin_robust_2003}
 J.-M. Valin, F.~Michaud, J.~Rouat, and D.~Letourneau.
 \newblock Robust sound source localization using a microphone array on a mobile
