@@ -1,0 +1,16 @@
+TY  - JOUR
+AU  - Boora, Ritu
+AU  - Dhull, Sanjeev Kumar
+PY  - 2020
+DA  - 2020/08/13
+TI  - A TDOA-based multiple source localization using delay density maps
+JO  - Sādhanā
+SP  - 204
+VL  - 45
+IS  - 1
+AB  - The higher computational efficiency of the time difference of arrival (TDOA) based sound source localization makes it a preferred choice over steered response power (SRP) methods in real-time applications. However, unlike SRP, its implementation for multiple source localization (MSL) is not straight forward. It includes challenges as accurate feature extraction in unfavourable acoustic conditions, association ambiguity involved in mapping the feature extractions to the corresponding sources and complexity involved in solving the hyperbolic delay equation to estimate the source coordinates. Moreover, the dominating source and early reverberation make the detection of delay associated with the submissive sources further perplexing. Hence, this paper proposes a proficient three-step method for localizing multiple sources from delay estimates. In step 1, the search space region is partitioned into cubic subvolumes, and the delay bound associated with each one is computed. Hereafter, these subvolumes are grouped differently, such that whose associated TDOA bounds are enclosed by a specific delay interval, are clustered together. In step 2, initially, the delay segments and later each subvolume contained by the corresponding delay segment are traced for passing through estimated delay hyperbola. These traced volumes are updated by the weight to measure the likelihood of a source in it. The resultant generates the delay density map in the search space. In the final step, localization enhancement is carried out in the selected volumes using conventional SRP (C-SRP). The validation of the proposed approach is done by carrying out the experiments under different acoustic conditions on the synthesized data and, recordings from SMARD & Audio Visual 16.3 Corpus.
+SN  - 0973-7677
+UR  - https://doi.org/10.1007/s12046-020-01453-8
+DO  - 10.1007/s12046-020-01453-8
+ID  - Boora2020
+ER  - 
