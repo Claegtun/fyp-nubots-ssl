@@ -1,5 +1,8 @@
 \begin{thebibliography}{10}
 
+\bibitem{noauthor_handclaps_2005}
+handclaps, March 2005.
+
 \bibitem{argentieri_prototyping_2005}
 S.~Argentieri, P.~Danes, and P.~Soueres.
 \newblock Prototyping {Filter}-{Sum} {Beamformers} for {Sound} {Source}
@@ -32,8 +35,8 @@ Sylvain Argentieri, Patrick Danes, and Philippe Soueres.
 
 \bibitem{badali_evaluating_2009}
 Anthony Badali, Jean-Marc Valin, François Michaud, and Parham Aarabi.
-\newblock Evaluating real-time audio localization algorithms for artificial
-  audition in robotics.
+\newblock Evaluating {Real}-{Time} {Audio} {Localization} {Algorithms} for
+  {Artificial} {Audition} in {Robotics}.
 \newblock In {\em 2009 {IEEE}/{RSJ} {International} {Conference} on
   {Intelligent} {Robots} and {Systems}}, pages 2033--2038, October 2009.
 \newblock ISSN: 2153-0866.
@@ -46,8 +49,8 @@ Meysam Basiri, Felix Schill, Pedro Lima, and Dario Floreano.
 
 \bibitem{bechler_system_2004}
 D.~Bechler, M.S. Schlosser, and K.~Kroschel.
-\newblock System for robust {3D} speaker tracking using microphone array
-  measurements.
+\newblock System for {Robust} 3d {Speaker} {Tracking} {Using} {Microphone}
+  {Array} {Measurements}.
 \newblock In {\em 2004 {IEEE}/{RSJ} {International} {Conference} on
   {Intelligent} {Robots} and {Systems} ({IROS}) ({IEEE} {Cat}.
   {No}.{04CH37566})}, volume~3, pages 2117--2122 vol.3, September 2004.
@@ -80,7 +83,7 @@ Guoliang Chen and Yang Xu.
 \newblock {\em Journal of Sensors}, 2019:1--13, August 2019.
 
 \bibitem{clifford_calculating_2010}
-alice clifford and joshua reiss.
+Alice Clifford and Joshua Reiss.
 \newblock calculating time delays of multiple active sources in live sound.
 \newblock {\em journal of the audio engineering society}, November 2010.
 
@@ -93,16 +96,16 @@ T.~Gustafsson, B.D. Rao, and M.~Trivedi.
 
 \bibitem{hu_estimation_2009}
 Jwu-Sheng Hu, Chia-Hsing Yang, and Cheng-Kang Wang.
-\newblock Estimation of sound source number and directions under a multi-source
-  environment.
+\newblock Estimation of {Sound} {Source} {Number} and {Directions} {Under} a
+  {Multi}-{Source} {Environment}.
 \newblock In {\em 2009 {IEEE}/{RSJ} {International} {Conference} on
   {Intelligent} {Robots} and {Systems}}, pages 181--186, October 2009.
 \newblock ISSN: 2153-0866.
 
 \bibitem{ishi_evaluation_2009}
 Carlos~T. Ishi, Olivier Chatot, Hiroshi Ishiguro, and Norihiro Hagita.
-\newblock Evaluation of a {MUSIC}-based real-time sound localization of
-  multiple sound sources in real noisy environments.
+\newblock Evaluation of a {MUSIC}-{Based} {Real}-{Time} {Sound} {Localization}
+  of {Multiple} {Sound} {Sources} in {Real} {Noisy} {Environments}.
 \newblock In {\em 2009 {IEEE}/{RSJ} {International} {Conference} on
   {Intelligent} {Robots} and {Systems}}, pages 2027--2032, October 2009.
 \newblock ISSN: 2153-0866.
@@ -117,7 +120,7 @@ Carlos~T. Ishi, Dong Liang, Hiroshi Ishiguro, and Norihiro Hagita.
 
 \bibitem{kim_robust_2008}
 Cheol-Taek Kim, Tae-Yong Choi, ByongSuk Choi, and Ju-Jang Lee.
-\newblock Robust estimation of sound direction for robot interface.
+\newblock Robust {Estimation} of {Sound} {Direction} for {Robot} {Interface}.
 \newblock In {\em 2008 {IEEE} {International} {Conference} on {Robotics} and
   {Automation}}, pages 3475--3480, May 2008.
 \newblock ISSN: 1050-4729.
@@ -129,8 +132,8 @@ Byoungho Kwon, Youngjin Park, and Youn-sik Park.
 
 \bibitem{mahajan_3d_2001}
 A.~Mahajan and M.~Walworth.
-\newblock {3D} position sensing using the differences in the time-of-flights
-  from a wave source to various receivers.
+\newblock 3d {Position} {Sensing} {Using} the {Differences} in the
+  {Time}-of-{Flights} from a {Wave} {Source} to {Various} {Receivers}.
 \newblock {\em IEEE Transactions on Robotics and Automation}, 17(1):91--94,
   February 2001.
 
@@ -144,8 +147,8 @@ Wageesha Manamperi, Thushara~D. Abhayapala, Jihui Zhang, and Prasanga~N.
 
 \bibitem{mattos_passive_2004}
 L.~Mattos and E.~Grant.
-\newblock Passive sonar applications: target tracking and navigation of an
-  autonomous robot.
+\newblock Passive {Sonar} {Applications}: {Target} {Tracking} and {Navigation}
+  of an {Autonomous} {Robot}.
 \newblock In {\em {IEEE} {International} {Conference} on {Robotics} and
   {Automation}, 2004. {Proceedings}. {ICRA} '04. 2004}, volume~5, pages
   4265--4270 Vol.5, April 2004.
@@ -169,8 +172,8 @@ Keisuke Nakamura, Kazuhiro Nakadai, Futoshi Asano, and Gökhan Ince.
 
 \bibitem{nakamura_real-time_2012}
 Keisuke Nakamura, Kazuhiro Nakadai, and Gökhan Ince.
-\newblock Real-time super-resolution {Sound} {Source} {Localization} for
-  robots.
+\newblock Real-{Time} {Super}-{Resolution} {Sound} {Source} {Localization} for
+  {Robots}.
 \newblock In {\em 2012 {IEEE}/{RSJ} {International} {Conference} on
   {Intelligent} {Robots} and {Systems}}, pages 694--699, October 2012.
 \newblock ISSN: 2153-0866.
@@ -201,16 +204,17 @@ Daniele Salvati, Carlo Drioli, and Gian~Luca Foresti.
 
 \bibitem{tamai_three_2005}
 Y.~Tamai, Y.~Sasaki, S.~Kagami, and H.~Mizoguchi.
-\newblock Three ring microphone array for {3D} sound localization and
-  separation for mobile robot audition.
+\newblock Three {Ring} {Microphone} {Array} for {3D} {Sound} {Localization} and
+  {Separation} for {Mobile} {Robot} {Audition}.
 \newblock In {\em 2005 {IEEE}/{RSJ} {International} {Conference} on
   {Intelligent} {Robots} and {Systems}}, pages 4172--4177, August 2005.
 \newblock ISSN: 2153-0866.
 
 \bibitem{valin_localization_2004}
 J.-M. Valin, F.~Michaud, B.~Hadjou, and J.~Rouat.
-\newblock Localization of simultaneous moving sound sources for mobile robot
-  using a frequency- domain steered beamformer approach.
+\newblock Localization of {Simultaneous} {Moving} {Sound} {Sources} for
+  {Mobile} {Robot} {Using} a {Frequency}- {Domain} {Steered} {Beamformer}
+  {Approach}.
 \newblock In {\em {IEEE} {International} {Conference} on {Robotics} and
   {Automation}, 2004. {Proceedings}. {ICRA} '04. 2004}, volume~1, pages
   1033--1038 Vol.1, April 2004.
@@ -218,8 +222,8 @@ J.-M. Valin, F.~Michaud, B.~Hadjou, and J.~Rouat.
 
 \bibitem{valin_robust_2003}
 J.-M. Valin, F.~Michaud, J.~Rouat, and D.~Letourneau.
-\newblock Robust sound source localization using a microphone array on a mobile
-  robot.
+\newblock Robust {Sound} {Source} {Localization} {Using} a {Microphone} {Array}
+  on a {Mobile} {Robot}.
 \newblock In {\em Proceedings 2003 {IEEE}/{RSJ} {International} {Conference} on
   {Intelligent} {Robots} and {Systems} ({IROS} 2003) ({Cat}.
   {No}.{03CH37453})}, volume~2, pages 1228--1233 vol.2, October 2003.

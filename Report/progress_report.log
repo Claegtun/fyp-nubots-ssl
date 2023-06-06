@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.12.27)  4 MAY 2023 13:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.12.27)  2 JUN 2023 23:43
 entering extended mode
 **./progress_report.tex
 (progress_report.tex
@@ -342,6 +342,46 @@ Package: array 2021/04/20 v2.5e Tabular extension package (FMi)
 \backup@length=\skip54
 \ar@cellbox=\box61
 ))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithm.
+sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+ (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count292
+\float@exts=\toks23
+\float@box=\box62
+\@float@everytoks=\toks24
+\@floatcapt=\box63
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks25
+\c@algorithm=\count293
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algpseud
+ocode.sty
+Package: algpseudocode 
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algorith
+micx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count294
+\c@ALG@rem=\count295
+\c@ALG@nested=\count296
+\ALG@tlm=\skip55
+\ALG@thistlm=\skip56
+\c@ALG@Lnr=\count297
+\c@ALG@blocknr=\count298
+\c@ALG@storecount=\count299
+\c@ALG@tmpcounter=\count300
+\ALG@tmplength=\skip57
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+)
 (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2020/12/05 v1.2c Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -378,28 +418,22 @@ Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
 \caption@hangindent=\dimen168
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count292
-\c@continuedfloat=\count293
+\c@caption@flags=\count301
+\c@continuedfloat=\count302
+Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 )
 (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.st
 y
 Package: subcaption 2022/01/07 v1.5 Sub-captions (AR)
-\c@subfigure=\count294
-\c@subtable=\count295
-) (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count296
-\float@exts=\toks23
-\float@box=\box62
-\@float@everytoks=\toks24
-\@floatcapt=\box63
+\c@subfigure=\count303
+\c@subtable=\count304
 )
 (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/footmisc\footmisc.sty
 Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
-\FN@temptoken=\toks25
+\FN@temptoken=\toks26
 \footnotemargin=\dimen169
-\c@pp@next@reset=\count297
+\c@pp@next@reset=\count305
 Package footmisc Info: Declaring symbol style bringhurst on input line 855.
 Package footmisc Info: Declaring symbol style chicago on input line 863.
 Package footmisc Info: Declaring symbol style wiley on input line 872.
@@ -411,21 +445,18 @@ Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
 )
 (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.sty
 Package: pdfpages 2022/05/22 v0.5v Insert pages of external PDF documents (AM)
-(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
-Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
-)
 (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count298
-\calc@Bcount=\count299
+\calc@Acount=\count306
+\calc@Bcount=\count307
 \calc@Adimen=\dimen170
 \calc@Bdimen=\dimen171
-\calc@Askip=\skip55
-\calc@Bskip=\skip56
+\calc@Askip=\skip58
+\calc@Bskip=\skip59
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count300
-\calc@Cskip=\skip57
+\calc@Ccount=\count308
+\calc@Cskip=\skip60
 )
 (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
 Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
@@ -457,12 +488,12 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.def
 File: pppdftex.def 2022/05/22 v0.5v Pdfpages driver for pdfTeX (AM)
 )
-\pdfpages@includegraphics@status=\count301
+\pdfpages@includegraphics@status=\count309
 \AM@pagebox=\box64
-\AM@global@opts=\toks26
-\AM@pagecnt=\count302
-\AM@toc@title=\toks27
-\c@AM@survey=\count303
+\AM@global@opts=\toks27
+\AM@pagecnt=\count310
+\AM@toc@title=\toks28
+\c@AM@survey=\count311
 \AM@templatesizebox=\box65
 ) (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
@@ -475,10 +506,15 @@ Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+) (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/titling\titling.sty
+Package: titling 2009/09/04 v2.1d maketitle typesetting
+\thanksmarkwidth=\skip61
+\thanksmargin=\skip62
+\droptitle=\skip63
 )
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 43.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 43
+h' as default language. on input line 48.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 48
 .
 (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -486,25 +522,25 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 (progress_report.aux)
 \openout1 = `progress_report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-Package hyperref Info: Link coloring OFF on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+Package hyperref Info: Link coloring OFF on input line 48.
 
 (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -516,11 +552,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 itlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count304
+\c@section@level=\count312
 )
-LaTeX Info: Redefining \ref on input line 43.
-LaTeX Info: Redefining \pageref on input line 43.
-LaTeX Info: Redefining \nameref on input line 43.
+LaTeX Info: Redefining \ref on input line 48.
+LaTeX Info: Redefining \pageref on input line 48.
+LaTeX Info: Redefining \nameref on input line 48.
  (progress_report.out) (progress_report.out)
 \@outlinefile=\write3
 \openout3 = `progress_report.out'.
@@ -534,17 +570,17 @@ nslations-basic-dictionary')
 (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.
 mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count305
+\scratchcounter=\count313
 \scratchdimen=\dimen177
 \scratchbox=\box66
-\nofMPsegments=\count306
-\nofMParguments=\count307
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count308
+\nofMPsegments=\count314
+\nofMParguments=\count315
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count316
 \MPscratchDim=\dimen178
-\MPnumerator=\count309
-\makeMPintoPDFobject=\count310
-\everyMPtoPDFconversion=\toks29
+\MPnumerator=\count317
+\makeMPintoPDFobject=\count318
+\everyMPtoPDFconversion=\toks30
 )
 (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf
 -base.sty
@@ -557,50 +593,49 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
-6.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5
+1.
  (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
-6.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5
+1.
 
 (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-46.
+51.
 
 (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-46.
+51.
 
 (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 46.
+(Font)              <12> on input line 51.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 46.
+(Font)              <8> on input line 51.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 46.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
+(Font)              <6> on input line 51.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
 
 
 (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
 
 
 (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 46
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 51
 .
 
 (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
@@ -608,203 +643,338 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 [1
 
-{C:/Users/Clayton/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-Chapter 1.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 53.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 53.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 53.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
-3.
-(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
- been already used, duplicate ignored
+{C:/Users/Clayton/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]pdfTeX warning
+ (ext4): destination with the same identifier (name{page.1}) has been already u
+sed, duplicate ignored
 <to be read again> 
                    \relax 
-l.60 \begin{itemize}
-                     [1
+l.54 \end{abstract}
+                    [1] (progress_report.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 2.
+)
+\tf@toc=\write4
+\openout4 = `progress_report.toc'.
 
-] [2]
-Chapter 2.
-[3
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.59 \chapter
+             {Introduction} [1
 
 ]
-Overfull \hbox (14.10892pt too wide) in paragraph at lines 115--116
+Chapter 1.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 6
+5.
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Overfull \hbox (1.09743pt too wide) in paragraph at lines 65--66
+\T1/lmr/m/n/10 NUbots [][][] is a mul-ti-dis-ci-plinary team un-der the Uni-ver
+-sity of New-cas-tle's robotics
+ []
+
+<./NUbot-sitting-down.jpg, id=167, 1505.625pt x 1505.625pt>
+File: ./NUbot-sitting-down.jpg Graphic file (type jpg)
+<use ./NUbot-sitting-down.jpg>
+Package pdftex.def Info: ./NUbot-sitting-down.jpg  used on input line 68.
+(pdftex.def)             Requested size: 258.75pt x 258.73271pt.
+[2
+
+] [3 <./NUbot-sitting-down.jpg>] [4]
+Chapter 2.
+[5
+
+]
+Overfull \hbox (14.10892pt too wide) in paragraph at lines 135--136
 \T1/lmr/m/n/10 A sim-ple yet proven way to es-ti-mate the DOA of a sound-source
  us-ing a microphone-
  []
 
-[4]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 121
+[6]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 141
 .
  (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Overfull \hbox (5.33235pt too wide) in paragraph at lines 125--126
+Overfull \hbox (5.33235pt too wide) in paragraph at lines 145--146
 []\T1/lmr/m/n/10 An ad-vanced form of this TDOA es-ti-ma-tion is the gen-er-ali
 sed cross-correlation
  []
 
 
-Overfull \hbox (3.8596pt too wide) in paragraph at lines 145--147
+Overfull \hbox (3.8596pt too wide) in paragraph at lines 165--167
 []\T1/lmr/m/n/10 The for-mer ex-pres-sion is the most ba-sic ap-proach for a si
 m-ple two-dimensional
  []
 
 
-Overfull \hbox (1.49115pt too wide) in paragraph at lines 148--149
+Overfull \hbox (1.49115pt too wide) in paragraph at lines 168--169
 []\T1/lmr/m/n/10 Another im-por-tant con-sid-er-a-tion is the res-o-lu-tion. Si
 nce the cross-correlation
  []
 
-[5]
-<./valin_2003/robot.png, id=111, 375.4025pt x 328.22626pt>
+[7]
+<./valin_2003/robot.png, id=230, 375.4025pt x 328.22626pt>
 File: ./valin_2003/robot.png Graphic file (type png)
 <use ./valin_2003/robot.png>
-Package pdftex.def Info: ./valin_2003/robot.png  used on input line 155.
+Package pdftex.def Info: ./valin_2003/robot.png  used on input line 177.
 (pdftex.def)             Requested size: 258.75pt x 226.24597pt.
-<./valin_2003/plot.png, id=114, 295.60437pt x 228.855pt>
+ [8]
+<./valin_2003/plot.png, id=240, 295.60437pt x 228.855pt>
 File: ./valin_2003/plot.png Graphic file (type png)
 <use ./valin_2003/plot.png>
-Package pdftex.def Info: ./valin_2003/plot.png  used on input line 163.
+Package pdftex.def Info: ./valin_2003/plot.png  used on input line 185.
 (pdftex.def)             Requested size: 258.75pt x 200.32794pt.
- [6 <./valin_2003/robot.png (PNG copy)>]
-<./hu_2009/array.png, id=129, 99.37125pt x 142.03062pt>
+ [9 <./valin_2003/robot.png (PNG copy)> <./valin_2003/plot.png>]
+<./hu_2009/array.png, id=251, 99.37125pt x 142.03062pt>
 File: ./hu_2009/array.png Graphic file (type png)
 <use ./hu_2009/array.png>
-Package pdftex.def Info: ./hu_2009/array.png  used on input line 174.
+Package pdftex.def Info: ./hu_2009/array.png  used on input line 198.
 (pdftex.def)             Requested size: 258.75pt x 369.92969pt.
- [7 <./valin_2003/plot.png>]
-[8 <./hu_2009/array.png>]
-<./chen_2019/array.jpg, id=148, 662.475pt x 589.20125pt>
+
+[10] [11 <./hu_2009/array.png>]
+<./chen_2019/array.jpg, id=272, 662.475pt x 589.20125pt>
 File: ./chen_2019/array.jpg Graphic file (type jpg)
 <use ./chen_2019/array.jpg>
-Package pdftex.def Info: ./chen_2019/array.jpg  used on input line 184.
+Package pdftex.def Info: ./chen_2019/array.jpg  used on input line 210.
 (pdftex.def)             Requested size: 258.75pt x 230.1292pt.
-<./chen_2019/distance_SNR.jpg, id=151, 662.475pt x 607.26875pt>
+<./chen_2019/distance_SNR.jpg, id=275, 662.475pt x 607.26875pt>
 File: ./chen_2019/distance_SNR.jpg Graphic file (type jpg)
 <use ./chen_2019/distance_SNR.jpg>
-Package pdftex.def Info: ./chen_2019/distance_SNR.jpg  used on input line 192.
+Package pdftex.def Info: ./chen_2019/distance_SNR.jpg  used on input line 218.
 (pdftex.def)             Requested size: 258.75pt x 237.18597pt.
- [9 <./chen_2019/array.jpg>] [10 <./chen_2019/distance_SNR.jpg>]
-<./manamperi_2022/array.png, id=172, 416.05438pt x 390.45876pt>
+ [12 <./chen_2019/array.jpg>] [13 <./chen_2019/distance_SNR.jpg>]
+<./manamperi_2022/array.png, id=297, 416.05438pt x 390.45876pt>
 File: ./manamperi_2022/array.png Graphic file (type png)
 <use ./manamperi_2022/array.png>
-Package pdftex.def Info: ./manamperi_2022/array.png  used on input line 207.
+Package pdftex.def Info: ./manamperi_2022/array.png  used on input line 239.
 (pdftex.def)             Requested size: 258.75pt x 242.84453pt.
-<./manamperi_2022/map_n30.png, id=175, 426.59375pt x 331.2375pt>
+<./manamperi_2022/map_n30.png, id=300, 426.59375pt x 331.2375pt>
 File: ./manamperi_2022/map_n30.png Graphic file (type png)
 <use ./manamperi_2022/map_n30.png>
-Package pdftex.def Info: ./manamperi_2022/map_n30.png  used on input line 215.
+Package pdftex.def Info: ./manamperi_2022/map_n30.png  used on input line 247.
 (pdftex.def)             Requested size: 258.75pt x 200.92241pt.
- [11 <./manamperi_2022/array.png>] [12 <./manamperi_2022/map_n30.png>] [13] [14
-] [15]
-<./valin_2007/grid.jpg, id=247, 54.49158pt x 17.3448pt>
+ [14 <./manamperi_2022/array.png>] [15 <./manamperi_2022/map_n30.png>] [16] [17
+] [18]
+<./valin_2007/grid.jpg, id=378, 54.49158pt x 17.3448pt>
 File: ./valin_2007/grid.jpg Graphic file (type jpg)
 <use ./valin_2007/grid.jpg>
-Package pdftex.def Info: ./valin_2007/grid.jpg  used on input line 298.
+Package pdftex.def Info: ./valin_2007/grid.jpg  used on input line 336.
 (pdftex.def)             Requested size: 258.75pt x 82.39493pt.
- [16 <./valin_2007/grid.jpg>]
-<./valin_2007/array.jpg, id=262, 54.34705pt x 57.96054pt>
+ [19 <./valin_2007/grid.jpg>]
+<./valin_2007/array.jpg, id=392, 54.34705pt x 57.96054pt>
 File: ./valin_2007/array.jpg Graphic file (type jpg)
 <use ./valin_2007/array.jpg>
-Package pdftex.def Info: ./valin_2007/array.jpg  used on input line 308.
+Package pdftex.def Info: ./valin_2007/array.jpg  used on input line 348.
 (pdftex.def)             Requested size: 258.75pt x 275.96983pt.
-<./valin_2007/track.jpg, id=265, 87.59125pt x 30.3534pt>
+<./valin_2007/track.jpg, id=395, 87.59125pt x 30.3534pt>
 File: ./valin_2007/track.jpg Graphic file (type jpg)
 <use ./valin_2007/track.jpg>
-Package pdftex.def Info: ./valin_2007/track.jpg  used on input line 316.
+Package pdftex.def Info: ./valin_2007/track.jpg  used on input line 356.
 (pdftex.def)             Requested size: 258.75pt x 89.69452pt.
- [17 <./valin_2007/array.jpg> <./valin_2007/track.jpg>]
-<./badali_2009/array.png, id=280, 138.5175pt x 138.5175pt>
+ [20 <./valin_2007/array.jpg>]
+<./badali_2009/array.png, id=411, 138.5175pt x 138.5175pt>
 File: ./badali_2009/array.png Graphic file (type png)
 <use ./badali_2009/array.png>
-Package pdftex.def Info: ./badali_2009/array.png  used on input line 326.
+Package pdftex.def Info: ./badali_2009/array.png  used on input line 368.
 (pdftex.def)             Requested size: 258.75pt x 258.7812pt.
- [18]
-<./badali_2009/error_SNR.png, id=290, 483.30562pt x 205.26688pt>
+ [21 <./valin_2007/track.jpg>]
+<./badali_2009/error_SNR.png, id=421, 483.30562pt x 205.26688pt>
 File: ./badali_2009/error_SNR.png Graphic file (type png)
 <use ./badali_2009/error_SNR.png>
-Package pdftex.def Info: ./badali_2009/error_SNR.png  used on input line 334.
+Package pdftex.def Info: ./badali_2009/error_SNR.png  used on input line 376.
 (pdftex.def)             Requested size: 258.75pt x 109.89967pt.
- [19 <./badali_2009/array.png> <./badali_2009/error_SNR.png>]
-<./salvati_2019/RMSE_SNR.png, id=303, 432.11438pt x 187.19937pt>
+ [22 <./badali_2009/array.png> <./badali_2009/error_SNR.png>]
+<./salvati_2019/RMSE_SNR.png, id=435, 432.11438pt x 187.19937pt>
 File: ./salvati_2019/RMSE_SNR.png Graphic file (type png)
 <use ./salvati_2019/RMSE_SNR.png>
-Package pdftex.def Info: ./salvati_2019/RMSE_SNR.png  used on input line 344.
+Package pdftex.def Info: ./salvati_2019/RMSE_SNR.png  used on input line 388.
 (pdftex.def)             Requested size: 258.75pt x 112.09769pt.
-<./salvati_2019/RMSE_SNR_two.png, id=306, 432.61626pt x 191.21437pt>
+<./salvati_2019/RMSE_SNR_two.png, id=438, 432.61626pt x 191.21437pt>
 File: ./salvati_2019/RMSE_SNR_two.png Graphic file (type png)
 <use ./salvati_2019/RMSE_SNR_two.png>
-Package pdftex.def Info: ./salvati_2019/RMSE_SNR_two.png  used on input line 35
-2.
+Package pdftex.def Info: ./salvati_2019/RMSE_SNR_two.png  used on input line 39
+6.
 (pdftex.def)             Requested size: 258.75pt x 114.37062pt.
- [20 <./salvati_2019/RMSE_SNR.png> <./salvati_2019/RMSE_SNR_two.png>]
-<./zhang_2021/maps.png, id=320, 414.04688pt x 288.07625pt>
+ [23 <./salvati_2019/RMSE_SNR.png> <./salvati_2019/RMSE_SNR_two.png>]
+<./zhang_2021/maps.png, id=454, 414.04688pt x 288.07625pt>
 File: ./zhang_2021/maps.png Graphic file (type png)
 <use ./zhang_2021/maps.png>
-Package pdftex.def Info: ./zhang_2021/maps.png  used on input line 362.
+Package pdftex.def Info: ./zhang_2021/maps.png  used on input line 408.
 (pdftex.def)             Requested size: 258.75pt x 180.02962pt.
-
-[21 <./zhang_2021/maps.png>]
-<./basiri_2016/array.png, id=336, 410.03188pt x 150.5625pt>
+ [24 <./zhang_2021/maps.png>]
+<./basiri_2016/array.png, id=469, 410.03188pt x 150.5625pt>
 File: ./basiri_2016/array.png Graphic file (type png)
 <use ./basiri_2016/array.png>
-Package pdftex.def Info: ./basiri_2016/array.png  used on input line 372.
+Package pdftex.def Info: ./basiri_2016/array.png  used on input line 420.
 (pdftex.def)             Requested size: 258.75pt x 95.01797pt.
-<./basiri_2016/histogram.png, id=339, 429.10312pt x 148.05313pt>
+<./basiri_2016/histogram.png, id=472, 429.10312pt x 148.05313pt>
 File: ./basiri_2016/histogram.png Graphic file (type png)
 <use ./basiri_2016/histogram.png>
-Package pdftex.def Info: ./basiri_2016/histogram.png  used on input line 380.
+Package pdftex.def Info: ./basiri_2016/histogram.png  used on input line 428.
 (pdftex.def)             Requested size: 258.75pt x 89.27759pt.
- [22 <./basiri_2016/array.png> <./basiri_2016/histogram.png>]
-Overfull \hbox (3.94327pt too wide) in paragraph at lines 425--426
+ [25 <./basiri_2016/array.png> <./basiri_2016/histogram.png>] [26]
+Overfull \hbox (3.94327pt too wide) in paragraph at lines 477--478
 []\T1/lmr/m/n/10 The most ba-sic form of MU-SIC, known as stan-dard eigen-value
 -decomposition
  []
 
-[23] [24]
-<./ishi_2009/array.png, id=398, 309.155pt x 129.98563pt>
+[27]
+<./ishi_2009/array.png, id=530, 309.155pt x 129.98563pt>
 File: ./ishi_2009/array.png Graphic file (type png)
 <use ./ishi_2009/array.png>
-Package pdftex.def Info: ./ishi_2009/array.png  used on input line 449.
+Package pdftex.def Info: ./ishi_2009/array.png  used on input line 503.
 (pdftex.def)             Requested size: 258.75pt x 108.80238pt.
- [25 <./ishi_2009/array.png>]
-<./nakamura_2012/rate_SNR.png, id=409, 426.59375pt x 99.87312pt>
+ [28 <./ishi_2009/array.png>]
+<./nakamura_2012/rate_SNR.png, id=544, 426.59375pt x 99.87312pt>
 File: ./nakamura_2012/rate_SNR.png Graphic file (type png)
 <use ./nakamura_2012/rate_SNR.png>
-Package pdftex.def Info: ./nakamura_2012/rate_SNR.png  used on input line 462.
+Package pdftex.def Info: ./nakamura_2012/rate_SNR.png  used on input line 518.
 (pdftex.def)             Requested size: 258.75pt x 60.58115pt.
- [26 <./nakamura_2012/rate_SNR.png>]
-[27]
+ [29 <./nakamura_2012/rate_SNR.png>] [30]
+[31]
 Chapter 3.
-(progress_report.bbl [28
-
-] [29
+[32
 
 ]
-Underfull \hbox (badness 1448) in paragraph at lines 138--144
+<./chen_2019/partitions.png, id=585, 169.13188pt x 143.53625pt>
+File: ./chen_2019/partitions.png Graphic file (type png)
+<use ./chen_2019/partitions.png>
+Package pdftex.def Info: ./chen_2019/partitions.png  used on input line 620.
+(pdftex.def)             Requested size: 345.0pt x 292.7991pt.
+ [33]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 628.
+ [34 <./chen_2019/partitions.png>] [35]
+<../Python/pyramid_robot/rir.png, id=611, 462.528pt x 346.896pt>
+File: ../Python/pyramid_robot/rir.png Graphic file (type png)
+<use ../Python/pyramid_robot/rir.png>
+Package pdftex.def Info: ../Python/pyramid_robot/rir.png  used on input line 70
+8.
+(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
+ [36 <../Python/pyramid_robot/rir.png>]
+<../Python/pyramid_robot/room_3d.png, id=622, 462.528pt x 346.896pt>
+File: ../Python/pyramid_robot/room_3d.png Graphic file (type png)
+<use ../Python/pyramid_robot/room_3d.png>
+Package pdftex.def Info: ../Python/pyramid_robot/room_3d.png  used on input lin
+e 724.
+(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
+<../Python/pyramid_robot/room_2d.png, id=623, 462.528pt x 346.896pt>
+File: ../Python/pyramid_robot/room_2d.png Graphic file (type png)
+<use ../Python/pyramid_robot/room_2d.png>
+Package pdftex.def Info: ../Python/pyramid_robot/room_2d.png  used on input lin
+e 732.
+(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
+ [37 <../Python/pyramid_robot/room_3d.png>]
+<../Python/pyramid_robot/noise_distance.png, id=636, 462.528pt x 346.896pt>
+File: ../Python/pyramid_robot/noise_distance.png Graphic file (type png)
+<use ../Python/pyramid_robot/noise_distance.png>
+Package pdftex.def Info: ../Python/pyramid_robot/noise_distance.png  used on in
+put line 744.
+(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
+ [38 <../Python/pyramid_robot/room_2d.png>]
+<../Python/pyramid_robot/noise_azimuth.png, id=645, 462.528pt x 346.896pt>
+File: ../Python/pyramid_robot/noise_azimuth.png Graphic file (type png)
+<use ../Python/pyramid_robot/noise_azimuth.png>
+Package pdftex.def Info: ../Python/pyramid_robot/noise_azimuth.png  used on inp
+ut line 752.
+(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
+ [39 <../Python/pyramid_robot/noise_distance.png>]
+<../Python/pyramid_robot/noise_elevation.png, id=651, 462.528pt x 346.896pt>
+File: ../Python/pyramid_robot/noise_elevation.png Graphic file (type png)
+<use ../Python/pyramid_robot/noise_elevation.png>
+Package pdftex.def Info: ../Python/pyramid_robot/noise_elevation.png  used on i
+nput line 760.
+(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
+ [40 <../Python/pyramid_robot/noise_azimuth.png>] [41 <../Python/pyramid_robot/
+noise_elevation.png>]
+Overfull \hbox (4.3893pt too wide) in paragraph at lines 786--788
+\T1/lmr/m/n/10 given a frame $\OML/lmm/m/it/10 T$ \T1/lmr/m/n/10 sam-ples long.
+ This can be rewrit-ten in terms of cross-correlations:
+ []
+
+[42]
+<../Python/srp_phat/grid.png, id=683, 1040.688pt x 621.522pt>
+File: ../Python/srp_phat/grid.png Graphic file (type png)
+<use ../Python/srp_phat/grid.png>
+Package pdftex.def Info: ../Python/srp_phat/grid.png  used on input line 809.
+(pdftex.def)             Requested size: 345.0pt x 206.04178pt.
+ [43 <../Python/srp_phat/grid.png>]
+<../Python/srp_phat/room_3d.png, id=697, 462.528pt x 346.896pt>
+File: ../Python/srp_phat/room_3d.png Graphic file (type png)
+<use ../Python/srp_phat/room_3d.png>
+Package pdftex.def Info: ../Python/srp_phat/room_3d.png  used on input line 831
+.
+(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
+<../Python/srp_phat/room_2d.png, id=698, 462.528pt x 346.896pt>
+File: ../Python/srp_phat/room_2d.png Graphic file (type png)
+<use ../Python/srp_phat/room_2d.png>
+Package pdftex.def Info: ../Python/srp_phat/room_2d.png  used on input line 839
+.
+(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
+ [44 <../Python/srp_phat/room_3d.png>]
+<../Python/srp_phat/noise_azimuth.png, id=709, 462.528pt x 346.896pt>
+File: ../Python/srp_phat/noise_azimuth.png Graphic file (type png)
+<use ../Python/srp_phat/noise_azimuth.png>
+Package pdftex.def Info: ../Python/srp_phat/noise_azimuth.png  used on input li
+ne 849.
+(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
+
+[45 <../Python/srp_phat/room_2d.png>]
+<../Python/srp_phat/noise_elevation.png, id=717, 462.528pt x 346.896pt>
+File: ../Python/srp_phat/noise_elevation.png Graphic file (type png)
+<use ../Python/srp_phat/noise_elevation.png>
+Package pdftex.def Info: ../Python/srp_phat/noise_elevation.png  used on input 
+line 857.
+(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
+ [46 <../Python/srp_phat/noise_azimuth.png>] [47 <../Python/srp_phat/noise_elev
+ation.png>]
+Chapter 4.
+(progress_report.bbl [48
+
+] [49
+
+]
+Underfull \hbox (badness 1448) in paragraph at lines 141--147
 []\T1/lmr/m/n/10 Wageesha Man-am-peri, Thushara D. Ab-haya-pala, Ji-hui Zhang, 
 and
  []
 
-[30] [31]) [32] (progress_report.aux)
+[50]
+Underfull \hbox (badness 1953) in paragraph at lines 174--180
+\T1/lmr/m/n/10 Super-Resolution Sound Source Lo-cal-iza-tion for Robots.  In \T
+1/lmr/m/it/10 2012
+ []
+
+[51]) [52] (progress_report.aux)
 Package rerunfilecheck Info: File `progress_report.out' has not changed.
-(rerunfilecheck)             Checksum: 48853CE6E325DA1D628B3790507B76B7;1338.
+(rerunfilecheck)             Checksum: 9C7CA2DEB71C65F8CD05934166ABA403;3992.
  ) 
 Here is how much of TeX's memory you used:
- 16398 strings out of 478907
- 308217 string characters out of 2850943
- 580904 words of memory out of 3000000
- 33882 multiletter control sequences out of 15000+600000
+ 17229 strings out of 478907
+ 322798 string characters out of 2850943
+ 597989 words of memory out of 3000000
+ 34603 multiletter control sequences out of 15000+600000
  480993 words of font info for 89 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,9n,83p,2540b,895s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
+ 72i,17n,83p,2540b,895s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exi
 st, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
+, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
@@ -834,9 +1004,9 @@ ts/type1/public/lm/lmri10.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/f
 onts/type1/public/lm/lmsy10.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX
 /fonts/type1/public/lm/lmsy7.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTe
 X/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on progress_report.pdf (33 pages, 2425683 bytes).
+Output written on progress_report.pdf (54 pages, 5617224 bytes).
 PDF statistics:
- 570 PDF objects out of 1000 (max. 8388607)
- 122 named destinations out of 1000 (max. 500000)
- 184 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 891 PDF objects out of 1000 (max. 8388607)
+ 204 named destinations out of 1000 (max. 500000)
+ 393 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,54 @@
+\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Background}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Scope}{3}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Literature-Review}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Overview of Methods}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Time-Difference of Arrival}{6}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Literature Examples}{8}{subsection.2.2.1}%
+\contentsline {subsubsection}{Valin et al., 2003, Robust Sound Source Localization Using a Microphone Array on a Mobile Robot}{8}{section*.3}%
+\contentsline {subsubsection}{Hu et al., 2009, Estimation of Sound Source Number and Directions Under a Multi-Source Environment}{10}{section*.6}%
+\contentsline {subsubsection}{Chen \& Xu, 2019, A Sound Source Localization Device Based on Rectangular Pyramid Structure for Mobile Robot}{11}{section*.8}%
+\contentsline {subsubsection}{Bechler et al., 2004, System for Robust 3D Speaker Tracking Using Microphone Array Measurements}{13}{section*.11}%
+\contentsline {subsubsection}{Kim et al., 2008, Robust Estimation of Sound Direction for Robot Interface}{13}{section*.12}%
+\contentsline {subsubsection}{Manamperi et al., 2022, Drone Audition: Sound Source Localization Using On-Board Microphones}{14}{section*.13}%
+\contentsline {subsubsection}{Mahajan \& Walworth, 2001, 3D Position Sensing Using the Differences in the Time-of-Flights from a Wave Source to Various Receivers}{15}{section*.16}%
+\contentsline {subsection}{\numberline {2.2.2}Distance}{15}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Reverberation}{16}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Multiple Sources}{16}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Beam-forming}{17}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Literature Examples}{18}{subsection.2.3.1}%
+\contentsline {subsubsection}{Valin et al., 2004, Localization of Simultaneous Moving Sound Sources for Mobile Robot Using a Frequency- Domain Steered Beamformer Approach}{18}{section*.17}%
+\contentsline {subsubsection}{Valin et al., 2007, Robust Localization and Tracking of Simultaneous Moving Sound Sources Using Beamforming and Particle Filtering}{19}{section*.19}%
+\contentsline {subsubsection}{Badali et al., 2009, Evaluating Real-Time Audio Localization Algorithms for Artificial Audition in Robotics}{21}{section*.22}%
+\contentsline {subsubsection}{Salvati et al., 2019, Power Method for Robust Diagonal Unloading Localization Beamforming}{22}{section*.25}%
+\contentsline {subsubsection}{Zhang et al., 2021, An Improved Multiple Sound Source Localization Method Using a Uniform Concentric Circular Microphone Array}{23}{section*.28}%
+\contentsline {subsubsection}{Basiri et al., 2016, On-Board Relative Bearing Estimation for Teams of Drones Using Sound}{24}{section*.30}%
+\contentsline {subsubsection}{Tamai et al., 2005, Three Ring Microphone Array for 3D Sound Localization and Separation for Mobile Robot Audition}{25}{section*.33}%
+\contentsline {subsubsection}{Mattos \& Grant, 2004, Passive Sonar Applications: Target Tracking and Navigation of an Autonomous Robot}{26}{section*.34}%
+\contentsline {subsection}{\numberline {2.3.2}Frequency and Width}{26}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}MUSIC}{26}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Literature Examples}{28}{subsection.2.4.1}%
+\contentsline {subsubsection}{Ishi et al., 2009, Evaluation of a MUSIC-Based Real-Time Sound Localization of Multiple Sound Sources in Real Noisy Environments}{28}{section*.35}%
+\contentsline {subsubsection}{Nakamura et al., 2012, Real-Time Super-Resolution Sound Source Localization for Robots}{29}{section*.37}%
+\contentsline {section}{\numberline {2.5}Discussion of the Literature}{29}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Accuracy and Estimation}{30}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Dimensions}{31}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Noise and Reverberation}{31}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.4}Computation}{31}{subsection.2.5.4}%
+\contentsline {chapter}{\numberline {3}Simulation}{32}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Software}{32}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Python}{32}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Pyroomacoustics}{32}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Sounds}{33}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Evaluation of Examples in the Literature}{33}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Rectangular Pyramid Array with TDOA}{33}{subsection.3.2.1}%
+\contentsline {subsubsection}{Algorithm}{33}{section*.39}%
+\contentsline {subsubsection}{Experimental Method}{36}{section*.41}%
+\contentsline {subsubsection}{Performance against Noise}{37}{section*.43}%
+\contentsline {subsubsection}{Discussion}{41}{section*.49}%
+\contentsline {subsection}{\numberline {3.2.2}SRP-PHAT}{42}{subsection.3.2.2}%
+\contentsline {subsubsection}{Algorithm}{42}{section*.50}%
+\contentsline {subsubsection}{Experimental Method}{43}{section*.52}%
+\contentsline {subsubsection}{Performance against Noise}{44}{section*.53}%
+\contentsline {subsubsection}{Discussion}{47}{section*.58}%
+\contentsline {chapter}{\numberline {4}Conclusion}{48}{chapter.4}%
