@@ -12,6 +12,9 @@ from scipy import signal
 
 import pyroomacoustics as pra
 
+# Set the font.
+ssfont = {"fontname":"Times New Roman"}
+
 # https://stackoverflow.com/questions/9647202/ordinal-numbers-replacement
 ordinal = lambda n: "%d%s" % (n,"tsnrhtdd"[(n//10%10!=1)*(n%10<4)*n%10::4])
 
@@ -37,9 +40,9 @@ c = 343
 α = 0.5
 
 # Name the log files.
-log_n_failures = "./noise_logs/log_n_failures.csv"
-log_r = "./noise_logs/log_r.csv"
-log_error = "./noise_logs/log_error"
+log_n_failures = "./pyramid_robot/noise_logs/log_n_failures.csv"
+log_r = "./pyramid_robot/noise_logs/log_r.csv"
+log_error = "./pyramid_robot/noise_logs/log_error.npz"
 
 # Clear the logs.
 np.savetxt(log_n_failures, [])
@@ -86,12 +89,15 @@ def set_up_room(σ2):
     room.add_microphone_array(mic_array)
 
     # Compute and plot the RIR.
-    # chrono = time.time()
+    chrono = time.time()
     room.compute_rir()
-    # print("RIR done in", time.time() - chrono, "s.")
-    # print("RT60:", room.measure_rt60()[0, 0])
-    # room.plot_rir()
-    # plt.show()
+    print("RIR done in", time.time() - chrono, "s.")
+    print("RT60:", room.measure_rt60()[0, 0])
+    room.plot_rir()
+    plt.savefig("./pyramid_robot/rir.png")
+    # plt.title("The RIR for Evaluation of the Rectangular Pyramid Array", **ssfont)
+    # plt.xlabel("Time (ms)", **ssfont)
+    plt.show()
 
     return room
 

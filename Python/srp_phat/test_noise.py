@@ -15,9 +15,6 @@ import pyroomacoustics as pra
 # https://stackoverflow.com/questions/9647202/ordinal-numbers-replacement
 ordinal = lambda n: "%d%s" % (n,"tsnrhtdd"[(n//10%10!=1)*(n%10<4)*n%10::4])
 
-# Set the font.
-ssfont = {"fontname":"Times New Roman"}
-
 """
 Set-up
 """
@@ -36,21 +33,18 @@ r_m = np.array([
 ]).T * 15.5*10**(-2) / 2
 
 # The position of the source:
-r_true = np.array([[5.5, 3, 1]]).T
+p_true = np.array([[5.5, 3, 1]]).T
 # The speed of sound:
 c = 343
 # The absorption-factor of the walls:
 α = 0.5
 
 # Name the log files.
-log_n_failures = "log_n_failures.csv"
-log_r = "log_r.csv"
-log_error = "log_error"
+log_angles = "./srp_phat/noise_logs/log_angles.csv"
 
-# # Clear the logs.
-# np.savetxt(log_n_failures, [])
-# with open(log_r) as f:
-#     np.savetxt(f, [])
+# Clear the logs.
+with open(log_angles) as f:
+    np.savetxt(f, [])
 
 # Read the input file.
 # f_s, audio_anechoic = wavfile.read("./sounds/432910__kyanite__clap.wav")
@@ -81,7 +75,7 @@ def set_up_room(σ2):
     )
 
     # Put the source.
-    room.add_source(r_true, signal=audio_anechoic)
+    room.add_source(p_true, signal=audio_anechoic)
 
     # The array has to be built more explicitly because the 
     # pra.circular_microphone_array_xyplane function is broken.
@@ -178,13 +172,10 @@ def make_spherical_grid(N_ev):
 
     # print("{} points".format(v.shape[1]))
 
-    fig = plt.figure()
-    ax = fig.add_subplot(projection='3d')
-    ax.scatter(v[0,:], v[1,:], v[2,:], c="k")
-    ax.set_xlabel("x-coordinate (m)", **ssfont)
-    ax.set_ylabel("y-coordinate (m)", **ssfont)
-    ax.set_zlabel("z-coordinate (m)", **ssfont)
-    plt.show()
+    # fig = plt.figure()
+    # ax = fig.add_subplot(projection='3d')
+    # ax.scatter(v[0,:], v[1,:], v[2,:])
+    # plt.show()
 
     return v
 
@@ -310,185 +301,134 @@ def estimate_direction(x):
 
     return (θ, φ)
 
+"""
+The Simulation of the Room
+"""
+
+# Set the number of simulations, etc.
+n_noises = 10
+n_runs = 10**4
+
+noises = np.arange(25,-25,-5)
+
+# Declare arrays to log data.
+angles_log = np.zeros((100,4))
+Δθ_log = np.zeros((n_noises, n_runs))
+Δφ_log = np.zeros((n_noises, n_runs))
+SNR_log = np.zeros((n_noises))
+
 # Set the room up.
 chrono = time.time()
 room = set_up_room(10**(-4))
 print("Room done in", time.time() - chrono, "s.")
+# SNR_log[0] = 10*np.log10(room.direct_snr(centre))
+print("SNR = ", SNR_log[0], "dB")
 
-# Simulate the response from the source to the array.
-room.simulate(snr = 25)
+n_success = 0
 
-# room.mic_array.to_wav("output.wav", norm=True, bitdepth=np.int16)
+all_timed = time.time()
+noise_timed = all_timed
 
-# Load the output of the simulation. Each channel is from one microphone.
-audio_reverb = room.mic_array.signals.T
-length = audio_reverb.shape[0]
+for i_noise in range(n_noises):
 
-# Get the number of samples in the frame.
-F = 1024
-plt.plot(audio_reverb[:,0], "k")
-plt.show()
-start = int(input(">> Frame-start: "))
-# start = 172000
-end = start + F
+    SNR_log[i_noise] = noises[i_noise]
 
-# Make the frame from all microphones.
-x = audio_reverb[start:end, :]
+    log_timed = time.time()
 
-θ, φ = estimate_direction(x)
+    for i_run in range(n_runs):
 
-print("θ = {:.1f} deg".format(np.rad2deg(θ)))
-print("φ = {:.1f} deg".format(np.rad2deg(φ)))
+        # Simulate the response from the source to the array.
+        room.simulate(snr = noises[i_noise])
 
+        # Load the output of the simulation. Each channel is from one microphone.
+        audio_reverb = room.mic_array.signals.T
+        length = audio_reverb.shape[0]
 
-# """
-# The Simulation of the Room
-# """
+        # Get the number of samples in the frame.
+        F = 1024*2*2*2
+        # plt.plot(audio_reverb[:,0], "k")
+        # plt.show()
+        # start = int(input(">> Frame-start: "))
+        start = 171500
+        end = start + F
 
-# # Set the number of simulations, etc.
-# n_noises = 10
-# n_runs = 10**4
+        # Make the frame from all microphones.
+        x = audio_reverb[start:end, :]
 
-# noises = np.arange(25,-25,-5)
+        # # Compute the FFT of both signals.
+        # X_0 = np.fft.fft(x[:,0])
 
-# # Declare arrays to log data.
-# r_log =np.zeros((100,3))
-# Δr_log = np.zeros((n_noises, n_runs))
-# Δθ_log = np.zeros((n_noises, n_runs))
-# error_distance_log = np.zeros((n_noises, n_runs))
-# n_failures = np.zeros(n_noises)
-# SNR_log = np.zeros((n_noises))
+        # # Plot the spectrum of one of the signals.
+        # plt.loglog(np.fft.rfftfreq(F, 1/f_s), np.absolute(X_0[0:int(F/2)+1]), "k")
+        # plt.show()
 
-# # Set the room up.
-# chrono = time.time()
-# room = set_up_room(10**(-4))
-# print("Room done in", time.time() - chrono, "s.")
-# # SNR_log[0] = 10*np.log10(room.direct_snr(centre))
-# print("SNR = ", SNR_log[0], "dB")
+        # Estimate the direction of the source.
+        θ, φ = estimate_direction(x)
 
-# n_success = 0
+        # Calculate the error.
+        r_true = p_true - centre
+        θ_true = np.arctan2(r_true[1], r_true[0])
+        Δθ = np.abs(θ_true - θ)
+        φ_true = np.arctan2(np.linalg.norm(r_true[0:2]), r_true[2])
+        Δφ = np.abs(φ_true - φ)
 
-# all_timed = time.time()
-# noise_timed = all_timed
+        Δθ_log[i_noise, i_run] = Δθ
+        Δφ_log[i_noise, i_run] = Δφ
 
-# for i_noise in range(n_noises):
+        angles_log[i_run % 100, :] = np.array([i_noise, i_run, θ, φ])
 
-#     SNR_log[i_noise] = noises[i_noise]
+        # print("Location:\n\t{}\n\t{}\n\t{}".format(
+        #     r_true.T,
+        #     r.T,
+        #     Δr
+        # ))
+        # print("Azimuth:\n\t{}\n\t{}\n\t{}".format(
+        #     np.rad2deg(θ_true.item()),
+        #     np.rad2deg(θ.item()),
+        #     np.rad2deg(Δθ.item())
+        # ))
+        # print("Distance:\n\t{}\n\t{}\n\t{}".format(
+        #     distance_true,
+        #     distance,
+        #     error_distance
+        # ))
 
-#     log_timed = time.time()
+        # Log progress for every hundredth run.
+        progress = i_noise*100.0/n_noises + (i_run+1)*100.0/n_runs/n_noises
+        if (i_run + 1) % 100 == 0:
+            # Print an update.
+            print("{:.0f} dB, {:.0f}, {:.2f} %:" 
+                " time taken {:.2f} s, {:.2f} s, {:.2f} s;"
+                " time left {:.2f} h"
+                .format(
+                SNR_log[i_noise],
+                i_run,
+                progress,
+                # np.mean(Δθ_log[i_noise, (i_run-99):(i_run+1)]),
+                # np.mean(Δθ_log[0, i_run]),
+                # np.mean(Δφ_log[i_noise, (i_run-99):(i_run+1)]),
+                # np.mean(Δφ_log[0, i_run]),
+                time.time() - log_timed,
+                time.time() - noise_timed,
+                time.time() - all_timed,
+                (time.time() - all_timed)*(1/progress*100.0 - 1)/60/60
+            ))
+            
+            with open(log_angles, "a") as f:
+                np.savetxt(
+                    f, 
+                    angles_log, 
+                    delimiter = ","
+                )
 
-#     for i_run in range(n_runs):
+            # Time the next log.
+            log_timed = time.time()
 
-#         # Simulate the response from the source to the array.
-#         room.simulate(snr = noises[i_noise])
-
-#         # room.mic_array.to_wav("output.wav", norm=True, bitdepth=np.int16)
-#         γ = compute_reverb_weighting(room)
-
-#         # Load the output of the simulation. Each channel is from one microphone.
-#         audio_reverb = room.mic_array.signals.T
-#         length = audio_reverb.shape[0]
-
-#         # Get the number of samples in the frame.
-#         F = 1024*2*2*2
-#         # plt.plot(audio_reverb[:,0], "k")
-#         # plt.show()
-#         # start = int(input(">> Frame-start: "))
-#         start = 171500
-#         end = start + F
-
-#         # Make the frame from all microphones.
-#         x = audio_reverb[start:end, :]
-
-#         # # Compute the FFT of both signals.
-#         # X_0 = np.fft.fft(x[:,0])
-
-#         # # Plot the spectrum of one of the signals.
-#         # plt.loglog(np.fft.rfftfreq(F, 1/f_s), np.absolute(X_0[0:int(F/2)+1]), "k")
-#         # plt.show()
-
-#         # Estimate the position of the source.
-#         try:
-#             r = estimate_position_from_all(x, f_s) + centre
-#         except OverflowError as error:
-#             n_failures[i_noise] = n_failures[i_noise] + 1
-#             r = np.zeros((3,1))
-
-#         # Calculate the error.
-#         Δr = np.linalg.norm(r_true - r)
-#         θ_true = np.arctan2(r_true[1]-centre[0], r_true[0]-centre[0])
-#         θ = np.arctan2(r[1]-centre[1], r[0]-centre[0])
-#         Δθ = np.abs(θ_true - θ)
-#         distance_true = np.linalg.norm(r_true - centre)
-#         distance = np.linalg.norm(r - centre)
-#         error_distance = np.abs(distance_true - distance)
-
-#         r_log[i_run % 100, :] = r.T
-#         Δr_log[i_noise, i_run] = Δr
-#         Δθ_log[i_noise, i_run] = Δθ
-#         error_distance_log[i_noise, i_run] = error_distance
-
-#         # print("Location:\n\t{}\n\t{}\n\t{}".format(
-#         #     r_true.T,
-#         #     r.T,
-#         #     Δr
-#         # ))
-#         # print("Azimuth:\n\t{}\n\t{}\n\t{}".format(
-#         #     np.rad2deg(θ_true.item()),
-#         #     np.rad2deg(θ.item()),
-#         #     np.rad2deg(Δθ.item())
-#         # ))
-#         # print("Distance:\n\t{}\n\t{}\n\t{}".format(
-#         #     distance_true,
-#         #     distance,
-#         #     error_distance
-#         # ))
-
-#         # Log progress for every hundredth run.
-#         progress = i_noise*100.0/n_noises + (i_run+1)*100.0/n_runs/n_noises
-#         if (i_run + 1) % 100 == 0:
-#             # Print an update.
-#             print("{:.0f} dB, {:.0f}, {:.2f} %: {:.0f} failures, {:.6f}, {:.6f}, {:.6f};" 
-#                 " time taken {:.2f} s, {:.2f} s, {:.2f} s;"
-#                 " time left {:.2f} h"
-#                 .format(
-#                 SNR_log[i_noise],
-#                 i_run,
-#                 progress,
-#                 n_failures[i_noise],
-#                 np.mean(Δr_log[i_noise, (i_run-99):(i_run+1)]),
-#                 # np.mean(Δr_log[0,i_run]),
-#                 np.mean(Δθ_log[i_noise, (i_run-99):(i_run+1)]),
-#                 # np.mean(Δθ_log[0, i_run]),
-#                 np.mean(error_distance_log[i_noise, (i_run-99):(i_run+1)]),
-#                 # np.mean(error_distance_log[0, i_run]),
-#                 time.time() - log_timed,
-#                 time.time() - noise_timed,
-#                 time.time() - all_timed,
-#                 (time.time() - all_timed)*(1/progress*100.0 - 1)/60/60
-#             ))
-
-#             np.savetxt(log_n_failures, n_failures, delimiter = ",")
-
-#             with open(log_r, "a") as f:
-#                 np.savetxt(
-#                     f, 
-#                     r_log, 
-#                     delimiter = ","
-#                 )
-
-#             # Time the next log.
-#             log_timed = time.time()
-
-#     # Print that the noise-level has been done.
-#     print("{} noise-level of SNR = {:.1f} dB done with {:.0f} failures"
-#         " and took {:.2f} s.".format(
-#         ordinal(i_noise+1),
-#         SNR_log[i_noise],
-#         n_failures[i_noise],
-#         time.time() - noise_timed
-#     ))
-#     noise_timed = time.time()
-
-# # Save the errors in a file.
-# np.savez(log_error, r=Δr_log, azimuth=Δθ_log, distance=error_distance_log)
+    # Print that the noise-level has been done.
+    print("{} noise-level of SNR = {:.1f} dB done"
+        " and took {:.2f} s.".format(
+        ordinal(i_noise+1),
+        SNR_log[i_noise],
+        time.time() - noise_timed
+    ))
+    noise_timed = time.time()

@@ -60,46 +60,135 @@ for i_noise in range(n_noises):
     θ_var[i_noise] = np.var(θ)
     φ_var[i_noise] = np.var(φ)
 
-noises = np.arange(25, -25, -5)
+# Build the rectangular pyramid of microphones 25 cm wide and 12.5 tall.
+centre = np.array([[5, 5, 1]]).T
+r_m = np.array([
+    [0,0,1],
+    [1,1,0],
+    [1,-1,0],
+    [-1,-1,0],
+    [-1,1,0]
+]).T * 12.5*10**(-2)
+# r_m = np.array([
+#     [1,1,1],
+#     [1,1,-1],
+#     [1,-1,1],
+#     [1,-1,-1],
+#     [-1,1,1],
+#     [-1,1,-1],
+#     [-1,-1,1],
+#     [-1,-1,-1]
+# ]).T * 15.5*10**(-2) / 2
 
-# Plot the results for the distance.
-fig, (ax1, ax2, ax3) = plt.subplots(3, 1, sharex=True)
-ax1.plot(noises, d_mean, "kx-")
-ax1.plot([-20,25], [d_true,d_true], "r-")
-ax1.set_ylabel("Mean distance (m)", **ssfont)
-ax2.plot(noises, d_var, "kx-")
-ax2.set_ylabel("Variance of distance (m^2)", **ssfont)
-ax3.plot(noises, n_failures_data, "kx-")
-ax3.set_ylabel("Number of failures", **ssfont)
-ax3.set_xlabel("SNR (dB)", **ssfont)
-ax1.set_title("The Error in Distance", **ssfont)
-plt.savefig("./pyramid_robot/noise_distance.png")
+p_m = r_m + centre
+
+# The position of the source:
+p_true = np.array([[5.5, 3, 1]]).T
+
+fig = plt.figure()
+ax1 = fig.add_subplot(projection = "3d")
+
+ax1.scatter(p_m[0,:], p_m[1,:], p_m[2,:], c = "r", marker = ".", s = 4)
+ax1.scatter(p_true[0], p_true[1], p_true[2], c = "b", marker = ".", s = 4)
+ax1.plot([0,10],[0,0],[0,0], "k")
+ax1.plot([10,10],[0,10],[0,0], "k")
+ax1.plot([10,0],[10,10],[0,0], "k")
+ax1.plot([0,0],[10,0],[0,0], "k")
+
+ax1.plot([0,10],[0,0],[3,3], "k")
+ax1.plot([10,10],[0,10],[3,3], "k")
+ax1.plot([10,0],[10,10],[3,3], "k")
+ax1.plot([0,0],[10,0],[3,3], "k")
+
+ax1.plot([0,0],[0,0],[0,3], "k")
+ax1.plot([0,0],[10,10],[0,3], "k")
+ax1.plot([10,10],[10,10],[0,3], "k")
+ax1.plot([10,10],[0,0],[0,3], "k")
+
+ax1.set_xlim([-2, 12])
+ax1.set_ylim([-2, 12])
+ax1.set_zlim([-1, 4])
+
+ax1.set_xlabel("x-coordinate (m)", **ssfont)
+ax1.set_ylabel("y-coordinate (m)", **ssfont)
+ax1.set_zlabel("z-coordinate (m)", **ssfont)
+
+# ax1.set_title("Positions of the Rectangular Pyramid Array and the Source for Testing Against Noise", **ssfont)
+ax1.legend(["microphones", "source"])
+
+plt.savefig("./pyramid_robot/room_3d.png")
+# plt.savefig("./srp_phat/room_3d.png")
+
 plt.show()
 
-# Plot the results for the azimuth.
-fig, (ax1, ax2, ax3) = plt.subplots(3, 1, sharex=True)
-ax1.plot(noises, np.rad2deg(θ_mean), "kx-")
-ax1.plot([-20,25], np.rad2deg([θ_true,θ_true]), "r-")
-ax1.set_ylabel("Mean azimuth (degree)", **ssfont)
-ax2.plot(noises, np.rad2deg(θ_var), "kx-")
-ax2.set_ylabel("Variance of azimuth (degree^2)", **ssfont)
-ax3.plot(noises, n_failures_data, "kx-")
-ax3.set_ylabel("Number of failures", **ssfont)
-ax3.set_xlabel("SNR (dB)", **ssfont)
-ax1.set_title("The Error in Azimuth", **ssfont)
-plt.savefig("./pyramid_robot/noise_azimuth.png")
+fig, ax1 = plt.subplots()
+
+ax1.set_aspect("equal")
+
+ax1.plot([0,0],[0,10], "k")
+ax1.plot([0,10],[10,10], "k")
+ax1.plot([10,10],[10,0], "k")
+ax1.plot([10,0],[0,0], "k")
+
+ax1.plot(p_m[0,:], p_m[1,:], "r.", marker = ".", markersize = 4)
+ax1.plot(p_true[0], p_true[1], "b.", marker = ".", markersize = 4)
+
+ax1.set_xlim([-2, 12])
+ax1.set_ylim([-2, 12])
+
+ax1.set_xlabel("x-coordinate (m)", **ssfont)
+ax1.set_ylabel("y-coordinate (m)", **ssfont)
+
+ax1.grid(visible = True)
+
+# ax1.set_title("Positions of the Rectangular Pyramid Array and the Source for Testing Against Noise", **ssfont)
+# ax1.legend(["microphones", "source"])
+
+plt.savefig("./pyramid_robot/room_2d.png")
+# plt.savefig("./srp_phat/room_2d.png")
+
 plt.show()
 
-# Plot the results for the azimuth.
-fig, (ax1, ax2, ax3) = plt.subplots(3, 1, sharex=True)
-ax1.plot(noises, np.rad2deg(φ_mean), "kx-")
-ax1.plot([-20,25], np.rad2deg([φ_true,φ_true]), "r-")
-ax1.set_ylabel("Mean elevation (degree)", **ssfont)
-ax2.plot(noises, np.rad2deg(φ_var), "kx-")
-ax2.set_ylabel("Variance of elevation (degree^2)", **ssfont)
-ax3.plot(noises, n_failures_data, "kx-")
-ax3.set_ylabel("Number of failures", **ssfont)
-ax3.set_xlabel("SNR (dB)", **ssfont)
-ax1.set_title("The Error in Elevation", **ssfont)
-plt.savefig("./pyramid_robot/noise_elevation.png")
-plt.show()
+# noises = np.arange(25, -25, -5)
+
+# # Plot the results for the distance.
+# fig, (ax1, ax2, ax3) = plt.subplots(3, 1, sharex=True)
+# ax1.plot(noises, d_mean, "kx-")
+# ax1.plot([-20,25], [d_true,d_true], "r-")
+# ax1.set_ylabel("Mean distance (m)", **ssfont)
+# ax2.plot(noises, d_var, "kx-")
+# ax2.set_ylabel("Variance of distance (m^2)", **ssfont)
+# ax3.plot(noises, n_failures_data, "kx-")
+# ax3.set_ylabel("Number of failures", **ssfont)
+# ax3.set_xlabel("SNR (dB)", **ssfont)
+# ax1.set_title("The Error in Distance", **ssfont)
+# plt.savefig("./pyramid_robot/noise_distance.png")
+# plt.show()
+
+# # Plot the results for the azimuth.
+# fig, (ax1, ax2, ax3) = plt.subplots(3, 1, sharex=True)
+# ax1.plot(noises, np.rad2deg(θ_mean), "kx-")
+# ax1.plot([-20,25], np.rad2deg([θ_true,θ_true]), "r-")
+# ax1.set_ylabel("Mean azimuth (degree)", **ssfont)
+# ax2.plot(noises, np.rad2deg(θ_var), "kx-")
+# ax2.set_ylabel("Variance of azimuth (degree^2)", **ssfont)
+# ax3.plot(noises, n_failures_data, "kx-")
+# ax3.set_ylabel("Number of failures", **ssfont)
+# ax3.set_xlabel("SNR (dB)", **ssfont)
+# ax1.set_title("The Error in Azimuth", **ssfont)
+# plt.savefig("./pyramid_robot/noise_azimuth.png")
+# plt.show()
+
+# # Plot the results for the azimuth.
+# fig, (ax1, ax2, ax3) = plt.subplots(3, 1, sharex=True)
+# ax1.plot(noises, np.rad2deg(φ_mean), "kx-")
+# ax1.plot([-20,25], np.rad2deg([φ_true,φ_true]), "r-")
+# ax1.set_ylabel("Mean elevation (degree)", **ssfont)
+# ax2.plot(noises, np.rad2deg(φ_var), "kx-")
+# ax2.set_ylabel("Variance of elevation (degree^2)", **ssfont)
+# ax3.plot(noises, n_failures_data, "kx-")
+# ax3.set_ylabel("Number of failures", **ssfont)
+# ax3.set_xlabel("SNR (dB)", **ssfont)
+# ax1.set_title("The Error in Elevation", **ssfont)
+# plt.savefig("./pyramid_robot/noise_elevation.png")
+# plt.show()
