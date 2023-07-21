@@ -1,0 +1,1423 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.12.27)  13 JUN 2023 08:54
+entering extended mode
+**./slides.tex
+(slides.tex
+LaTeX2e <2021-06-01> patch level 1
+L3 programming layer <2021-10-18>
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamer.cls
+Document Class: beamer 2023/05/15 v3.70 A class for typesetting presentations
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasemode
+s.sty
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count182
+)
+\beamer@tempbox=\box50
+\beamer@tempcount=\count183
+\c@beamerpauses=\count184
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasedeco
+de.sty
+\beamer@slideinframe=\count185
+\beamer@minimum=\count186
+\beamer@decode@box=\box51
+)
+\beamer@commentbox=\box52
+\beamer@modecount=\count187
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+)
+\headdp=\dimen138
+\footheight=\dimen139
+\sidebarheight=\dimen140
+\beamer@tempdim=\dimen141
+\beamer@finalheight=\dimen142
+\beamer@animht=\dimen143
+\beamer@animdp=\dimen144
+\beamer@animwd=\dimen145
+\beamer@leftmargin=\dimen146
+\beamer@rightmargin=\dimen147
+\beamer@leftsidebar=\dimen148
+\beamer@rightsidebar=\dimen149
+\beamer@boxsize=\dimen150
+\beamer@vboxoffset=\dimen151
+\beamer@descdefault=\dimen152
+\beamer@descriptionwidth=\dimen153
+\beamer@lastskip=\skip47
+\beamer@areabox=\box53
+\beamer@animcurrent=\box54
+\beamer@animshowbox=\box55
+\beamer@sectionbox=\box56
+\beamer@logobox=\box57
+\beamer@linebox=\box58
+\beamer@sectioncount=\count188
+\beamer@subsubsectionmax=\count189
+\beamer@subsectionmax=\count190
+\beamer@sectionmax=\count191
+\beamer@totalheads=\count192
+\beamer@headcounter=\count193
+\beamer@partstartpage=\count194
+\beamer@sectionstartpage=\count195
+\beamer@subsectionstartpage=\count196
+\beamer@animationtempa=\count197
+\beamer@animationtempb=\count198
+\beamer@xpos=\count199
+\beamer@ypos=\count266
+\beamer@ypos@offset=\count267
+\beamer@showpartnumber=\count268
+\beamer@currentsubsection=\count269
+\beamer@coveringdepth=\count270
+\beamer@sectionadjust=\count271
+\beamer@toclastsection=\count272
+\beamer@tocsectionnumber=\count273
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseopti
+ons.sty
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+))
+\beamer@paperwidth=\skip48
+\beamer@paperheight=\skip49
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count274
+\Gm@cntv=\count275
+\c@Gm@tempcnt=\count276
+\Gm@bindingoffset=\dimen154
+\Gm@wd@mp=\dimen155
+\Gm@odd@mp=\dimen156
+\Gm@even@mp=\dimen157
+\Gm@layoutwidth=\dimen158
+\Gm@layoutheight=\dimen159
+\Gm@layouthoffset=\dimen160
+\Gm@layoutvoffset=\dimen161
+\Gm@dimlist=\toks17
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg
+))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.
+sty
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfut
+il-common.tex
+\pgfutil@everybye=\toks18
+\pgfutil@tempdima=\dimen162
+\pgfutil@tempdimb=\dimen163
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfut
+il-common-lists.tex))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfut
+il-latex.def
+\pgfutil@abb=\box59
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrc
+s.code.tex
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.te
+x)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
+))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys
+.sty
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfke
+ys.code.tex
+\pgfkeys@pathtoks=\toks19
+\pgfkeys@temptoks=\toks20
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfke
+ysfiltered.code.tex
+\pgfkeys@tmptoks=\toks21
+)))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.co
+de.tex
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcal
+c.code.tex
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathuti
+l.code.tex
+\pgf@x=\dimen164
+\pgf@xa=\dimen165
+\pgf@xb=\dimen166
+\pgf@xc=\dimen167
+\pgf@y=\dimen168
+\pgf@ya=\dimen169
+\pgf@yb=\dimen170
+\pgf@yc=\dimen171
+\c@pgf@counta=\count277
+\c@pgf@countb=\count278
+\c@pgf@countc=\count279
+\c@pgf@countd=\count280
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathpar
+ser.code.tex
+\pgfmath@dimen=\dimen172
+\pgfmath@count=\count281
+\pgfmath@box=\box60
+\pgfmath@toks=\toks22
+\pgfmath@stack@operand=\toks23
+\pgfmath@stack@operation=\toks24
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.code.tex
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.basic.code.tex)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.trigonometric.code.tex)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.random.code.tex)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.comparison.code.tex)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.base.code.tex)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.round.code.tex)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.misc.code.tex)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.integerarithmetics.code.tex)))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathflo
+at.code.tex
+\c@pgfmathroundto@lastzeros=\count282
+)))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
+File: size11.clo 2021/02/12 v1.4n Standard LaTeX file (size option)
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcor
+e.sty
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2020/12/05 v1.2c Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics
+.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.d
+ef
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen173
+\Gin@req@width=\dimen174
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsy
+s.sty
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
+sys.code.tex
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfke
+ys.code.tex)
+\pgf@x=\dimen175
+\pgf@y=\dimen176
+\pgf@xa=\dimen177
+\pgf@ya=\dimen178
+\pgf@xb=\dimen179
+\pgf@yb=\dimen180
+\pgf@xc=\dimen181
+\pgf@yc=\dimen182
+\pgf@xd=\dimen183
+\pgf@yd=\dimen184
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count283
+\c@pgf@countb=\count284
+\c@pgf@countc=\count285
+\c@pgf@countd=\count286
+\t@pgf@toka=\toks25
+\t@pgf@tokb=\toks26
+\t@pgf@tokc=\toks27
+\pgf@sys@id@count=\count287
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
+.cfg
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
+sys-pdftex.def
+File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
+sys-common-pdf.def
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
+syssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfsyssoftpath@smallbuffer@items=\count288
+\pgfsyssoftpath@bigbuffer@items=\count289
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
+sysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cf
+g
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+ore.code.tex
+Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.co
+de.tex)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.cod
+e.tex)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orepoints.code.tex
+File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@picminx=\dimen185
+\pgf@picmaxx=\dimen186
+\pgf@picminy=\dimen187
+\pgf@picmaxy=\dimen188
+\pgf@pathminx=\dimen189
+\pgf@pathmaxx=\dimen190
+\pgf@pathminy=\dimen191
+\pgf@pathmaxy=\dimen192
+\pgf@xx=\dimen193
+\pgf@xy=\dimen194
+\pgf@yx=\dimen195
+\pgf@yy=\dimen196
+\pgf@zx=\dimen197
+\pgf@zy=\dimen198
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@path@lastx=\dimen199
+\pgf@path@lasty=\dimen256
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orepathusage.code.tex
+File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@shorten@end@additional=\dimen257
+\pgf@shorten@start@additional=\dimen258
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orescopes.code.tex
+File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfpic=\box61
+\pgf@hbox=\box62
+\pgf@layerbox@main=\box63
+\pgf@picture@serial@count=\count290
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgflinewidth=\dimen259
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oretransformations.code.tex
+File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@pt@x=\dimen260
+\pgf@pt@y=\dimen261
+\pgf@pt@temp=\dimen262
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orequick.code.tex
+File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oreobjects.code.tex
+File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orearrows.code.tex
+File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowsep=\dimen263
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oreshade.code.tex
+File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@max=\dimen264
+\pgf@sys@shading@range@num=\count291
+\pgf@shadingcount=\count292
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oreimage.code.tex
+File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oreexternal.code.tex
+File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfexternal@startupbox=\box64
+))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orelayers.code.tex
+File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oretransparency.code.tex
+File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orepatterns.code.tex
+File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orerdf.code.tex
+File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\xxcolor
+.sty
+Package: xxcolor 2003/10/24 ver 0.1
+\XC@nummixins=\count293
+\XC@countmixins=\count294
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcm
+ds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr
+.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkeys
+.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefi
+nekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape
+.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmac
+ro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.s
+ty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+)
+\@linkdim=\dimen265
+\Hy@linkcounter=\count295
+\Hy@pagecounter=\count296
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref-lan
+gpatches.def
+File: hyperref-langpatches.def 2021-06-07 v7.00m Hyperref: patches for babel la
+nguages
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.s
+ty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count297
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `bookmarks' set `true' on input line 4073.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 4073.
+Package hyperref Info: Option `implicit' set `false' on input line 4073.
+Package hyperref Info: Hyper figures OFF on input line 4192.
+Package hyperref Info: Link nesting OFF on input line 4197.
+Package hyperref Info: Hyper index ON on input line 4200.
+Package hyperref Info: Plain pages OFF on input line 4207.
+Package hyperref Info: Backreferencing OFF on input line 4212.
+Package hyperref Info: Implicit mode OFF; no redefinition of LaTeX internals.
+Package hyperref Info: Bookmarks ON on input line 4445.
+\c@Hy@tempcnt=\count298
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4804.
+\XeTeXLinkMargin=\dimen266
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintca
+lc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count299
+\Field@Width=\dimen267
+\Fld@charsize=\dimen268
+Package hyperref Info: Hyper figures OFF on input line 6076.
+Package hyperref Info: Link nesting OFF on input line 6081.
+Package hyperref Info: Hyper index ON on input line 6084.
+Package hyperref Info: backreferencing OFF on input line 6091.
+Package hyperref Info: Link coloring OFF on input line 6096.
+Package hyperref Info: Link coloring with OCG OFF on input line 6101.
+Package hyperref Info: PDF/A mode OFF on input line 6106.
+LaTeX Info: Redefining \ref on input line 6146.
+LaTeX Info: Redefining \pageref on input line 6150.
+\Hy@abspage=\count300
+
+
+Package hyperref Message: Stopped early.
+
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2021-06-07 v7.00m Hyperref driver for pdfTeX
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.st
+y
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
+e
+with kernel methods
+)
+\Fld@listcount=\count301
+\c@bookmark@seq@number=\count302
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunf
+ilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniqu
+ecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaserequ
+ires.sty
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasecomp
+atibility.sty)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasefont
+.sty
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks28
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\sansma
+thaccent.sty
+Package: sansmathaccent 2020/01/31
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile.
+sty
+Package: scrlfile 2023/04/24 v3.40 KOMA-Script package (file load hooks)
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile-
+hook-3.34.sty
+Package: scrlfile-hook-3.34 2023/04/24 v3.40 KOMA-Script package (using LaTeX h
+ooks)
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlogo.s
+ty
+Package: scrlogo 2023/04/24 v3.40 KOMA-Script package (logo)
+)))))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetran
+slator.sty
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator
+.sty
+Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
+))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasemisc
+.sty)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetwos
+creens.sty)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseover
+lay.sty
+\beamer@argscount=\count303
+\beamer@lastskipcover=\skip50
+\beamer@trivlistdepth=\count304
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetitl
+e.sty)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasesect
+ion.sty
+\c@lecture=\count305
+\c@part=\count306
+\c@section=\count307
+\c@subsection=\count308
+\c@subsubsection=\count309
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasefram
+e.sty
+\beamer@framebox=\box65
+\beamer@frametitlebox=\box66
+\beamer@zoombox=\box67
+\beamer@zoomcount=\count310
+\beamer@zoomframecount=\count311
+\beamer@frametextheight=\dimen269
+\c@subsectionslide=\count312
+\beamer@frametopskip=\skip51
+\beamer@framebottomskip=\skip52
+\beamer@frametopskipautobreak=\skip53
+\beamer@framebottomskipautobreak=\skip54
+\beamer@envbody=\toks29
+\framewidth=\dimen270
+\c@framenumber=\count313
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseverb
+atim.sty
+\beamer@verbatimfileout=\write4
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasefram
+esize.sty
+\beamer@splitbox=\box68
+\beamer@autobreakcount=\count314
+\beamer@autobreaklastheight=\dimen271
+\beamer@frametitletoks=\toks30
+\beamer@framesubtitletoks=\toks31
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasefram
+ecomponents.sty
+\beamer@footins=\box69
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasecolo
+r.sty)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasenote
+s.sty
+\beamer@frameboxcopy=\box70
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetoc.
+sty)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetemp
+lates.sty
+\beamer@sbttoks=\toks32
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseauxt
+emplates.sty
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseboxe
+s.sty
+\bmb@box=\box71
+\bmb@colorbox=\box72
+\bmb@boxwidth=\dimen272
+\bmb@boxheight=\dimen273
+\bmb@prevheight=\dimen274
+\bmb@temp=\dimen275
+\bmb@dima=\dimen276
+\bmb@dimb=\dimen277
+\bmb@prevheight=\dimen278
+)
+\beamer@blockheadheight=\dimen279
+))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseloca
+lstructure.sty
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/tools\enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks33
+)
+\beamer@bibiconwidth=\skip55
+\c@figure=\count315
+\c@table=\count316
+\abovecaptionskip=\skip56
+\belowcaptionskip=\skip57
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasenavi
+gation.sty
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasenavi
+gationsymbols.tex)
+\beamer@section@min@dim=\dimen280
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetheo
+rems.sty
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2021/04/20 v2.17j AMS math features
+\@mathmargin=\skip58
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks34
+\ex@=\dimen281
+))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen282
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count317
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count318
+\leftroot@=\count319
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count320
+\DOTSCASE@=\count321
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box73
+\strutbox@=\box74
+\big@size=\dimen283
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count322
+\c@MaxMatrixCols=\count323
+\dotsspace@=\muskip17
+\c@parentequation=\count324
+\dspbrk@lvl=\count325
+\tag@help=\toks35
+\row@=\count326
+\column@=\count327
+\maxfields@=\count328
+\andhelp@=\toks36
+\eqnshift@=\dimen284
+\alignsep@=\dimen285
+\tagshift@=\dimen286
+\tagwidth@=\dimen287
+\totwidth@=\dimen288
+\lineht@=\dimen289
+\@envbody=\toks37
+\multlinegap=\skip59
+\multlinetaggap=\skip60
+\mathdisplay@stack=\toks38
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks39
+\thm@bodyfont=\toks40
+\thm@headfont=\toks41
+\thm@notefont=\toks42
+\thm@headpunct=\toks43
+\thm@preskip=\skip61
+\thm@postskip=\skip62
+\thm@headsep=\skip63
+\dth@everypar=\toks44
+)
+\c@theorem=\count329
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasethem
+es.sty))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerthemedef
+ault.sty
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerfontthem
+edefault.sty)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamercolorthe
+medefault.sty)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerinnerthe
+medefault.sty
+\beamer@dima=\dimen290
+\beamer@dimb=\dimen291
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerouterthe
+medefault.sty)))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerthemeDar
+mstadt.sty
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerouterthe
+mesmoothbars.sty)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerinnerthe
+merounded.sty)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamercolorthe
+meorchid.sty)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamercolorthe
+mewhale.sty))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamercolorthe
+meseahorse.sty)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerfontthem
+eserif.sty)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup6
+) (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx.sty
+Package: siunitx 2022-08-08 v3.1.6 A comprehensive (SI) units package
+\l__siunitx_angle_tmp_dim=\dimen292
+\l__siunitx_angle_marker_box=\box75
+\l__siunitx_angle_unit_box=\box76
+\l__siunitx_compound_count_int=\count330
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/translations\translat
+ions.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
+ (CN)
+)
+\l__siunitx_number_exponent_fixed_int=\count331
+\l__siunitx_number_min_decimal_int=\count332
+\l__siunitx_number_min_integer_int=\count333
+\l__siunitx_number_round_precision_int=\count334
+\l__siunitx_number_group_first_int=\count335
+\l__siunitx_number_group_size_int=\count336
+\l__siunitx_number_group_minimum_int=\count337
+\l__siunitx_table_tmp_box=\box77
+\l__siunitx_table_tmp_dim=\dimen293
+\l__siunitx_table_column_width_dim=\dimen294
+\l__siunitx_table_integer_box=\box78
+\l__siunitx_table_decimal_box=\box79
+\l__siunitx_table_before_box=\box80
+\l__siunitx_table_after_box=\box81
+\l__siunitx_table_before_dim=\dimen295
+\l__siunitx_table_carry_dim=\dimen296
+\l__siunitx_unit_tmp_int=\count338
+\l__siunitx_unit_position_int=\count339
+\l__siunitx_unit_total_int=\count340
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l
+3keys2e.sty
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2021-10-18 L3 programming layer (loader) 
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-p
+dftex.def
+File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count341
+\l__pdf_internal_box=\box82
+))
+Package: l3keys2e 2021-08-27 LaTeX2e option processing using LaTeX3 keys
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2021/04/20 v2.5e Tabular extension package (FMi)
+\col@sep=\dimen297
+\ar@mcellbox=\box83
+\extrarowheight=\dimen298
+\NC@list=\toks45
+\extratabsurround=\skip64
+\backup@length=\skip65
+\ar@cellbox=\box84
+))
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithm.
+sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+ (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count342
+\float@exts=\toks46
+\float@box=\box85
+\@float@everytoks=\toks47
+\@floatcapt=\box86
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks48
+\c@algorithm=\count343
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algpseud
+ocode.sty
+Package: algpseudocode 
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algorith
+micx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count344
+\c@ALG@rem=\count345
+\c@ALG@nested=\count346
+\ALG@tlm=\skip66
+\ALG@thistlm=\skip67
+\c@ALG@Lnr=\count347
+\c@ALG@blocknr=\count348
+\c@ALG@storecount=\count349
+\c@ALG@tmpcounter=\count350
+\ALG@tmplength=\skip68
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2022/03/01 v3.6b Customizing captions (AR)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
+\caption@tempdima=\dimen299
+\captionmargin=\dimen300
+\caption@leftmargin=\dimen301
+\caption@rightmargin=\dimen302
+\caption@width=\dimen303
+\caption@indent=\dimen304
+\caption@parindent=\dimen305
+\caption@hangindent=\dimen306
+Package caption Info: beamer document class detected.
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption-beame
+r.sto
+File: caption-beamer.sto 2022/01/06 v2.0c Adaption of the caption package to th
+e beamer document classes (AR)
+))
+\c@caption@flags=\count351
+\c@continuedfloat=\count352
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: Hyperref support is turned off
+(caption)             because hyperref has stopped early.
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.st
+y
+Package: subcaption 2022/01/07 v1.5 Sub-captions (AR)
+\c@subfigure=\count353
+\c@subtable=\count354
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/footmisc\footmisc.sty
+Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
+\FN@temptoken=\toks49
+\footnotemargin=\dimen307
+\c@pp@next@reset=\count355
+Package footmisc Info: Declaring symbol style bringhurst on input line 855.
+Package footmisc Info: Declaring symbol style chicago on input line 863.
+Package footmisc Info: Declaring symbol style wiley on input line 872.
+Package footmisc Info: Declaring symbol style lamport-robust on input line 883.
+
+Package footmisc Info: Declaring symbol style lamport* on input line 903.
+Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
+.
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.sty
+Package: pdfpages 2022/05/22 v0.5v Insert pages of external PDF documents (AM)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count356
+\calc@Bcount=\count357
+\calc@Adimen=\dimen308
+\calc@Bdimen=\dimen309
+\calc@Askip=\skip69
+\calc@Bskip=\skip70
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count358
+\calc@Cskip=\skip71
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
+Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
+\ESO@tempdima=\dimen310
+\ESO@tempdimb=\dimen311
+)
+\AM@pagewidth=\dimen312
+\AM@pageheight=\dimen313
+\AM@fboxrule=\dimen314
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.def
+File: pppdftex.def 2022/05/22 v0.5v Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count359
+\AM@pagebox=\box87
+\AM@global@opts=\toks50
+\AM@pagecnt=\count360
+\AM@toc@title=\toks51
+\c@AM@survey=\count361
+\AM@templatesizebox=\box88
+) (C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.s
+ty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+Package translations Info: No language package found. I am going to use `englis
+h' as default language. on input line 51.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 51
+.
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+(slides.aux)
+\openout1 = `slides.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot 
+* h-part:(L,W,R)=(28.45274pt, 307.28987pt, 28.45274pt)
+* v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
+* \paperwidth=364.19536pt
+* \paperheight=273.14662pt
+* \textwidth=307.28987pt
+* \textheight=244.6939pt
+* \oddsidemargin=-43.81725pt
+* \evensidemargin=-43.81725pt
+* \topmargin=-72.26999pt
+* \headheight=14.22636pt
+* \headsep=0.0pt
+* \topskip=11.0pt
+* \footskip=14.22636pt
+* \marginparwidth=4.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.
+mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count362
+\scratchdimen=\dimen315
+\scratchbox=\box89
+\nofMPsegments=\count363
+\nofMParguments=\count364
+\everyMPshowfont=\toks52
+\MPscratchCnt=\count365
+\MPscratchDim=\dimen316
+\MPnumerator=\count366
+\makeMPintoPDFobject=\count367
+\everyMPtoPDFconversion=\toks53
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf
+-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys
+.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package hyperref Info: Link coloring OFF on input line 51.
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gett
+itlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count368
+)
+LaTeX Info: Redefining \ref on input line 51.
+LaTeX Info: Redefining \pageref on input line 51.
+LaTeX Info: Redefining \nameref on input line 51.
+ (slides.out) (slides.out)
+\@outlinefile=\write5
+\openout5 = `slides.out'.
+
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator
+-basic-dictionary-English.dict
+Dictionary: translator-basic-dictionary, Language: English 
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator
+-bibliography-dictionary-English.dict
+Dictionary: translator-bibliography-dictionary, Language: English 
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator
+-environment-dictionary-English.dict
+Dictionary: translator-environment-dictionary, Language: English 
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator
+-months-dictionary-English.dict
+Dictionary: translator-months-dictionary, Language: English 
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator
+-numbers-dictionary-English.dict
+Dictionary: translator-numbers-dictionary, Language: English 
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator
+-theorem-dictionary-English.dict
+Dictionary: translator-theorem-dictionary, Language: English 
+)
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\tr
+anslations-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+ (slides.nav) [1{C:/Users/Clayton/AppData/Local/MiKTeX/pdftex/config/pdftex.map
+}
+
+]
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 8
+0.
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 8
+0.
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+80.
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+80.
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 80.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 80.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 80.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 80.
+
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 80.
+
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 80
+.
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+<./NUbot-sitting-down.jpg, id=230, 1505.625pt x 1505.625pt>
+File: ./NUbot-sitting-down.jpg Graphic file (type jpg)
+<use ./NUbot-sitting-down.jpg>
+Package pdftex.def Info: ./NUbot-sitting-down.jpg  used on input line 80.
+(pdftex.def)             Requested size: 82.96854pt x 82.95895pt.
+
+[2
+
+ <./NUbot-sitting-down.jpg>] [3
+
+] [4
+
+]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 133.
+<./basic_tdoa.png, id=469, 455.7025pt x 343.2825pt>
+File: ./basic_tdoa.png Graphic file (type png)
+<use ./basic_tdoa.png>
+Package pdftex.def Info: ./basic_tdoa.png  used on input line 133.
+(pdftex.def)             Requested size: 122.91406pt x 92.58798pt.
+ [5
+
+ <./basic_tdoa.png>]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 151
+.
+
+(C:\Users\Clayton\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 151.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 151.
+
+[6
+
+]
+<../Python/gcc_phat/gcc_example.png, id=650, 462.528pt x 346.896pt>
+File: ../Python/gcc_phat/gcc_example.png Graphic file (type png)
+<use ../Python/gcc_phat/gcc_example.png>
+Package pdftex.def Info: ../Python/gcc_phat/gcc_example.png  used on input line
+ 166.
+(pdftex.def)             Requested size: 184.3758pt x 138.28484pt.
+ [7
+
+ <../Python/gcc_phat/gcc_example.png>]
+<./chen_2019/array.jpg, id=734, 662.475pt x 589.20125pt>
+File: ./chen_2019/array.jpg Graphic file (type jpg)
+<use ./chen_2019/array.jpg>
+Package pdftex.def Info: ./chen_2019/array.jpg  used on input line 190.
+(pdftex.def)             Requested size: 82.96854pt x 73.78482pt.
+<./chen_2019/distance_SNR.jpg, id=735, 662.475pt x 607.26875pt>
+File: ./chen_2019/distance_SNR.jpg Graphic file (type jpg)
+<use ./chen_2019/distance_SNR.jpg>
+Package pdftex.def Info: ./chen_2019/distance_SNR.jpg  used on input line 190.
+(pdftex.def)             Requested size: 92.1879pt x 84.49814pt.
+ [8
+
+ <./chen_2019/array.jpg> <./chen_2019/distance_SNR.jpg>]
+<./rascon_2017/delay_and_sum.jpg, id=819, 240.94818pt x 126.18343pt>
+File: ./rascon_2017/delay_and_sum.jpg Graphic file (type jpg)
+<use ./rascon_2017/delay_and_sum.jpg>
+Package pdftex.def Info: ./rascon_2017/delay_and_sum.jpg  used on input line 22
+2.
+(pdftex.def)             Requested size: 110.6219pt x 57.93147pt.
+ [9
+
+ <./rascon_2017/delay_and_sum.jpg>]
+<./valin_2007/array.jpg, id=903, 54.34705pt x 57.96054pt>
+File: ./valin_2007/array.jpg Graphic file (type jpg)
+<use ./valin_2007/array.jpg>
+Package pdftex.def Info: ./valin_2007/array.jpg  used on input line 261.
+(pdftex.def)             Requested size: 110.6219pt x 117.9832pt.
+ [10
+
+ <./valin_2007/array.jpg>] [11
+
+] [12
+
+]
+<./nakamura_2012/rate_SNR.png, id=1153, 426.59375pt x 99.87312pt>
+File: ./nakamura_2012/rate_SNR.png Graphic file (type png)
+<use ./nakamura_2012/rate_SNR.png>
+Package pdftex.def Info: ./nakamura_2012/rate_SNR.png  used on input line 315.
+(pdftex.def)             Requested size: 230.46739pt x 53.95811pt.
+ [13
+
+ <./nakamura_2012/rate_SNR.png>]
+<../Python/pyramid_robot/room_2d_tight.png, id=1237, 328.8285pt x 318.7107pt>
+File: ../Python/pyramid_robot/room_2d_tight.png Graphic file (type png)
+<use ../Python/pyramid_robot/room_2d_tight.png>
+Package pdftex.def Info: ../Python/pyramid_robot/room_2d_tight.png  used on inp
+ut line 353.
+(pdftex.def)             Requested size: 92.1879pt x 89.35022pt.
+ [14
+
+ <../Python/pyramid_robot/room_2d_tight.png>]
+<../Python/pyramid_robot/noise_distance.png, id=1319, 462.41508pt x 346.81131pt
+>
+File: ../Python/pyramid_robot/noise_distance.png Graphic file (type png)
+<use ../Python/pyramid_robot/noise_distance.png>
+Package pdftex.def Info: ../Python/pyramid_robot/noise_distance.png  used on in
+put line 363.
+(pdftex.def)             Requested size: 276.559pt x 207.4216pt.
+ [15
+
+ <../Python/pyramid_robot/noise_distance.png>]
+<../Python/pyramid_robot/noise_azimuth.png, id=1401, 462.41508pt x 346.81131pt>
+
+File: ../Python/pyramid_robot/noise_azimuth.png Graphic file (type png)
+<use ../Python/pyramid_robot/noise_azimuth.png>
+Package pdftex.def Info: ../Python/pyramid_robot/noise_azimuth.png  used on inp
+ut line 373.
+(pdftex.def)             Requested size: 276.559pt x 207.4216pt.
+[16
+
+ <../Python/pyramid_robot/noise_azimuth.png>]
+<../Python/srp_phat/grid_tight.png, id=1483, 495.0495pt x 448.074pt>
+File: ../Python/srp_phat/grid_tight.png Graphic file (type png)
+<use ../Python/srp_phat/grid_tight.png>
+Package pdftex.def Info: ../Python/srp_phat/grid_tight.png  used on input line 
+398.
+(pdftex.def)             Requested size: 138.2795pt x 125.15219pt.
+ [17
+
+ <../Python/srp_phat/grid_tight.png>]
+<../Python/srp_phat/noise_azimuth.png, id=1565, 462.41508pt x 346.81131pt>
+File: ../Python/srp_phat/noise_azimuth.png Graphic file (type png)
+<use ../Python/srp_phat/noise_azimuth.png>
+Package pdftex.def Info: ../Python/srp_phat/noise_azimuth.png  used on input li
+ne 408.
+(pdftex.def)             Requested size: 276.559pt x 207.4216pt.
+ [18
+
+ <../Python/srp_phat/noise_azimuth.png>]
+<../Python/srp_phat/noise_elevation.png, id=1647, 462.41508pt x 346.81131pt>
+File: ../Python/srp_phat/noise_elevation.png Graphic file (type png)
+<use ../Python/srp_phat/noise_elevation.png>
+Package pdftex.def Info: ../Python/srp_phat/noise_elevation.png  used on input 
+line 418.
+(pdftex.def)             Requested size: 276.559pt x 207.4216pt.
+ [19
+
+ <../Python/srp_phat/noise_elevation.png>] [20
+
+]
+<./gant.png, id=1807, 650.93187pt x 236.885pt>
+File: ./gant.png Graphic file (type png)
+<use ./gant.png>
+Package pdftex.def Info: ./gant.png  used on input line 442.
+(pdftex.def)             Requested size: 276.559pt x 100.64767pt.
+ [21
+
+ <./gant.png>] [22
+
+] [23
+
+] (slides.bbl) [24
+
+ <C:/Users/Clayton/AppData/Local/Programs/MiKTeX/tex/latex/beamer/beamericonart
+icle.pdf>]
+\tf@nav=\write6
+\openout6 = `slides.nav'.
+
+\tf@toc=\write7
+\openout7 = `slides.toc'.
+
+\tf@snm=\write8
+\openout8 = `slides.snm'.
+
+ (slides.aux)
+Package rerunfilecheck Info: File `slides.out' has not changed.
+(rerunfilecheck)             Checksum: 1141BFA3ACE2665E9EF8E419E2598779;1428.
+ ) 
+Here is how much of TeX's memory you used:
+ 28101 strings out of 478907
+ 574935 string characters out of 2850943
+ 840645 words of memory out of 3000000
+ 45294 multiletter control sequences out of 15000+600000
+ 457971 words of font info for 81 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 128i,20n,124p,816b,913s stack positions out of 5000i,500n,10000p,200000b,80000s
+{C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}
+{C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.en
+c}{C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}
+{C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.en
+c}{C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.
+enc}<C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/euler/eufm10.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/lm/lmex10.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/lm/lmmi10.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/lm/lmmi5.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/lm/lmmi6.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/lm/lmmi7.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/lm/lmmi8.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/lm/lmr10.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/font
+s/type1/public/lm/lmr12.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/lm/lmr5.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/lm/lmr6.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/lm/lmr7.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/lm/lmr8.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/lm/lmri10.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/lm/lmri7.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/lm/lmsy10.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/lm/lmsy5.pfb><C:/Users/Clayton/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Clayton/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/Clayton/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Clayton/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Clayton/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on slides.pdf (24 pages, 4719238 bytes).
+PDF statistics:
+ 2217 PDF objects out of 2487 (max. 8388607)
+ 63 named destinations out of 1000 (max. 500000)
+ 262 words of extra memory for PDF output out of 10000 (max. 10000000)
+

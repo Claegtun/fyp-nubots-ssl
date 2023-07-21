@@ -1,0 +1,33 @@
+FYP Notes:
+
+25/2/2023
+
+Scope:
+	Goals:
+		Challenging:
+			- Localise more than one source,
+			- Incorporate a communication protocol with other robots,
+			- Detect a quick short sound, e.g. a snap,
+		Ideal:
+			- Localise three-dimensionally with range and bearing,
+			- Help the overall localisation of the robot,
+			- Have real-time signal-processing and localisation, i.e. processing in parallel with 	acquisition,
+			- Have a wide bandwidth, e.g. ultrasonic sounds as well as audible,
+			- Detect a more varied sound, e.g. voice,
+		Basic:
+			- Localise at least two-dimensionally with range and bearing,
+			- Process and acquire at least serially, i.e. switch between the two,
+			- Communicate with the NUC,
+			- Detect at least audible sounds,
+			- Detect at least a strong constant sound, e.g. a whistle,
+	Questions:
+		- What is the method of localisation, either time-difference-of-arrival (TDOA), beamforming, or something else?
+		- Where is the computation? Should it be on an STM32, DSP, SBC, NUC, etc.?
+		- What microphones are best? They should preferrably be omnidirectional.
+		- Which kind of signal is best? Should it be analogue or digital? The sampling requirements will set this criterion.
+		- What level of electronics design is there? If analogue microphones are to be used, then fitlering may be needed.
+		
+4/3/2023
+
+
+			

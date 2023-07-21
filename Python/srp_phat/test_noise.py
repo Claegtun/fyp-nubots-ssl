@@ -397,16 +397,17 @@ for i_noise in range(n_noises):
         progress = i_noise*100.0/n_noises + (i_run+1)*100.0/n_runs/n_noises
         if (i_run + 1) % 100 == 0:
             # Print an update.
-            print("{:.0f} dB, {:.0f}, {:.2f} %:" 
+            print("{:.0f} dB, {:.0f}, {:.2f} %:"
+                " {:.2f} deg, {:.2f} deg;"
                 " time taken {:.2f} s, {:.2f} s, {:.2f} s;"
                 " time left {:.2f} h"
                 .format(
                 SNR_log[i_noise],
                 i_run,
                 progress,
-                # np.mean(Δθ_log[i_noise, (i_run-99):(i_run+1)]),
+                np.mean(np.rad2deg(Δθ_log[i_noise, (i_run-99):(i_run+1)])),
                 # np.mean(Δθ_log[0, i_run]),
-                # np.mean(Δφ_log[i_noise, (i_run-99):(i_run+1)]),
+                np.mean(np.rad2deg(Δφ_log[i_noise, (i_run-99):(i_run+1)])),
                 # np.mean(Δφ_log[0, i_run]),
                 time.time() - log_timed,
                 time.time() - noise_timed,

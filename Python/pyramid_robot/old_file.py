@@ -38,6 +38,9 @@ f_s, audio_anechoic = wavfile.read("./sounds/345__anton__handclaps.wav")
 # plt.plot(t_up, audio_anechoic)
 # plt.show()
 
+audio_anechoic = audio_anechoic/audio_anechoic.max()
+audio_anechoic = audio_anechoic[0:200000]
+
 # Build the room.
 SNR = -50
 α = 0.5
@@ -54,7 +57,7 @@ room = pra.ShoeBox(
 )
 
 # Put the source.
-r_true = np.array([[5.5, 3, 1]]).T
+r_true = np.array([[6, 1, 1]]).T
 room.add_source(r_true, signal=audio_anechoic)
 
 # Build the rectangular pyramid of microphones 25 cm wide and 12.5 tall.
@@ -146,6 +149,11 @@ def compute_tdoa(x_0, x_1, f_s):
     # Compute the GCC.
     χ = np.multiply(φ, np.multiply(X_0, np.conj(X_1)))
     R_01 = np.fft.fftshift(np.real(np.fft.ifft(χ)))
+
+    scale = 4
+    R_01 = signal.resample_poly(R_01, scale, 1)
+    F = F*scale
+    f_s = f_s*scale
 
     # Compute the TDOA and the azimuth.
     τ = np.linspace(-(F+1)/f_s/2, (F-1)/f_s/2, F)
@@ -269,7 +277,8 @@ plt.show()
 # start = int(length/2)
 # start = int(input(">> Frame-start: "))
 # start = 6*F
-start = 171500
+# start = 171500
+start = np.argmax(audio_reverb[:,0]) - F + 1024*7
 end = start + F
 
 # Make the frame from all microphones.

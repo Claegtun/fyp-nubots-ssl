@@ -45,7 +45,7 @@ ax2.plot(noises, np.rad2deg(θ_var), "kx-")
 ax2.set_ylabel("Variance of azimuth (degree^2)", **ssfont)
 ax2.set_xlabel("SNR (dB)", **ssfont)
 ax1.set_title("The Error in Azimuth", **ssfont)
-plt.savefig("./srp_phat/noise_azimuth.png")
+plt.savefig("./srp_phat/noise_azimuth.png", dpi = 512)
 plt.show()
 
 # Plot the results for the azimuth.
@@ -57,7 +57,7 @@ ax2.plot(noises, np.rad2deg(φ_var), "kx-")
 ax2.set_ylabel("Variance of elevation (degree^2)", **ssfont)
 ax2.set_xlabel("SNR (dB)", **ssfont)
 ax1.set_title("The Error in Elevation", **ssfont)
-plt.savefig("./srp_phat/noise_elevation.png")
+plt.savefig("./srp_phat/noise_elevation.png", dpi = 512)
 plt.show()
 
 # # Build the rectangular pyramid of microphones 25 cm wide and 12.5 tall.
