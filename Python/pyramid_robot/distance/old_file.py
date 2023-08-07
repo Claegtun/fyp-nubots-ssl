@@ -42,15 +42,12 @@ c = 343
 α = 0.5
 
 # Name the log files.
-log_n_failures = "./pyramid_robot/distance_logs/log_n_failures.csv"
-log_r = "./pyramid_robot/distance_logs/log_r.csv"
-log_error = "./pyramid_robot/distance_logs/log_error.npz"
+log_n_failures = "./pyramid_robot/distance/logs/n_failures.csv"
+log_r = "./pyramid_robot/distance/logs/r.csv"
 
 # Clear the logs.
 np.savetxt(log_n_failures, [])
 np.savetxt(log_r, [])
-# with open(log_r) as f:
-#     np.savetxt(f, [])
 
 # Read the input file.
 # f_s, audio_anechoic = wavfile.read("./sounds/432910__kyanite__clap.wav")
@@ -58,6 +55,7 @@ f_s, audio_anechoic = wavfile.read("./sounds/345__anton__handclaps.wav")
 # f_s, audio_anechoic = wavfile.read("./sounds/78508__joedeshon__referee_whistle_01.wav")
 # f_s, audio_anechoic = wavfile.read("./sounds/418564__14fpanskabubik_lukas__whistle.wav")
 
+# Normalise the input and truncate it.
 audio_anechoic = audio_anechoic/audio_anechoic.max()
 audio_anechoic = audio_anechoic[0:200000]
 
@@ -116,7 +114,6 @@ distances = np.linspace(1, 5, 10)
 Δθ_log = np.zeros(n_distances)
 error_distance_log = np.zeros(n_distances)
 n_failures = np.zeros(n_distances)
-SNR_log = np.zeros((n_distances))
 
 # # Set the room up.
 # chrono = time.time()
@@ -276,7 +273,7 @@ for i_distance in range(0, n_distances):
     #         # np.mean(error_distance_log[0, i_run]),
     #         time.time() - log_timed,
     #         time.time() - distance_timed,
-    #         time.time() - all_timed,
+    #         time.time() pyramid_robot/noise/run_test.py- all_timed,
     #         (time.time() - all_timed)*(1/progress*100.0 - 1)/60/60
     #     ))
 
@@ -310,6 +307,3 @@ for i_distance in range(0, n_distances):
         time.time() - distance_timed
     ))
     distance_timed = time.time()
-
-# Save the errors in a file.
-np.savez(log_error, r=Δr_log, azimuth=Δθ_log, distance=error_distance_log)

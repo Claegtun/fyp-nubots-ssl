@@ -1,11 +1,13 @@
 import numpy as np
+from scipy import signal
 
 c = 343
 
 def compute_reverb_weighting(room, α):
     """
     @brief  computes the reverberation-weighting used in the paper.
-    @param  the room object
+    @param  room: the room object
+    @param  α: the absorption-factor
     @return the weighting
     """
     A = 0
@@ -30,6 +32,7 @@ def compute_tdoa(x_0, x_1, f_s, γ):
     @param  x_0 (F, 1): the first channel
     @param  x_1 (F, 1): the second channel
     @param  f_s: the sampling frequency in Hz
+    @param  γ: the reverberation-weighting
     @return float: the TDOA  
     """
 
@@ -61,6 +64,11 @@ def compute_tdoa(x_0, x_1, f_s, γ):
     χ = np.multiply(φ, np.multiply(X_0, np.conj(X_1)))
     R_01 = np.fft.fftshift(np.real(np.fft.ifft(χ)))
 
+    scale = 4
+    R_01 = signal.resample_poly(R_01, scale, 1)
+    F = F*scale
+    f_s = f_s*scale
+
     # Compute the TDOA and the azimuth.
     τ = np.linspace(-(F+1)/f_s/2, (F-1)/f_s/2, F)
     Δt_01 = τ[np.argmax(R_01)]
@@ -74,6 +82,8 @@ def estimate_position_from_one(r_0, Δt, i, r_m):
     @param  r_0 (3, 1): the initial position
     @param  Δt (M, M): the computed TDOAs for all pairs
     @param  i: the index of the microphone not taken
+    @param  r_m (3, M): the coordinates of the microphones with respect to the 
+            array
     @return ndarray (3, 1): the estimated position
     """
 
@@ -114,11 +124,14 @@ def estimate_position_from_one(r_0, Δt, i, r_m):
     
     return r_0
 
-def estimate_position_from_all(x, f_s, r_m):
+def estimate_position_from_all(x, f_s, r_m, γ):
     """
     @brief  Estimates the position of the source from many sets of equations.
     @param  x (F, M): the frame with all channels
     @param  f_s: the sampling frequency in Hz
+    @param  r_m (3, M): the coordinates of the microphones with respect to the 
+            array
+    @param  γ: the reverberation-weighting
     @return ndarray (3, 1): the estimated position
     """
 
@@ -130,7 +143,7 @@ def estimate_position_from_all(x, f_s, r_m):
         for j in range(M):
             if j == i:
                 continue
-            Δt[i, j] = compute_tdoa(x[:,i], x[:,j], f_s)
+            Δt[i, j] = compute_tdoa(x[:,i], x[:,j], f_s, γ)
 
     # Average the diagonal pairs, e.g. x[0,1] and x[1,0].
     Δt = (Δt - Δt.T)/2
@@ -143,7 +156,7 @@ def estimate_position_from_all(x, f_s, r_m):
     # microphone has the shortest TDOA. The partition lies in the sector 
     # between the chosen microphone and the bisecting line between it and the 
     # adjacent microphone.
-    r_0 = np.zeros((3,))
+    r_span = np.zeros((3,3))
     for m in range(1, M):
         # If the TDOAs on both sides of the m-th microphone are non-zero, then
         # check the other neighbouring two.
@@ -158,23 +171,49 @@ def estimate_position_from_all(x, f_s, r_m):
             r_mid = (r_m[:,m] + r_m[:,l]) / 2
             # Span outwards to find a good enough initial position between the 
             # two lines.
-            r_0 = 2.0*(r_m[:,m] + r_mid)
+            r_span[:,1] = 2.0*(r_m[:,m] + r_mid)
+            # r_span[:,0] = np.matmul(
+            #     np.array([
+            #         [np.cos( np.pi/8),  -np.sin( np.pi/8),  0],
+            #         [np.sin( np.pi/8),   np.cos( np.pi/8),  0],
+            #         [0,                  0,                 1]
+            #     ]),
+            #     r_span[:,1]
+            # )
+            # r_span[:,2] = np.matmul(
+            #     np.array([
+            #         [np.cos(-np.pi/8),  -np.sin(-np.pi/8),  0],
+            #         [np.sin(-np.pi/8),   np.cos(-np.pi/8),  0],
+            #         [0,                  0,                 1]
+            #     ]),
+            #     r_span[:,1]
+            # )
+
+    def estimate_across_span(r_span, Δt, m):
+        for span in range(3):
+            for scaling in range(2, 11):
+                try:
+                    if span == 2 and scaling == 3:
+                        robert_frost = 0
+                    r = estimate_position_from_one(
+                        scaling*r_span[:,span], 
+                        Δt, 
+                        m, 
+                        r_m
+                    )
+                except OverflowError as error:
+                    if scaling == 10 and span == 2:
+                        raise OverflowError("Failure to compute iteration")
+                    continue
+                else:
+                    return r
 
     # Estimate the source's position as the mean of five estimates each with 
     # reference to each microphone.
     r = np.zeros((3, M))
-    scaling = 1.0
     for m in range(1, M):
-        # r[:,m] = estimate_position_from_one(r_0, Δt, m)
-        try:
-            r[:,m] = estimate_position_from_one(scaling*r_0, Δt, m, r_m)
-        except OverflowError as error:
-            if scaling == 3.0:
-                raise OverflowError("Failure to compute iteration")
-            scaling = scaling + 0.5
-            m = m - 1
-            continue
-        scaling = 1.0
-    r_F = np.sum(r, axis = 1) / (M-1)
+        r[:,m] = estimate_position_from_one(r_span[:,1], Δt, m, r_m)
+        # r[:,m] = estimate_across_span(r_span, Δt, m)
 
+    r_F = np.sum(r, axis = 1) / (M-1)
     return r_F.reshape((3,1))
