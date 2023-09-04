@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.7.28)  6 AUG 2023 14:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.7.28)  14 AUG 2023 10:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -631,13 +631,13 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 2.
-)
+ [2
+
+])
 \tf@toc=\write4
 \openout4 = `thesis.toc'.
 
- [2
-
-]
+ [3]
 Chapter 1.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 6
 6.
@@ -649,16 +649,16 @@ Overfull \hbox (1.09743pt too wide) in paragraph at lines 66--67
 -sity of New-cas-tle's robotics
  []
 
-<./NUbot-sitting-down.jpg, id=173, 1505.625pt x 1505.625pt>
+<./NUbot-sitting-down.jpg, id=218, 1505.625pt x 1505.625pt>
 File: ./NUbot-sitting-down.jpg Graphic file (type jpg)
 <use ./NUbot-sitting-down.jpg>
 Package pdftex.def Info: ./NUbot-sitting-down.jpg  used on input line 69.
 (pdftex.def)             Requested size: 258.75pt x 258.73271pt.
-[3
+[4
 
-] [4 <./NUbot-sitting-down.jpg>] [5]
+] [5 <./NUbot-sitting-down.jpg>] [6]
 Chapter 2.
-[6
+[7
 
 ]
 Overfull \hbox (14.10892pt too wide) in paragraph at lines 140--141
@@ -666,7 +666,7 @@ Overfull \hbox (14.10892pt too wide) in paragraph at lines 140--141
  us-ing a microphone-
  []
 
-[7]
+[8]
 LaTeX Font Info:    Trying to load font information for U+euf on input line 146
 .
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
@@ -683,260 +683,293 @@ Overfull \hbox (3.8596pt too wide) in paragraph at lines 171--173
 m-ple two-dimensional
  []
 
-[8]
+[9]
 Overfull \hbox (1.49115pt too wide) in paragraph at lines 174--175
 []\T1/lmr/m/n/10 Another im-por-tant con-sid-er-a-tion is the res-o-lu-tion. Si
 nce the cross-correlation
  []
 
-<./valin_2003/robot.png, id=237, 375.4025pt x 328.22626pt>
+[10] [11]
+<./valin_2003/robot.png, id=310, 375.4025pt x 328.22626pt>
 File: ./valin_2003/robot.png Graphic file (type png)
 <use ./valin_2003/robot.png>
-Package pdftex.def Info: ./valin_2003/robot.png  used on input line 185.
+Package pdftex.def Info: ./valin_2003/robot.png  used on input line 215.
 (pdftex.def)             Requested size: 258.75pt x 226.24597pt.
-[9]
-<./valin_2003/plot.png, id=247, 295.60437pt x 228.855pt>
+<./valin_2003/plot.png, id=313, 295.60437pt x 228.855pt>
 File: ./valin_2003/plot.png Graphic file (type png)
 <use ./valin_2003/plot.png>
-Package pdftex.def Info: ./valin_2003/plot.png  used on input line 193.
+Package pdftex.def Info: ./valin_2003/plot.png  used on input line 223.
 (pdftex.def)             Requested size: 258.75pt x 200.32794pt.
- [10 <./valin_2003/robot.png (PNG copy)> <./valin_2003/plot.png>]
-<./hu_2009/array.png, id=258, 99.37125pt x 142.03062pt>
+ [12 <./valin_2003/robot.png (PNG copy)>]
+<./hu_2009/array.png, id=325, 99.37125pt x 142.03062pt>
 File: ./hu_2009/array.png Graphic file (type png)
 <use ./hu_2009/array.png>
-Package pdftex.def Info: ./hu_2009/array.png  used on input line 208.
+Package pdftex.def Info: ./hu_2009/array.png  used on input line 238.
 (pdftex.def)             Requested size: 258.75pt x 369.92969pt.
- [11]
-[12 <./hu_2009/array.png>]
-<./chen_2019/array.jpg, id=278, 662.475pt x 589.20125pt>
+ [13 <./valin_2003/plot.png>] [14 <./hu_2009/array.png>]
+<./chen_2019/array.jpg, id=347, 662.475pt x 589.20125pt>
 File: ./chen_2019/array.jpg Graphic file (type jpg)
 <use ./chen_2019/array.jpg>
-Package pdftex.def Info: ./chen_2019/array.jpg  used on input line 222.
+Package pdftex.def Info: ./chen_2019/array.jpg  used on input line 252.
 (pdftex.def)             Requested size: 258.75pt x 230.1292pt.
-<./chen_2019/distance_SNR.jpg, id=281, 662.475pt x 607.26875pt>
+<./chen_2019/distance_SNR.jpg, id=350, 662.475pt x 607.26875pt>
 File: ./chen_2019/distance_SNR.jpg Graphic file (type jpg)
 <use ./chen_2019/distance_SNR.jpg>
-Package pdftex.def Info: ./chen_2019/distance_SNR.jpg  used on input line 230.
+Package pdftex.def Info: ./chen_2019/distance_SNR.jpg  used on input line 260.
 (pdftex.def)             Requested size: 258.75pt x 237.18597pt.
- [13 <./chen_2019/array.jpg>] [14 <./chen_2019/distance_SNR.jpg>]
-<./manamperi_2022/array.png, id=304, 416.05438pt x 390.45876pt>
+ [15 <./chen_2019/array.jpg>] [16 <./chen_2019/distance_SNR.jpg>]
+<./manamperi_2022/array.png, id=372, 416.05438pt x 390.45876pt>
 File: ./manamperi_2022/array.png Graphic file (type png)
 <use ./manamperi_2022/array.png>
-Package pdftex.def Info: ./manamperi_2022/array.png  used on input line 253.
+Package pdftex.def Info: ./manamperi_2022/array.png  used on input line 283.
 (pdftex.def)             Requested size: 258.75pt x 242.84453pt.
-<./manamperi_2022/map_n30.png, id=307, 426.59375pt x 331.2375pt>
+<./manamperi_2022/map_n30.png, id=375, 426.59375pt x 331.2375pt>
 File: ./manamperi_2022/map_n30.png Graphic file (type png)
 <use ./manamperi_2022/map_n30.png>
-Package pdftex.def Info: ./manamperi_2022/map_n30.png  used on input line 261.
+Package pdftex.def Info: ./manamperi_2022/map_n30.png  used on input line 291.
 (pdftex.def)             Requested size: 258.75pt x 200.92241pt.
- [15 <./manamperi_2022/array.png>] [16 <./manamperi_2022/map_n30.png>] [17] [18
-] [19]
-<./valin_2007/grid.jpg, id=386, 54.49158pt x 17.3448pt>
-File: ./valin_2007/grid.jpg Graphic file (type jpg)
-<use ./valin_2007/grid.jpg>
-Package pdftex.def Info: ./valin_2007/grid.jpg  used on input line 354.
-(pdftex.def)             Requested size: 258.75pt x 82.39493pt.
- [20]
-<./valin_2007/array.jpg, id=400, 54.34705pt x 57.96054pt>
-File: ./valin_2007/array.jpg Graphic file (type jpg)
-<use ./valin_2007/array.jpg>
-Package pdftex.def Info: ./valin_2007/array.jpg  used on input line 370.
-(pdftex.def)             Requested size: 258.75pt x 275.96983pt.
- [21 <./valin_2007/grid.jpg>]
-<./valin_2007/track.jpg, id=410, 87.59125pt x 30.3534pt>
-File: ./valin_2007/track.jpg Graphic file (type jpg)
-<use ./valin_2007/track.jpg>
-Package pdftex.def Info: ./valin_2007/track.jpg  used on input line 378.
-(pdftex.def)             Requested size: 258.75pt x 89.69452pt.
- [22 <./valin_2007/array.jpg> <./valin_2007/track.jpg>]
-<./badali_2009/array.png, id=425, 138.5175pt x 138.5175pt>
-File: ./badali_2009/array.png Graphic file (type png)
-<use ./badali_2009/array.png>
-Package pdftex.def Info: ./badali_2009/array.png  used on input line 392.
-(pdftex.def)             Requested size: 258.75pt x 258.7812pt.
- [23]
-<./badali_2009/error_SNR.png, id=434, 483.30562pt x 205.26688pt>
-File: ./badali_2009/error_SNR.png Graphic file (type png)
-<use ./badali_2009/error_SNR.png>
-Package pdftex.def Info: ./badali_2009/error_SNR.png  used on input line 400.
-(pdftex.def)             Requested size: 258.75pt x 109.89967pt.
- [24 <./badali_2009/array.png> <./badali_2009/error_SNR.png>]
-<./salvati_2019/RMSE_SNR.png, id=448, 432.11438pt x 187.19937pt>
-File: ./salvati_2019/RMSE_SNR.png Graphic file (type png)
-<use ./salvati_2019/RMSE_SNR.png>
-Package pdftex.def Info: ./salvati_2019/RMSE_SNR.png  used on input line 414.
-(pdftex.def)             Requested size: 258.75pt x 112.09769pt.
-<./salvati_2019/RMSE_SNR_two.png, id=451, 432.61626pt x 191.21437pt>
-File: ./salvati_2019/RMSE_SNR_two.png Graphic file (type png)
-<use ./salvati_2019/RMSE_SNR_two.png>
-Package pdftex.def Info: ./salvati_2019/RMSE_SNR_two.png  used on input line 42
-2.
-(pdftex.def)             Requested size: 258.75pt x 114.37062pt.
- [25 <./salvati_2019/RMSE_SNR.png> <./salvati_2019/RMSE_SNR_two.png>]
-<./zhang_2021/maps.png, id=468, 414.04688pt x 288.07625pt>
-File: ./zhang_2021/maps.png Graphic file (type png)
-<use ./zhang_2021/maps.png>
-Package pdftex.def Info: ./zhang_2021/maps.png  used on input line 436.
-(pdftex.def)             Requested size: 258.75pt x 180.02962pt.
- [26 <./zhang_2021/maps.png>]
-<./basiri_2016/array.png, id=483, 410.03188pt x 150.5625pt>
-File: ./basiri_2016/array.png Graphic file (type png)
-<use ./basiri_2016/array.png>
-Package pdftex.def Info: ./basiri_2016/array.png  used on input line 450.
-(pdftex.def)             Requested size: 258.75pt x 95.01797pt.
-<./basiri_2016/histogram.png, id=486, 429.10312pt x 148.05313pt>
-File: ./basiri_2016/histogram.png Graphic file (type png)
-<use ./basiri_2016/histogram.png>
-Package pdftex.def Info: ./basiri_2016/histogram.png  used on input line 458.
-(pdftex.def)             Requested size: 258.75pt x 89.27759pt.
- [27 <./basiri_2016/array.png> <./basiri_2016/histogram.png>] [28]
-Overfull \hbox (3.94327pt too wide) in paragraph at lines 509--510
-[]\T1/lmr/m/n/10 The most ba-sic form of MU-SIC, known as stan-dard eigen-value
--decomposition
- []
-
-[29]
-<./ishi_2009/array.png, id=544, 309.155pt x 129.98563pt>
-File: ./ishi_2009/array.png Graphic file (type png)
-<use ./ishi_2009/array.png>
-Package pdftex.def Info: ./ishi_2009/array.png  used on input line 537.
-(pdftex.def)             Requested size: 258.75pt x 108.80238pt.
- [30 <./ishi_2009/array.png>]
-<./nakamura_2012/rate_SNR.png, id=558, 426.59375pt x 99.87312pt>
-File: ./nakamura_2012/rate_SNR.png Graphic file (type png)
-<use ./nakamura_2012/rate_SNR.png>
-Package pdftex.def Info: ./nakamura_2012/rate_SNR.png  used on input line 552.
-(pdftex.def)             Requested size: 258.75pt x 60.58115pt.
- [31 <./nakamura_2012/rate_SNR.png>] [32]
-[33]
-Chapter 3.
-[34
-
-]
-<./chen_2019/partitions.png, id=599, 169.13188pt x 143.53625pt>
-File: ./chen_2019/partitions.png Graphic file (type png)
-<use ./chen_2019/partitions.png>
-Package pdftex.def Info: ./chen_2019/partitions.png  used on input line 654.
-(pdftex.def)             Requested size: 345.0pt x 292.7991pt.
- [35]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 662.
- [36 <./chen_2019/partitions.png>] [37]
-<../Python/pyramid_robot/noise/rir.png, id=626, 462.528pt x 346.896pt>
-File: ../Python/pyramid_robot/noise/rir.png Graphic file (type png)
-<use ../Python/pyramid_robot/noise/rir.png>
-Package pdftex.def Info: ../Python/pyramid_robot/noise/rir.png  used on input l
-ine 742.
-(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
- [38 <../Python/pyramid_robot/noise/rir.png>]
-<../Python/pyramid_robot/room_3d.png, id=637, 462.528pt x 346.896pt>
-File: ../Python/pyramid_robot/room_3d.png Graphic file (type png)
-<use ../Python/pyramid_robot/room_3d.png>
-Package pdftex.def Info: ../Python/pyramid_robot/room_3d.png  used on input lin
-e 758.
-(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
-<../Python/pyramid_robot/room_2d.png, id=638, 462.528pt x 346.896pt>
-File: ../Python/pyramid_robot/room_2d.png Graphic file (type png)
-<use ../Python/pyramid_robot/room_2d.png>
-Package pdftex.def Info: ../Python/pyramid_robot/room_2d.png  used on input lin
-e 766.
-(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
- [39 <../Python/pyramid_robot/room_3d.png>]
-<../Python/pyramid_robot/noise/distance.png, id=651, 462.41508pt x 346.81131pt>
-
-File: ../Python/pyramid_robot/noise/distance.png Graphic file (type png)
-<use ../Python/pyramid_robot/noise/distance.png>
-Package pdftex.def Info: ../Python/pyramid_robot/noise/distance.png  used on in
-put line 778.
-(pdftex.def)             Requested size: 345.0pt x 258.75311pt.
- [40 <../Python/pyramid_robot/room_2d.png>]
-<../Python/pyramid_robot/noise/azimuth.png, id=660, 462.41508pt x 346.81131pt>
-File: ../Python/pyramid_robot/noise/azimuth.png Graphic file (type png)
-<use ../Python/pyramid_robot/noise/azimuth.png>
-Package pdftex.def Info: ../Python/pyramid_robot/noise/azimuth.png  used on inp
-ut line 786.
-(pdftex.def)             Requested size: 345.0pt x 258.75311pt.
- [41 <../Python/pyramid_robot/noise/distance.png>]
-<../Python/pyramid_robot/noise/elevation.png, id=666, 462.41508pt x 346.81131pt
->
-File: ../Python/pyramid_robot/noise/elevation.png Graphic file (type png)
-<use ../Python/pyramid_robot/noise/elevation.png>
-Package pdftex.def Info: ../Python/pyramid_robot/noise/elevation.png  used on i
-nput line 794.
-(pdftex.def)             Requested size: 345.0pt x 258.75311pt.
-
-[42 <../Python/pyramid_robot/noise/azimuth.png>] [43 <../Python/pyramid_robot/n
-oise/elevation.png>]
-Overfull \hbox (4.3893pt too wide) in paragraph at lines 826--828
+ [17 <./manamperi_2022/array.png>] [18 <./manamperi_2022/map_n30.png>] [19]
+Overfull \hbox (4.3893pt too wide) in paragraph at lines 358--360
 \T1/lmr/m/n/10 given a frame $\OML/lmm/m/it/10 T$ \T1/lmr/m/n/10 sam-ples long.
  This can be rewrit-ten in terms of cross-correlations: 
  []
 
-[44]
-<../Python/srp_phat/grid.png, id=704, 1040.688pt x 621.522pt>
+[20] [21]
+<./valin_2007/grid.jpg, id=452, 54.49158pt x 17.3448pt>
+File: ./valin_2007/grid.jpg Graphic file (type jpg)
+<use ./valin_2007/grid.jpg>
+Package pdftex.def Info: ./valin_2007/grid.jpg  used on input line 391.
+(pdftex.def)             Requested size: 258.75pt x 82.39493pt.
+ [22 <./valin_2007/grid.jpg>]
+<./valin_2007/array.jpg, id=467, 54.34705pt x 57.96054pt>
+File: ./valin_2007/array.jpg Graphic file (type jpg)
+<use ./valin_2007/array.jpg>
+Package pdftex.def Info: ./valin_2007/array.jpg  used on input line 407.
+(pdftex.def)             Requested size: 258.75pt x 275.96983pt.
+<./valin_2007/track.jpg, id=470, 87.59125pt x 30.3534pt>
+File: ./valin_2007/track.jpg Graphic file (type jpg)
+<use ./valin_2007/track.jpg>
+Package pdftex.def Info: ./valin_2007/track.jpg  used on input line 415.
+(pdftex.def)             Requested size: 258.75pt x 89.69452pt.
+ [23 <./valin_2007/array.jpg>]
+<./badali_2009/array.png, id=485, 138.5175pt x 138.5175pt>
+File: ./badali_2009/array.png Graphic file (type png)
+<use ./badali_2009/array.png>
+Package pdftex.def Info: ./badali_2009/array.png  used on input line 429.
+(pdftex.def)             Requested size: 258.75pt x 258.7812pt.
+ [24 <./valin_2007/track.jpg>]
+<./badali_2009/error_SNR.png, id=495, 483.30562pt x 205.26688pt>
+File: ./badali_2009/error_SNR.png Graphic file (type png)
+<use ./badali_2009/error_SNR.png>
+Package pdftex.def Info: ./badali_2009/error_SNR.png  used on input line 437.
+(pdftex.def)             Requested size: 258.75pt x 109.89967pt.
+ [25 <./badali_2009/array.png> <./badali_2009/error_SNR.png>]
+<./salvati_2019/RMSE_SNR.png, id=510, 432.11438pt x 187.19937pt>
+File: ./salvati_2019/RMSE_SNR.png Graphic file (type png)
+<use ./salvati_2019/RMSE_SNR.png>
+Package pdftex.def Info: ./salvati_2019/RMSE_SNR.png  used on input line 451.
+(pdftex.def)             Requested size: 258.75pt x 112.09769pt.
+<./salvati_2019/RMSE_SNR_two.png, id=513, 432.61626pt x 191.21437pt>
+File: ./salvati_2019/RMSE_SNR_two.png Graphic file (type png)
+<use ./salvati_2019/RMSE_SNR_two.png>
+Package pdftex.def Info: ./salvati_2019/RMSE_SNR_two.png  used on input line 45
+9.
+(pdftex.def)             Requested size: 258.75pt x 114.37062pt.
+ [26 <./salvati_2019/RMSE_SNR.png> <./salvati_2019/RMSE_SNR_two.png>]
+<./zhang_2021/maps.png, id=528, 414.04688pt x 288.07625pt>
+File: ./zhang_2021/maps.png Graphic file (type png)
+<use ./zhang_2021/maps.png>
+Package pdftex.def Info: ./zhang_2021/maps.png  used on input line 473.
+(pdftex.def)             Requested size: 258.75pt x 180.02962pt.
+ [27 <./zhang_2021/maps.png>]
+<./basiri_2016/array.png, id=543, 410.03188pt x 150.5625pt>
+File: ./basiri_2016/array.png Graphic file (type png)
+<use ./basiri_2016/array.png>
+Package pdftex.def Info: ./basiri_2016/array.png  used on input line 487.
+(pdftex.def)             Requested size: 258.75pt x 95.01797pt.
+<./basiri_2016/histogram.png, id=546, 429.10312pt x 148.05313pt>
+File: ./basiri_2016/histogram.png Graphic file (type png)
+<use ./basiri_2016/histogram.png>
+Package pdftex.def Info: ./basiri_2016/histogram.png  used on input line 495.
+(pdftex.def)             Requested size: 258.75pt x 89.27759pt.
+ [28 <./basiri_2016/array.png> <./basiri_2016/histogram.png>] [29]
+Overfull \hbox (3.94327pt too wide) in paragraph at lines 542--543
+[]\T1/lmr/m/n/10 The most ba-sic form of MU-SIC, known as stan-dard eigen-value
+-decomposition
+ []
+
+[30]
+<./ishi_2009/array.png, id=596, 309.155pt x 129.98563pt>
+File: ./ishi_2009/array.png Graphic file (type png)
+<use ./ishi_2009/array.png>
+Package pdftex.def Info: ./ishi_2009/array.png  used on input line 570.
+(pdftex.def)             Requested size: 258.75pt x 108.80238pt.
+ [31 <./ishi_2009/array.png>]
+<./nakamura_2012/rate_SNR.png, id=612, 426.59375pt x 99.87312pt>
+File: ./nakamura_2012/rate_SNR.png Graphic file (type png)
+<use ./nakamura_2012/rate_SNR.png>
+Package pdftex.def Info: ./nakamura_2012/rate_SNR.png  used on input line 585.
+(pdftex.def)             Requested size: 258.75pt x 60.58115pt.
+ [32 <./nakamura_2012/rate_SNR.png>] [33]
+[34]
+Chapter 3.
+[35
+
+]
+<./chen_2019/partitions.png, id=652, 169.13188pt x 143.53625pt>
+File: ./chen_2019/partitions.png Graphic file (type png)
+<use ./chen_2019/partitions.png>
+Package pdftex.def Info: ./chen_2019/partitions.png  used on input line 687.
+(pdftex.def)             Requested size: 345.0pt x 292.7991pt.
+ [36]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 695.
+ [37 <./chen_2019/partitions.png>] [38]
+<../Python/pyramid_robot/noise/rir.png, id=678, 462.528pt x 346.896pt>
+File: ../Python/pyramid_robot/noise/rir.png Graphic file (type png)
+<use ../Python/pyramid_robot/noise/rir.png>
+Package pdftex.def Info: ../Python/pyramid_robot/noise/rir.png  used on input l
+ine 775.
+(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
+ [39 <../Python/pyramid_robot/noise/rir.png>]
+<../Python/pyramid_robot/room_3d.png, id=689, 462.528pt x 346.896pt>
+File: ../Python/pyramid_robot/room_3d.png Graphic file (type png)
+<use ../Python/pyramid_robot/room_3d.png>
+Package pdftex.def Info: ../Python/pyramid_robot/room_3d.png  used on input lin
+e 791.
+(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
+<../Python/pyramid_robot/room_2d.png, id=690, 462.528pt x 346.896pt>
+File: ../Python/pyramid_robot/room_2d.png Graphic file (type png)
+<use ../Python/pyramid_robot/room_2d.png>
+Package pdftex.def Info: ../Python/pyramid_robot/room_2d.png  used on input lin
+e 799.
+(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
+ [40 <../Python/pyramid_robot/room_3d.png>]
+<../Python/pyramid_robot/noise/distance.png, id=703, 462.41508pt x 346.81131pt>
+
+File: ../Python/pyramid_robot/noise/distance.png Graphic file (type png)
+<use ../Python/pyramid_robot/noise/distance.png>
+Package pdftex.def Info: ../Python/pyramid_robot/noise/distance.png  used on in
+put line 811.
+(pdftex.def)             Requested size: 345.0pt x 258.75311pt.
+ [41 <../Python/pyramid_robot/room_2d.png>]
+<../Python/pyramid_robot/noise/azimuth.png, id=712, 462.41508pt x 346.81131pt>
+File: ../Python/pyramid_robot/noise/azimuth.png Graphic file (type png)
+<use ../Python/pyramid_robot/noise/azimuth.png>
+Package pdftex.def Info: ../Python/pyramid_robot/noise/azimuth.png  used on inp
+ut line 819.
+(pdftex.def)             Requested size: 345.0pt x 258.75311pt.
+ [42 <../Python/pyramid_robot/noise/distance.png>]
+<../Python/pyramid_robot/noise/elevation.png, id=718, 462.41508pt x 346.81131pt
+>
+File: ../Python/pyramid_robot/noise/elevation.png Graphic file (type png)
+<use ../Python/pyramid_robot/noise/elevation.png>
+Package pdftex.def Info: ../Python/pyramid_robot/noise/elevation.png  used on i
+nput line 827.
+(pdftex.def)             Requested size: 345.0pt x 258.75311pt.
+
+[43 <../Python/pyramid_robot/noise/azimuth.png>] [44 <../Python/pyramid_robot/n
+oise/elevation.png>]
+<../Python/srp_phat/grid.png, id=744, 1040.688pt x 621.522pt>
 File: ../Python/srp_phat/grid.png Graphic file (type png)
 <use ../Python/srp_phat/grid.png>
-Package pdftex.def Info: ../Python/srp_phat/grid.png  used on input line 863.
+Package pdftex.def Info: ../Python/srp_phat/grid.png  used on input line 869.
 (pdftex.def)             Requested size: 345.0pt x 206.04178pt.
  [45]
 
 LaTeX Warning: Reference `fig:pyramid_robot_rir' on page 46 undefined on input 
-line 874.
+line 880.
 
 [46 <../Python/srp_phat/grid.png>]
-<../Python/srp_phat/room_3d.png, id=725, 462.528pt x 346.896pt>
+<../Python/srp_phat/room_3d.png, id=766, 462.528pt x 346.896pt>
 File: ../Python/srp_phat/room_3d.png Graphic file (type png)
 <use ../Python/srp_phat/room_3d.png>
-Package pdftex.def Info: ../Python/srp_phat/room_3d.png  used on input line 887
+Package pdftex.def Info: ../Python/srp_phat/room_3d.png  used on input line 893
 .
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
-<../Python/srp_phat/room_2d.png, id=726, 462.528pt x 346.896pt>
+<../Python/srp_phat/room_2d.png, id=767, 462.528pt x 346.896pt>
 File: ../Python/srp_phat/room_2d.png Graphic file (type png)
 <use ../Python/srp_phat/room_2d.png>
-Package pdftex.def Info: ../Python/srp_phat/room_2d.png  used on input line 895
+Package pdftex.def Info: ../Python/srp_phat/room_2d.png  used on input line 901
 .
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
  [47 <../Python/srp_phat/room_3d.png>]
-<../Python/srp_phat/noise/clap/plots.png, id=738, 578.16pt x 361.35pt>
+<../Python/srp_phat/noise/clap/plots.png, id=778, 578.16pt x 361.35pt>
 File: ../Python/srp_phat/noise/clap/plots.png Graphic file (type png)
 <use ../Python/srp_phat/noise/clap/plots.png>
 Package pdftex.def Info: ../Python/srp_phat/noise/clap/plots.png  used on input
- line 905.
+ line 911.
 (pdftex.def)             Requested size: 345.0pt x 215.6207pt.
 
 [48 <../Python/srp_phat/room_2d.png>]
-<../Python/srp_phat/noise/whistle/plots.png, id=746, 578.16pt x 361.35pt>
+<../Python/srp_phat/noise/whistle/plots.png, id=786, 578.16pt x 361.35pt>
 File: ../Python/srp_phat/noise/whistle/plots.png Graphic file (type png)
 <use ../Python/srp_phat/noise/whistle/plots.png>
 Package pdftex.def Info: ../Python/srp_phat/noise/whistle/plots.png  used on in
-put line 913.
+put line 919.
 (pdftex.def)             Requested size: 345.0pt x 215.6207pt.
 
 
 LaTeX Warning: Reference `fig:srp_phat_noise_azimuth' on page 49 undefined on i
-nput line 920.
+nput line 926.
 
 [49 <../Python/srp_phat/noise/clap/plots.png> <../Python/srp_phat/noise/whistle
 /plots.png>]
-<../Python/srp_phat/noise/clap/map.png, id=757, 462.528pt x 346.896pt>
+<../Python/srp_phat/noise/clap/map.png, id=797, 462.528pt x 346.896pt>
 File: ../Python/srp_phat/noise/clap/map.png Graphic file (type png)
 <use ../Python/srp_phat/noise/clap/map.png>
 Package pdftex.def Info: ../Python/srp_phat/noise/clap/map.png  used on input l
-ine 929.
+ine 935.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
  [50]
-<../Python/srp_phat/noise/whistle/map.png, id=765, 462.528pt x 346.896pt>
+<../Python/srp_phat/noise/whistle/map.png, id=804, 462.528pt x 346.896pt>
 File: ../Python/srp_phat/noise/whistle/map.png Graphic file (type png)
 <use ../Python/srp_phat/noise/whistle/map.png>
 Package pdftex.def Info: ../Python/srp_phat/noise/whistle/map.png  used on inpu
-t line 937.
+t line 943.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
  [51 <../Python/srp_phat/noise/clap/map.png>] [52 <../Python/srp_phat/noise/whi
 stle/map.png>] [53]
 Chapter 4.
-(./thesis.bbl [54
+[54
 
-] [55
+] [55] [56]
+! Undefined control sequence.
+<argument> I\superscript 
+                         {2}S and Other Serial Interfaces
+l.1046 ...rscript{2}S and Other Serial Interfaces}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> ...ection\endcsname }\fi I\superscript 
+                                                  {2}S and Other Serial Inte...
+l.1046 ...rscript{2}S and Other Serial Interfaces}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.1048 Like SPI and I\superscript
+                                 {2}C, I\textsuperscript{2}S allows a microp...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[57] [58]
+Chapter 5.
+(./thesis.bbl [59
+
+] [60
 
 ]
 Underfull \hbox (badness 1448) in paragraph at lines 141--147
@@ -944,29 +977,38 @@ Underfull \hbox (badness 1448) in paragraph at lines 141--147
 and
  []
 
-[56]
+[61]
 Underfull \hbox (badness 1953) in paragraph at lines 174--180
 \T1/lmr/m/n/10 Super-Resolution Sound Source Lo-cal-iza-tion for Robots.  In \T
 1/lmr/m/it/10 2012
  []
 
-[57]) [58] (./thesis.aux)
+[62]) [63] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 123826E783C8B809F0995F79F4C17180;4232.
+
+Package rerunfilecheck Warning: File `thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thesis.out':
+(rerunfilecheck)             Before: 6BC9EBFDBDC2053A773CE4260BBD700B;5335
+(rerunfilecheck)             After:  FC35C9FA01D1FD828FB86BE3607AA80D;5639.
  ) 
 Here is how much of TeX's memory you used:
- 17594 strings out of 478287
- 332706 string characters out of 5849289
- 589995 words of memory out of 5000000
- 35265 multiletter control sequences out of 15000+600000
- 552815 words of font info for 92 fonts, out of 8000000 for 9000
+ 17626 strings out of 478287
+ 333094 string characters out of 5849289
+ 590002 words of memory out of 5000000
+ 35276 multiletter control sequences out of 15000+600000
+ 553181 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,17n,79p,1300b,879s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exi
+pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exi
 st, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exist
+, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist
 , replaced by a fixed one
@@ -1004,10 +1046,10 @@ c/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/te
 xmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lm
 sy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
 10.pfb>
-Output written on thesis.pdf (58 pages, 6765800 bytes).
+Output written on thesis.pdf (63 pages, 6777464 bytes).
 PDF statistics:
- 966 PDF objects out of 1000 (max. 8388607)
- 771 compressed objects within 8 object streams
- 219 named destinations out of 1000 (max. 500000)
- 411 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1036 PDF objects out of 1200 (max. 8388607)
+ 836 compressed objects within 9 object streams
+ 239 named destinations out of 1000 (max. 500000)
+ 475 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -961,6 +961,134 @@ Indeed, the SRP-PHAT seemed more robust to noise than the other TDOA-based metho
 
 The SRP-PHAT was very poor for a narrowband signal such as a whistle. However, this was somewhat expected since it was known that the PHAT worked worse with narrowband signals \cite{valin_localization_2004} \cite{valin_robust_2007}. This may be considered the worst kind of sound and thus set a lower bound of performance; other kinds of sound should fare better. Even still, this can be fine-tuned with some parameters like the sampling rate, the frame-length, the modified spectral weighting. 
 
+\section{Proposed Method}
+
+\subsection{A Further Study into SRP-PHAT}
+
+Given the method used in by some papers \cite{valin_localization_2004}, \cite{valin_robust_2007}, a further study in its parameters such as sampling frequency and how well it works more broadly.
+
+\subsubsection{Experimental Method}
+
+For this set of simulations, the same room was tested as before, but the array is 
+
+\subs
+
+\chapter{Electronics Design}
+
+\section{Overall Design}
+
+Since this system was to be used on a humanoid robot, an embedded solution is needed given that it would draw less power and be smaller and lighter. This makes an added challenge given that most examples in the literature are implemented on either a SOC, a laptop, or even a desktop. Such an embedded solution would behave as a separate process that could handle the high throughput of the microphones and the high computation but then send simple results through USB which would need relatively little throughput.
+
+The biggest factor was the interface between the microphones and the main processor. There were a few potential kinds, namely:
+\begin{itemize}
+	\item analogue microphones through one or more ADCs,
+	\item digital microphones through SPI, I\textsuperscript{2}S, etc.,
+	\item and digital microphones through USB.
+\end{itemize}
+The last was deemed not appropiate since it was not scalable to an embedded processor and might have needed more overhead in the firmware.
+
+\section{Microphones}
+
+The microphones and their respective interface needed:
+\begin{itemize}
+	\item to be sampled at 48 \si{kHz} at least,
+	\item to be omnidirectional,
+	\item to be sampled simultaneously exactly at the same time,
+	\item to be reasonably robust to electrical interference,
+	\item to not take up to much pre-processing to burden the processor's computation,
+	\item to be able to handle at least eight microphones on one processor,
+	\item to have a good SNR,
+	\item to have a good sensitivity,
+\end{itemize}
+The last two needed not to be too demanding but simply enough so that a wide range of sounds could be heard with enough clarity not to affect the phase.
+
+\subsection{Sensitivity and Dynamic Range}
+
+It is widely known that quiet rooms have a sound-pressure-level of 30 to 40 \si{dB_{SPL}}, and converstions one metre away have that of 60 \si{dB_{SPL}}. Louder environments tend to have level of round 90 \si{dB_{SPL}}. Very loud sounds like a chainsaw about one metre away, aeroplanes, etc. have a level of 120 \si{dB_{SPL}}. 
+
+% http://www.sengpielaudio.com/TableOfSoundPressureLevels.htm
+
+Anything above that is passed the threshold of pain. Although it is not expected that the system must localise sounds of every possible level, it would be best if the system could localise within a range as deep as possible.
+
+However, most microphones would have a noise-floor which is often somewhere between 20 and 40 \si{dB_{SPL}} and is often written as a SNR relative to a single tone of 94 \si{dB_{SPL}} at 1 \si{kHz}. This floor bounds how quiet the sounds can be heard.
+
+% https://www.st.com/resource/en/application_note/an4598-preamplifying-the-analog-output-of-a-mems-microphone-stmicroelectronics.pdf
+
+Furthermore, the sensitivity affects the dynamic range of levels. This is given as the ratio between the output often in volts and the pressure in Pascals, but it is most often written in decibels and for a single tone of 94 \si{dB_{SPL}} at 1 \si{kHz}. The higher the sensitivitiy is, the higher the voltage is. Most electret and MEMS microphones have a sensitivity between -46 and -35 \si{dBV}.
+
+% https://www.analog.com/en/analog-dialogue/articles/understanding-microphone-sensitivity.html#:~:text=Microphone%20sensitivity%20is%20typically%20measured,a%20measure%20of%20its%20sensitivity.
+
+Other specifications of microphones are the total harminic distortion (THD), and the maximum acoustic input. Most common electret and MEMS microphones have a THD  less than 1 \% and a maximum acoustic input of about 120 \si{dB_{SPL}}. However, harmonic distortion might not be a big problem since it does not affect the spectral phase, only the spectral magnitude.
+
+\subsection{Interface}
+
+Small microphones in electronics use many different kinds of communication. The main kinds are:
+\begin{itemize}
+	\item analogue through an ADC,
+	\item pulse-density-modultion (PDM),
+	\item I\textsuperscript{2}S, 
+	\item SPI,
+	\item I\textsuperscript{2}C
+\end{itemize}
+
+The first three are the most common, and the last two share similarities with I\textsuperscript{2}S.
+
+\subsubsection{Analogue through an ADC}
+
+The most basic MEMS microphone is one that has its own pre-amplifier and outputs a small yet measurable voltage. This output is often weak and has a higher impedance. So, another amplifier circuit may be needed before an ADC. Indeed, an analogue anti-aliasing filter is also needed which may add complexity to the electronic design.
+% https://www.analog.com/media/en/technical-documentation/technical-articles/analog-and-digital-mems-microphone-design-considerations-ms-2472.pdf
+
+Most processors on the market, i.e. microcontrollers, DSPs, etc., have two or three ADCs but with multiplexed channels. However, for each ADC, the channels are sampled sequentially by a single sample-and-hold after the multiplexer. Thus, this means that the channels can never be sampled simultaneously. Therefore, an external ADC chip that can sample simultaneously must be chosen. Such chips can often communicate through either a serial or a parallel interface, e.g. SPI. Given that enough samples from each microphone can be outputed on the interface within a sample-period, then a serial interface should not affect the timing.
+
+For example, eight microphones are sampled at 48 \si{kHz} and at 16 bits by an external ADC chip which communicates through SPI with a clock-frequency of 20 \si{MHz}. The number of needed clock-cycles to output all eight samples is $8\cdot 16 = 128$, and the time to output all is thus:
+\begin{equation}
+\frac{128}{20 \si{MHz}} = 6.4 \si{\micro s}
+\end{equation}
+which is less than the sample-period of $1/48 \si{kHz} = 20.8\si{micro s}$ and thus gives enough time to add it to a buffer for example in the processor. Indeed, some external ADC chips such as the one cited allow for multiple serial outputs so that the throughput can be higher.
+% AD7606
+
+Otherwise, the simultaneous sampling can be forsaken so that system samples sequentially instead, and the design is simpler, but it is unpredictable how this imprecise sampling will affect the algorithm. It is therefore safer to assume the worst and design the system to sample simultaneously.
+
+\subsubsection{PDM}
+
+PDM microphones have additional circuitry made up of an ADC and modulator. Pulse-density-modulation (PDM) is where the sound-signal is encoded as bits whose density correlates to the sound's amplitude. These bits are output by a given clock-signal. Thus, PDM microphones can be connected to SPI, I\textsuperscript{2}S, and other interfaces on a microcontroller. For example, some STM32s have modules specifically for communicating with PDM microphones that can allow up to eight microphones. At worst, the delay between two channels can be half the clock-cycle which is often in the range of \si{MHz} and thus not too long.
+
+This stream of bits is then filtered, decimated, and converted to a PCM signal of integer values. However, because of this, there may be more computational burden since it has to be done by the processor.
+
+\subsubsection{I\textsuperscript{2}S and Other Serial Interfaces}
+
+Like SPI and I\superscript{2}C, I\textsuperscript{2}S allows a microphone to output a word representing a value on a serial data-line along with a clock-signal. Thus, the data can be output at a much lower rate. Some microcontrollers allow three or four I\textsuperscript{2}S interface, each can allow two microphones. Therefore, some microcontrollers can allow eight microphones in theory. However, there seems to be no guarantee that the samples of each microphone are simultaneous or even near such.
+
+\section{Anti-aliasing Filter}
+
+If an analogue output is to be read by an ADC from the microphone, then an analgoue anti-aliasing filter must be used lest noise and other components of higher frequency in the stop-band are folded back into the pass-band. 
+
+The phase-response should be carefully taken into mind. Although a perfect lienar phase-response is not needed, the phase-response must be consistent between channels, i.e. microphoens, since the GCC-PHAT only takes the relative difference in phase between two such channels. Therefore, components like capacitors must be precise enough to not propogate any variance in the phase-response. On the other hand, the magnitude-response is not too important since GCC-PHAT will whiten the spectrum anyway.
+
+Furthermore, most analogue filters cannot have both a steep roll-off and a good phase-response. Even then, filters of higher order have more components and complexity and can thus lead to inconsistencies between the channels.
+
+Therefore, one solution for example is to have the cut-off of -3 \si{dB} at 10 \si{kHz}\footnote{This is a good compromise in bandwidth since most common sounds lie therewithin, and although humans can theoretically hear sounds above this, most can practically not.}. A second-order filter will then have a cut-off of -40 \si{dB} at 100 \si{kHz} which will give a sampling rate of 200 \si{kSs^{-1}}. However, this will have to be downsampled to 48 \si{kHz} since the simulations have been done with this sampling frequency in mind, and faster sampling tends to worsen the GCC-PHAT.
+
+\section{External ADC Chip}
+
+An external ADC chip is needed that:
+\begin{itemize}
+	\item can sample at 100 \si{kHz},
+	\item can communicate eight samples within one sample-period,
+	\item can sample eight channels simultaneously,
+	\item and has a reasonably compatible digital interface whether it is serial or parallel.
+\end{itemize}
+
+\section{Processor}
+
+The processor can be either a simple micrcontroller or a digital signal processor (DSP); the latter may be more suited to this application. A processor is needed that:
+\begin{itemize}
+	\item can communicate with an external ADC, or communicate with digital microphones,
+	\item has a reasonably high clock-speed,
+	\item has hardware-accelerated FFT among other mathematical optimisations,
+	\item and can communicate through USB or any other simple interface e.g. UART to send results.
+\end{itemize}
+
 \chapter{Conclusion}
 
 After this first semester, the literature-review has mostly been completed and has given a deep insight into existing methods and examples that most relevant to this project and robotics in general. Mostly, signal-processing techniques related to either TDOA, beamforming, and MUSIC have been explored.

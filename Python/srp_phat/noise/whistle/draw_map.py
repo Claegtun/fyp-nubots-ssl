@@ -43,7 +43,7 @@ r_m = np.array([
 # The position of the source:
 p_true = np.array([[5.5, 3, 1]]).T
 # The absorption-factor of the walls:
-α = 0.5
+α = 0.99
 
 # Name the log files.
 log_angles = "./srp_phat/noise/whistle/logs/angles.csv"
@@ -57,8 +57,8 @@ np.savetxt(log_angles, [])
 # f_s, audio_anechoic_original = wavfile.read("./sounds/78508__joedeshon__referee_whistle_01.wav")
 f_s, audio_anechoic = wavfile.read("./sounds/418564__14fpanskabubik_lukas__whistle.wav")
 # f_s, audio_anechoic_original = wavfile.read("./pyroomacoustics/examples/input_samples/cmu_arctic_us_aew_a0001.wav")
-# audio_anechoic = signal.resample(audio_anechoic, audio_anechoic.shape[0]//2)
-# f_s = f_s//2
+# audio_anechoic = signal.resample(audio_anechoic, audio_anechoic.shape[0]*2)
+# f_s = f_s*2
 
 audio_anechoic = audio_anechoic/audio_anechoic.max()
 audio_anechoic = audio_anechoic[:40000,0]
@@ -148,6 +148,16 @@ for i_noise in range(n_noises):
     audio_reverb = room.mic_array.signals.T
     length = audio_reverb.shape[0]
 
+    # audio_reverb_old = room.mic_array.signals.T
+    # length = audio_reverb_old.shape[0]
+    # audio_reverb_old = signal.resample(audio_reverb_old, length*8, axis=1)
+
+    # audio_reverb = np.zeros((length,8))
+    # for m in range(8):
+    #     audio_reverb[:,m] = np.roll(audio_reverb_old[:,m], m)
+
+    # audio_reverb = signal.resample(audio_reverb, length, axis=1)
+
     # For the first few frames, only 
     start = 0
     end = 0
@@ -204,5 +214,5 @@ fig.suptitle("The Energy-Map of SRP-PHAT with a Whistle".format(
     noises[i_noise]
 ))
 fig.subplots_adjust(hspace = 0.3)
-plt.savefig("./srp_phat/noise/whistle/map.png", dpi = 512)
+# plt.savefig("./srp_phat/noise/whistle/map.png", dpi = 512)
 plt.show()
