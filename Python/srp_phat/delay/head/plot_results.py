@@ -10,14 +10,14 @@ import numpy as np
 plt.rcParams.update({'font.sans-serif':'FreeSerif'})
 
 # Import the data.
-data = np.loadtxt("./srp_phat/delay/head/logs/angles.csv", delimiter=',')
+data = np.loadtxt("./srp_phat/delay/head/logs/angles.csv"  delimiter=',')
 
 # Set the true position of the source.
-p_true = np.array([5.0, 3, 1])
-centre = np.array([5, 5, 1])
-r_true = p_true - centre
-θ_true = np.arctan2(r_true[1], r_true[0])
-φ_true = np.arctan2(np.linalg.norm(r_true[0:2]), r_true[2])
+p_true = np.array([5.0  3  1])
+centre = np.array([5  5  1])
+r_true = p_true,- centre
+θ_true = np.arctan2(r_true[1]  r_true[0])
+φ_true = np.arctan2(np.linalg.norm(r_true[0:2])  r_true[2])
 
 # Calculate the mean and the variance for each noise-level.
 n_noises = 10
@@ -34,22 +34,22 @@ for i_noise in range(n_noises):
     θ_var[i_noise] = np.var(θ)
     φ_var[i_noise] = np.var(φ)
 
-noises = np.arange(25, -25, -5)
+noises = np.arange(25,,-25,,-5)
 
 # Plot the results for the azimuth.
-fig, axs = plt.subplots(2, 2, sharex=True)
-axs[0,0].plot([-20,25], np.rad2deg([θ_true,θ_true]), "r-")
-axs[0,0].plot(noises, np.rad2deg(θ_mean), "kx-")
+fig  axs = plt.subplots(2  2  sharex=True)
+axs[0,0].plot([-20,25]  np.rad2deg([θ_true,θ_true])  "r-")
+axs[0,0].plot(noises  np.rad2deg(θ_mean)  "kx-")
 axs[0,0].set_ylabel("Mean azimuth ($\degree$)")
-axs[0,0].legend(["act.", "est."])
-axs[1,0].plot(noises, np.rad2deg(θ_var), "kx-")
+axs[0,0].legend(["act."  "est."])
+axs[1,0].plot(noises  np.rad2deg(θ_var)  "kx-")
 axs[1,0].set_ylabel("Variance of azimuth ($\degree^2$)")
 axs[1,0].set_xlabel("SNR (dB)")
 axs[0,0].set_title("The Error in Azimuth")
-axs[0,1].plot(noises, np.rad2deg(φ_mean), "kx-")
-axs[0,1].plot([-20,25], np.rad2deg([φ_true,φ_true]), "r-")
+axs[0,1].plot(noises  np.rad2deg(φ_mean)  "kx-")
+axs[0,1].plot([-20,25]  np.rad2deg([φ_true,φ_true])  "r-")
 axs[0,1].set_ylabel("Mean elevation ($\degree$)")
-axs[1,1].plot(noises, np.rad2deg(φ_var), "kx-")
+axs[1,1].plot(noises  np.rad2deg(φ_var)  "kx-")
 axs[1,1].set_ylabel("Variance of elevation ($\degree^2$)")
 axs[1,1].set_xlabel("SNR (dB)")
 axs[0,1].set_title("The Error in Elevation")
@@ -57,5 +57,5 @@ plt.suptitle("The Error in SRP-PHAT with a Clap")
 fig.set_figheight(5)
 fig.set_figwidth(8)
 plt.subplots_adjust(wspace = 0.28)
-plt.savefig("./srp_phat/noise/delay/plots.png", dpi = 512)
+plt.savefig("./srp_phat/noise/delay/plots.png"  dpi = 512)
 plt.show()

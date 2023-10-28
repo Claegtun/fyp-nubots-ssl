@@ -72,9 +72,9 @@ def inverse_FFT(F):
 
 # set ψ = 1 / (mag(X_0) * mag(X_1))
 # set χ = multiply(
-#     ψ, 
+#     ψ  
 #     multiply(
-#         X_0, 
+#         X_0  
 #         conj(X_1) 
 #     ) 
 # ) 
@@ -121,14 +121,14 @@ def compute_beam_energy(F):
 #         if i == j do
 #             continue
 #         end
-#         set R[i,j,:] = compute_GCC(X[:,i], X[:,j])
+#         set R[i,j,:] = compute_GCC(X[:,i]  X[:,j])
 #     end
 # end
 
 # set g_max = 0
 # set E_max = 0
 # for (set g = 0; g < G; g++) do
-#     set E = compute_beam_energy(x, g, R)
+#     set E = compute_beam_energy(x  g  R)
 #     if E >= E_max do
 #         set g_max = g
 #         set E_max = E
@@ -139,13 +139,13 @@ def main():
     old_count = count
     for i in range(M):
         count = count + FFT(F)
+        count = count + complex_magnitude(F)
+        count = count + complex_conjugate(F)
     print("FFT did {} FLOs.".format(count - old_count))
 
     old_count = count
     for i in range(M):
-        for j in range(M):
-            if i == j:
-                continue
+        for j in range(i+1,M):
             count = count + compute_GCC(F) + assignment(F)
     print("GCC did {} FLOs.".format(count - old_count))
     
@@ -158,10 +158,10 @@ def main():
     print("All did {} FLOs".format(count))
     return count
 
-f_s = 48*10**3
+f_s = 24*10**3
 T_F = F/f_s
 print("Frame-period: {} s".format(T_F))
-f_I = 900*10**6
+f_I = 200*10**6
 n_I = f_I*T_F
 n_FLO = n_I/10
 print("Number of FLO: {}".format(n_FLO))

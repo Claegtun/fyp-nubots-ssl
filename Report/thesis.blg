@@ -4,45 +4,64 @@ The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: ./zotero.bib
 Warning--to sort, need author or key in noauthor_handclaps_2005
-You've used 34 entries,
+Warning--to sort, need author or key in noauthor_comprehensive_nodate
+Warning--to sort, need author or key in noauthor_decibel_nodate
+Warning--to sort, need author or key in noauthor_spw2430hr5h-b_2014
+Warning--to sort, need author or key in noauthor_interfacing_2019
+Warning--to sort, need author or key in noauthor_arm_2021
+Warning--to sort, need author or key in noauthor_filter_2002
+Warning--to sort, need author or key in noauthor_sph1642ht5h-1_2017
+Warning--to sort, need author or key in noauthor_sisonic_nodate
+Warning--to sort, need author or key in noauthor_very_2009
+Warning--to sort, need author or key in noauthor_tlv27x_2016
+Warning--to sort, need author or key in noauthor_digital_2018
+Warning--to sort, need author or key in noauthor_tms320c5515_2013
+Warning--to sort, need author or key in noauthor_precision_2020
+Warning--to sort, need author or key in noauthor_a78mxx_2015
+Warning--to sort, need author or key in noauthor_8-channel_2021
+Warning--to sort, need author or key in noauthor_stm32h723733_2021
+Warning--empty publisher in abbott_decibels_nodate
+Warning--empty year in abbott_decibels_nodate
+Warning--empty year in lewis_understanding_nodate
+You've used 50 entries,
             2118 wiz_defined-function locations,
-            688 strings with 11650 characters,
-and the built_in function-call counts, 15283 in all, are:
-= -- 1562
-> -- 625
-< -- 24
-+ -- 251
-- -- 210
-* -- 1080
-:= -- 2262
-add.period$ -- 116
-call.type$ -- 34
-change.case$ -- 207
+            714 strings with 11893 characters,
+and the built_in function-call counts, 15753 in all, are:
+= -- 1540
+> -- 560
+< -- 18
++ -- 235
+- -- 180
+* -- 1042
+:= -- 2257
+add.period$ -- 115
+call.type$ -- 50
+change.case$ -- 243
 chr.to.int$ -- 0
-cite$ -- 35
-duplicate$ -- 618
-empty$ -- 1211
-format.name$ -- 210
-if$ -- 3351
+cite$ -- 70
+duplicate$ -- 650
+empty$ -- 1456
+format.name$ -- 180
+if$ -- 3497
 int.to.chr$ -- 0
-int.to.str$ -- 34
-missing$ -- 33
-newline$ -- 187
+int.to.str$ -- 50
+missing$ -- 29
+newline$ -- 216
 num.names$ -- 66
-pop$ -- 223
+pop$ -- 372
 preamble$ -- 1
-purify$ -- 173
+purify$ -- 190
 quote$ -- 0
-skip$ -- 531
+skip$ -- 579
 stack$ -- 0
-substring$ -- 1238
-swap$ -- 251
-text.length$ -- 24
+substring$ -- 1078
+swap$ -- 203
+text.length$ -- 18
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 136
-warning$ -- 1
-while$ -- 146
-width$ -- 36
-write$ -- 407
-(There was 1 warning)
+type$ -- 200
+warning$ -- 20
+while$ -- 128
+width$ -- 52
+write$ -- 458
+(There were 20 warnings)

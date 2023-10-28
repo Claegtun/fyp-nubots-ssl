@@ -30,23 +30,43 @@ Set-up
 # Build the cube of microphones 15.5 cm wide.
 centre = np.array([[5, 5, 1]]).T
 r_m = np.array([
-    [1,1,1],
-    [1,1,-1],
-    [1,-1,1],
-    [1,-1,-1],
-    [-1,1,1],
-    [-1,1,-1],
-    [-1,-1,1],
-    [-1,-1,-1]
-]).T * 15.5*10**(-2) / 2
+    [1,1,1],    # NE top
+    [1,1,-1],   # NE bottom
+    [1,-1,1],   # SE top
+    [1,-1,-1],  # SE bottom
+    [-1,1,1],   # NW top
+    [-1,1,-1],  # NW bottom
+    [-1,-1,1],  # SW top
+    [-1,-1,-1]  # SW bottom
+]).T * 91.2*10**(-3) / 2
 
 # The position of the source:
-p_true = np.array([[6.5, 3.5, 1]]).T
+p_true = np.array([[6.5, 3.5, 2.5]]).T
 # The absorption-factor of the walls:
 α = 0.5
 
+D = 91.2*10**(-3)*np.sqrt(3)
+c = 343
+
+def delay_along_arc(β, r_i):
+    r_true = p_true - centre
+    d_true = np.linalg.norm(r_true)
+    l_true = np.linalg.norm(r_true-r_i)
+    return (D*β/2 + np.linalg.norm([d_true,D/2]) - l_true)/c
+
+delay = np.array([
+    0,
+    delay_along_arc(np.deg2rad(19),r_m[:,1]),
+    0,
+    0,
+    delay_along_arc(np.deg2rad(19),r_m[:,4]),
+    delay_along_arc(np.pi/2,r_m[:,5]),
+    0,
+    delay_along_arc(np.deg2rad(19),r_m[:,7])
+])
+
 # Name the log files.
-log_angles = "./main_method/noise/solid/logs/angles.csv"
+log_angles = "./main_method/delay/head/logs/angles.csv"
 
 # Clear the logs.
 np.savetxt(log_angles, [])
@@ -57,11 +77,11 @@ f_s, audio_anechoic = wavfile.read("./sounds/345__anton__handclaps.wav")
 # f_s, audio_anechoic_original = wavfile.read("./sounds/78508__joedeshon__referee_whistle_01.wav")
 # f_s, audio_anechoic = wavfile.read("./sounds/418564__14fpanskabubik_lukas__whistle.wav")
 # f_s, audio_anechoic_original = wavfile.read("./pyroomacoustics/examples/input_samples/cmu_arctic_us_aew_a0001.wav")
-audio_anechoic = signal.resample(audio_anechoic, audio_anechoic.shape[0]//2)
-f_s = f_s//2
+audio_anechoic = signal.resample(audio_anechoic, audio_anechoic.shape[0]//4)
+f_s = f_s//4
 
 audio_anechoic = audio_anechoic/audio_anechoic.max()
-audio_anechoic = audio_anechoic[0:180000//2]
+audio_anechoic = audio_anechoic[171500//4:173000//4]
 
 def set_up_room(σ2):
     """
@@ -144,29 +164,33 @@ for i_noise in range(n_noises):
     # Simulate the response from the source to the array.
     room.simulate(snr = noises[i_noise])
 
-    # Load the output of the simulation. Each channel is from one microphone.
-    # audio_reverb = room.mic_array.signals.T
-    # length = audio_reverb.shape[0]
-
+    # Upsample the original tenfold.
     audio_reverb_old = room.mic_array.signals.T
     length = audio_reverb_old.shape[0]
-    # audio_reverb_upsampled = np.zeros((length*8,8))
-    # for m in range(8):
-    #     audio_reverb_upsampled[:,m] = signal.resample(audio_reverb_old[:,m], length*8)
+    audio_reverb_upsampled = np.zeros((length*10,8))
+    for m in range(8):
+        audio_reverb_upsampled[:,m] = signal.resample(
+            audio_reverb_old[:,m], 
+            length*10
+        )
 
-    # audio_reverb_delayed = np.zeros((length*8,8))
+    # Delay each channel and then downsample it back to the original rate.
+    audio_reverb_delayed = np.zeros((length*10,8))
     audio_reverb = np.zeros((length,8))
-    # for m in range(8):
-    #     audio_reverb_delayed[:,m] = np.roll(audio_reverb_upsampled[:,m], m)
-    #     audio_reverb[:,m] = signal.resample(audio_reverb_delayed[:,m], length)
-
-    audio_reverb_old[:,4] = np.roll(audio_reverb_old[:,4], 1)
-    audio_reverb_old[:,5] = np.roll(audio_reverb_old[:,5], 1)
+    for m in range(8):
+        audio_reverb_delayed[:,m] = np.roll(
+            audio_reverb_upsampled[:,m], 
+            int(np.rint(delay[m]*f_s*10))
+        )
+        audio_reverb[:,m] = signal.resample(
+            audio_reverb_delayed[:,m], 
+            length
+        )
 
     # Make the last frame.
-    start = 85900*F//F
+    start = 0
     end = start + F
-    x = audio_reverb_old[start:end, :]
+    x = audio_reverb[start:end, :]
 
     # Estimate the direction of the source.
     θ, φ = estimator.estimate_direction(
@@ -202,9 +226,9 @@ for i_noise in range(n_noises):
 
 axs[1,0].set_xlabel("Azimuth ($\degree$)")
 axs[1,0].set_ylabel("Elevation ($\degree$)")
-fig.suptitle("The Energy-Map of SRP-PHAT with a Whistle".format(
+fig.suptitle("The Energy-Map against Noise with Delays along the Head".format(
     noises[i_noise]
 ))
 fig.subplots_adjust(hspace = 0.3)
-# plt.savefig("./main_method/noise/whistle/map.png", dpi = 512)
+plt.savefig("./main_method/delay/head/map.png", dpi = 1024)
 plt.show()

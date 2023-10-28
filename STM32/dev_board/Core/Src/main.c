@@ -38,6 +38,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+//#define SERIAL_NPARA
 
 /* USER CODE END PD */
 
@@ -50,13 +51,15 @@
 
 /* USER CODE BEGIN PV */
 
-volatile static uint16_t rx_buffer[1024];
+volatile static uint16_t data_buffer[4][1024];
+volatile static uint32_t rx_buffer[1024*8];
 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
+void DMA_TIM8_callback(DMA_HandleTypeDef* hdma);
 
 /* USER CODE END PFP */
 
@@ -88,7 +91,6 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-  MX_DMA_Init();
 
   /* USER CODE END SysInit */
 
@@ -102,45 +104,82 @@ int main(void)
   MX_TIM2_Init();
   MX_USART3_UART_Init();
   MX_TIM3_Init();
+  MX_SPI2_Init();
+  MX_SPI3_Init();
+  MX_SPI4_Init();
+  MX_TIM4_Init();
+  MX_TIM5_Init();
   /* USER CODE BEGIN 2 */
-  /*HAL_GPIO_WritePin(SPI1_nCS_GPIO_Port, SPI1_nCS_Pin, GPIO_PIN_SET);
-
-  HAL_GPIO_WritePin(ADC_CNVST_GPIO_Port, ADC_CNVST_Pin, GPIO_PIN_RESET);
-
-  HAL_GPIO_WritePin(ADC_CNVST_GPIO_Port, ADC_CNVST_Pin, GPIO_PIN_SET);
-  for(int i = 0; i < 5; i++);
-  HAL_GPIO_WritePin(ADC_CNVST_GPIO_Port, ADC_CNVST_Pin, GPIO_PIN_RESET);*/
 
   // Disable the count.
-  TIM8->CR1 &= ~TIM_CR1_CEN;
+  //TIM8->CR1 &= ~TIM_CR1_CEN;
   // Select TI2 as the input.
-  TIM8->CCMR1 |= TIM_CCMR1_CC2S_0;
+  //TIM8->CCMR1 |= TIM_CCMR1_CC2S_0;
   // ?
-  TIM8->CCER |= TIM_CCER_CC2P;
-  TIM8->ARR = 11;
-  TIM8->CCR1 = 6;
-  TIM8->RCR = 32;
+  //TIM8->CCER |= TIM_CCER_CC2P;
+  //TIM8->ARR = 11;
+  //TIM8->CCR1 = 6;
+  //TIM8->RCR = 32;
 
   // Disable the count.
-  TIM3->CR1 &= ~TIM_CR1_CEN;
+  //TIM3->CR1 &= ~TIM_CR1_CEN;
   // Select TI2 as the input.
-  TIM3->CCMR1 |= TIM_CCMR1_CC2S_0;
+  //TIM3->CCMR1 |= TIM_CCMR1_CC2S_0;
   // ?
   //TIM3->CCER |= TIM_CCER_CC2P;
-  TIM3->ARR = 399;
-  TIM3->CCR1 = 1;
+  //TIM3->ARR = 399;
+  //TIM3->CCR1 = 1;
 
-  uint16_t tx_buffer = 0x0210;
+#ifndef SERIAL_NPARA
+  CLEAR_BIT(TIM8->CR1, TIM_CR1_ARPE);
+  TIM8->ARR = 53; //27
+  TIM8->CCR1 = 40; //14
+  TIM8->RCR = 7;
+  SET_BIT(TIM8->CR1, TIM_CR1_ARPE);
+
+  //SET_BIT(TIM8->CCER, TIM_CCER_CC1P);
+#endif
+
+  // Reset the ADC.
   HAL_GPIO_WritePin(ADC_RESET_GPIO_Port, ADC_RESET_Pin, GPIO_PIN_SET);
-  HAL_Delay(1);
+  HAL_Delay(1); // > 3 us
   HAL_GPIO_WritePin(ADC_RESET_GPIO_Port, ADC_RESET_Pin, GPIO_PIN_RESET);
-  HAL_Delay(1);
+  HAL_Delay(1); // > 253 us
+
+#ifndef SERIAL_NPARA
+  GPIOE->MODER = 0x00000000UL;
+
+  __HAL_TIM_ENABLE_DMA(&htim5, TIM_DMA_CC1);
+  htim5.hdma[TIM_DMA_ID_CC1]->XferCpltCallback = DMA_TIM8_callback;
+  HAL_DMA_Start_IT(htim5.hdma[TIM_DMA_ID_CC1], (uint32_t)&GPIOE->IDR, (uint32_t)rx_buffer, 1024*8);
+#endif
+
+  // Start the SCLK timer, the nCS timer, and the CONVST timer respectively.
+  HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
-  for (int i = 0; i < 50; i++);
-  HAL_SPI_Transmit(&hspi1, (uint8_t*)&tx_buffer, 1, HAL_MAX_DELAY);
-  HAL_SPI_Receive_DMA(&hspi1, (uint8_t*)rx_buffer, 1024);
+
+#ifdef SERIAL_NPARA
+  // Write to the configuration register that four data lines are needed.
+  uint16_t tx_buffer[2] = {0x0210, 0x0000};
+  uint16_t rx_buffer[2] = {0xAAAA, 0x0008};
+  do {
+	  tx_buffer[0] = 0x0210;
+	  HAL_SPI_Transmit(&hspi1, (uint8_t*)&tx_buffer[0], 1, HAL_MAX_DELAY);
+	  tx_buffer[0] = 0x4210;
+	  HAL_SPI_TransmitReceive(&hspi1, (uint8_t*)&tx_buffer, (uint8_t*)&rx_buffer, 2, HAL_MAX_DELAY);
+  } while(rx_buffer[1] != 0x0010);
+
+  // Begin receiving data.
+  CLEAR_BIT(TIM2->CR1, TIM_CR1_CEN);
+  HAL_SPI_Receive_DMA(&hspi1, (uint8_t*)data_buffer[0], 1024);
+  HAL_SPI_Receive_DMA(&hspi2, (uint8_t*)data_buffer[1], 1024);
+  HAL_SPI_Receive_DMA(&hspi3, (uint8_t*)data_buffer[2], 1024);
+  HAL_SPI_Receive_DMA(&hspi4, (uint8_t*)data_buffer[3], 1024);
+  SET_BIT(TIM2->CR1, TIM_CR1_CEN);
+#endif
 
   /* USER CODE END 2 */
 
@@ -148,7 +187,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  DMA_Stream_TypeDef* dma = hspi1.hdmarx->Instance;
 	  HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
 	  HAL_Delay(500);
     /* USER CODE END WHILE */
@@ -219,27 +257,6 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
-	/*if (GPIO_Pin == ADC_BUSY_Pin) {
-		HAL_GPIO_WritePin(SPI1_nCS_GPIO_Port, SPI1_nCS_Pin, GPIO_PIN_RESET);
-		HAL_StatusTypeDef status = HAL_SPI_TransmitReceive_IT(
-				&hspi1,
-				(uint8_t*)tx_buffer,
-				(uint8_t*)rx_buffer,
-				4
-		);
-	}*/
-}
-
-void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi) {
-	/*if (hspi == &hspi1) {
-		HAL_GPIO_WritePin(SPI1_nCS_GPIO_Port, SPI1_nCS_Pin, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(ADC_CNVST_GPIO_Port, ADC_CNVST_Pin, GPIO_PIN_SET);
-		for(int i = 0; i < 5; i++);
-		HAL_GPIO_WritePin(ADC_CNVST_GPIO_Port, ADC_CNVST_Pin, GPIO_PIN_RESET);
-	}*/
-}
-
 void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
 	if (hspi == &hspi1) {
 		volatile int robert_frost = 0;
@@ -249,6 +266,13 @@ void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
 void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi) {
 	if (hspi == &hspi1) {
 		volatile int robert_frost = 0;
+	}
+}
+
+void DMA_TIM8_callback(DMA_HandleTypeDef* hdma) {
+	if (hdma == htim5.hdma[TIM_DMA_ID_CC1]) {
+		volatile int robert_frost = 0;
+		HAL_GPIO_TogglePin(SIG_0_GPIO_Port, SIG_0_Pin);
 	}
 }
 

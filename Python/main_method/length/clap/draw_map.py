@@ -38,15 +38,15 @@ r_m = np.array([
     [-1,1,-1],
     [-1,-1,1],
     [-1,-1,-1]
-]).T * 15.5*10**(-2) / 2
+]).T * 91.2*10**(-3) / 2
 
 # The position of the source:
-p_true = np.array([[5.5, 3, 1]]).T
+p_true = np.array([[5.5, 3, 2]]).T
 # The absorption-factor of the walls:
 α = 0.5
 
 # Name the log files.
-log_angles = "./main_method/noise/clap/logs/angles.csv"
+log_angles = "./main_method/length/clap/logs/angles.csv"
 
 # Clear the logs.
 np.savetxt(log_angles, [])
@@ -57,11 +57,11 @@ f_s, audio_anechoic = wavfile.read("./sounds/345__anton__handclaps.wav")
 # f_s, audio_anechoic_original = wavfile.read("./sounds/78508__joedeshon__referee_whistle_01.wav")
 # f_s, audio_anechoic_original = wavfile.read("./sounds/418564__14fpanskabubik_lukas__whistle.wav")
 # f_s, audio_anechoic_original = wavfile.read("./pyroomacoustics/examples/input_samples/cmu_arctic_us_aew_a0001.wav")
-audio_anechoic = signal.resample(audio_anechoic, audio_anechoic.shape[0]//2)
-f_s = f_s//2
+audio_anechoic = signal.resample(audio_anechoic, audio_anechoic.shape[0]//4)
+f_s = f_s//4
 
 audio_anechoic = audio_anechoic/audio_anechoic.max()
-audio_anechoic = audio_anechoic[0:180000//2]
+audio_anechoic = audio_anechoic[0:180000//4]
 
 def set_up_room(σ2):
     """
@@ -108,6 +108,7 @@ The Beamforming Method
 """
 
 # Get the number of samples in the frame.
+# This should not matter since the noise is not being calculated.
 F = 1024
 
 # Make the object for the SRP-PHAT.
@@ -123,9 +124,8 @@ The Simulation of the Room
 """
 
 # Set the number of simulations, etc.
-# noises = np.arange(25,-25,-5)
-noises = np.array([10,0,-10,-20])
-n_noises = noises.shape[0]
+n_lengths = 4
+lengths = np.array([64, 128, 512, 2048])
 
 # Set the room up.
 chrono = time.time()
@@ -135,41 +135,42 @@ print("Room done in", time.time() - chrono, "s.")
 n_success = 0
 
 all_timed = time.time()
-noise_timed = all_timed
+length_timed = all_timed
 
 fig, axs = plt.subplots(2, 2)
 
-for i_noise in range(n_noises):
+for i_length in range(n_lengths):
 
     # Simulate the response from the source to the array.
-    room.simulate(snr = noises[i_noise])
+    room.simulate(snr = 10)
 
     # Load the output of the simulation. Each channel is from one microphone.
     audio_reverb = room.mic_array.signals.T
     length = audio_reverb.shape[0]
 
-    # # Make the frame from all microphones.
-    # start = np.clip(np.argmax(audio_reverb[:,0]) - F, 0, None) + F//2
-    # end = start + F
-    # x = audio_reverb[start:end, :]
-
-    # For the first few frames, only 
-    start = 0
-    end = 0
-    for i_start in range(0, 85900*F//F, F):
-        start = i_start
-        end = start + F
-
-        # Make the frame from all microphones.
-        x = audio_reverb[start:end, :]
-
-        # Calculate the noise in this frame.
-        estimator.calculate_noise(x)
-
-    # Make the last frame.
-    start = start + F
-    end = end + F
+    # Make the frame from all microphones.
+    F = lengths[i_length]
+    start = np.clip(np.argmax(audio_reverb[:,0]) - F, 0, None) + F//2
+    end = start + F
     x = audio_reverb[start:end, :]
+
+    # # For the first few frames, only 
+    # start = 0
+    # end = 0
+    # for i_start in range(0, 85900*F//F, F):
+    #     start = i_start
+    #     end = start + F
+
+    #     # Make the frame from all microphones.
+    #     x = audio_reverb[start:end, :]
+
+    #     # Calculate the noise in this frame.
+    #     estimator.calculate_noise(x)
+
+    # # Make the last frame.
+    # start = start + F
+    # end = end + F
+    # x = audio_reverb[start:end, :]
 
     # Estimate the direction of the source.
     θ, φ = estimator.estimate_direction(
@@ -177,7 +178,7 @@ for i_noise in range(n_noises):
         τ, 
         grid, 
         map=True, 
-        ax=axs[i_noise//2, i_noise%2]
+        ax=axs[i_length//2, i_length%2]
     )
 
     # Calculate the error.
@@ -188,26 +189,26 @@ for i_noise in range(n_noises):
     Δφ = np.abs(φ_true - φ).item()
 
     # Plot the esimated and the true location.
-    axs[i_noise//2, i_noise%2].plot(np.rad2deg(θ_true), np.rad2deg(φ_true), "xr")
-    axs[i_noise//2, i_noise%2].plot(np.rad2deg(θ), np.rad2deg(φ), "xg")
-    axs[i_noise//2, i_noise%2].set_title("SNR of {} dB".format(
-        noises[i_noise]
+    axs[i_length//2, i_length%2].plot(np.rad2deg(θ_true), np.rad2deg(φ_true), "xr")
+    axs[i_length//2, i_length%2].plot(np.rad2deg(θ), np.rad2deg(φ), "xg")
+    axs[i_length//2, i_length%2].set_title("Frame-length of {} S".format(
+        lengths[i_length]
     ), fontname="FreeSerif")
 
     # Print that the noise-level has been done.
-    print("{} noise-level of SNR = {:.1f} dB done"
+    print("{} frame-length of F = {:.1f} S done"
         " and took {:.2f} s.".format(
-        ordinal(i_noise+1),
-        noises[i_noise],
-        time.time() - noise_timed
+        ordinal(i_length+1),
+        lengths[i_length],
+        time.time() - length_timed
     ))
-    noise_timed = time.time()
+    length_timed = time.time()
 
 axs[1,0].set_xlabel("Azimuth ($\degree$)")
 axs[1,0].set_ylabel("Elevation ($\degree$)")
-fig.suptitle("The Energy-Map of SRP-PHAT with a Clap".format(
-    noises[i_noise]
+fig.suptitle("The Energy-Map against Frame-length with a Clap".format(
+    lengths[i_length]
 ))
 fig.subplots_adjust(hspace = 0.3)
-plt.savefig("./main_method/noise/clap/map.png", dpi = 512)
+plt.savefig("./main_method/length/clap/map.png", dpi = 1024)
 plt.show()

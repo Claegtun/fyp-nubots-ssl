@@ -1,25 +1,25 @@
 // complex addition
-    // 2 real additions
+, , // 2 real additions
 // complex multiplication
-    // 4 real multiplications
-    // 2 real additions
-    // 2 assignments
+, , // 4 real multiplications
+, , // 2 real additions
+, , // 2 assignments
 // complex magnitude
-    // 4 real multiplications
-    // 1 real addition
-    // 1 square-root
+, , // 4 real multiplications
+, , // 1 real addition
+, , // 1 square-root
 // complex conjugate
-    // 1 negation
-    // 2 assignments
+, , // 1 negation
+, , // 2 assignments
 
 // 81920 complex additions
 // 4096 complex multiplications
 // 8 assignments
 foreach (x_i in x) do
-    // 10240 complex additions
-    // 5120 complex multiplications
-    // 1 assignment
-    set X = FFT(x)
+, , // 10240 complex additions
+, , // 5120 complex multiplications
+, , // 1 assignment
+, , set X = FFT(x)
 end
 
 // 114688 complex magnitudes 
@@ -31,31 +31,31 @@ end
 // 224 assignments
 // 224 indices
 for (set i = 0; i < M; i++) do
-    for (set j = 0; j < M; j++) do
-        // 1 comparison
-        if i == j do
-            continue
-        end
-        // 2048 complex magnitudes 
-        // 1024 real multiplications
-        // 1024 real inverses
-        // 1024 complex conjugates
-        // 11264 complex additions
-        // 6144 complex multiplications
-        // 4 assignments
-        // 4 indices
-        set R[i,j,:] = compute_GCC(X[:,i], X[:,j])
-    end
+, , for (set j = 0; j < M; j++) do
+, , , , // 1 comparison
+, , , , if i == j do
+, , , , , , continue
+, , , , end
+, , , , // 2048 complex magnitudes 
+, , , , // 1024 real multiplications
+, , , , // 1024 real inverses
+, , , , // 1024 complex conjugates
+, , , , // 11264 complex additions
+, , , , // 6144 complex multiplications
+, , , , // 4 assignments
+, , , , // 4 indices
+, , , , set R[i,j,:] = compute_GCC(X[:,i], X[:,j])
+, , end
 end
 
 set g_max = 0
 set E_max = 0
 for (set g = 0; g < G; g++) do
-    set E = compute_beam_energy(x, g, R)
-    if E >= E_max do
-        set g_max = g
-        set E_max = E
-    end
+, , set E = compute_beam_energy(x, g, R)
+, , if E >= E_max do
+, , , , set g_max = g
+, , , , set E_max = E
+, , end
 end
 
 // F/2*log_2(F) complex additions
@@ -72,26 +72,26 @@ end
 // F+F/2*log_2(F) complex multiplications
 // 3 assignments
 function compute_GCC(X_0, X_1) do
-    // 2*F complex magnitudes
-    // F real multiplications
-    // F real inverses
-    // 1 assignment
-    set ψ = 1 / (mag(X_0) * mag(X_1))
-    // F complex conjugates
-    // F complex multiplications
-    // F complex multiplications
-    // 1 assignment
-    set χ = multiply(
-        ψ, 
-        multiply(
-            X_0, 
-            conj(X_1) 
-        ) 
-    ) 
-    // F/2*log_2(F) complex additions
-    // F*log_2(F) complex multiplications
-    // 1 assignment
-    set R_01 = real(invFFT(χ))
+, , // 2*F complex magnitudes
+, , // F real multiplications
+, , // F real inverses
+, , // 1 assignment
+, , set ψ = 1 / (mag(X_0) * mag(X_1))
+, , // F complex conjugates
+, , // F complex multiplications
+, , // F complex multiplications
+, , // 1 assignment
+, , set χ = multiply(
+, , , , ψ, 
+, , , , multiply(
+, , , , , , X_0, 
+, , , , , , conj(X_1) 
+, , , , ) 
+, , ) 
+, , // F/2*log_2(F) complex additions
+, , // F*log_2(F) complex multiplications
+, , // 1 assignment
+, , set R_01 = real(invFFT(χ))
 end
 
 // 57 assignments
@@ -99,17 +99,17 @@ end
 // 56 comparisons
 // 336 indices
 function compute_beam_energy(x, g, R) do
-    E = 0
-    for (set i = 0; i < M; i++) do
-        for (set j = 0; j < M; j++) do
-            // 1 comparison
-            if i == j do
-                continue
-            end
-            // 1 assignment
-            // 1 addition
-            // 6 indices
-            set E = E + R[i,j,τ[g,i,j]]
-        end
-    end
+, , E = 0
+, , for (set i = 0; i < M; i++) do
+, , , , for (set j = 0; j < M; j++) do
+, , , , , , // 1 comparison
+, , , , , , if i == j do
+, , , , , , , , continue
+, , , , , , end
+, , , , , , // 1 assignment
+, , , , , , // 1 addition
+, , , , , , // 6 indices
+, , , , , , set E = E + R[i,j,τ[g,i,j]]
+, , , , end
+, , end
 end

@@ -38,10 +38,10 @@ r_m = np.array([
     [-1,1,-1],
     [-1,-1,1],
     [-1,-1,-1]
-]).T * 15.5*10**(-2) / 2
+]).T * 91.2*10**(-3) / 2
 
 # The position of the source:
-p_true = np.array([[5.5, 3, 1]]).T
+p_true = np.array([[5.5, 3, 2]]).T
 # The absorption-factor of the walls:
 α = 0.5
 
@@ -153,7 +153,7 @@ for i_frequency in range(n_freqencies):
     print("Room done in", time.time() - chrono, "s.")
 
     # Simulate the response from the source to the array.
-    room.simulate(snr = 10)
+    room.simulate(snr = 0)
 
     # Load the output of the simulation. Each channel is from one microphone.
     audio_reverb = room.mic_array.signals.T
@@ -216,9 +216,9 @@ for i_frequency in range(n_freqencies):
 
 axs[1,0].set_xlabel("Azimuth ($\degree$)")
 axs[1,0].set_ylabel("Elevation ($\degree$)")
-fig.suptitle("The Energy-Map of SRP-PHAT with a Clap".format(
+fig.suptitle("The Energy-Map against Sampling Frequency with a Clap".format(
     frequencies[i_frequency]
 ))
 fig.subplots_adjust(hspace = 0.3)
-plt.savefig("./main_method/frequency/clap/map.png", dpi = 512)
+plt.savefig("./main_method/frequency/clap/map.png", dpi = 1024)
 plt.show()

@@ -12,11 +12,11 @@ ssfont = {"fontname":"Times New Roman"}
 # Build the rectangular pyramid of microphones 25 cm wide and 12.5 tall.
 centre = np.array([[5, 5, 1]]).T
 # r_m = np.array([
-#     [0,0,1],
-#     [1,1,0],
-#     [1,-1,0],
-#     [-1,-1,0],
-#     [-1,1,0]
+#  ,  [0,0,1],
+#  ,  [1,1,0],
+#  ,  [1,-1,0],
+#  ,  [-1,-1,0],
+#  ,  [-1,1,0]
 # ]).T * 12.5*10**(-2)
 r_m = np.array([
     [1,1,1],

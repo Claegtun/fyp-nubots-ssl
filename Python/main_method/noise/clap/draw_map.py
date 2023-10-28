@@ -38,10 +38,10 @@ r_m = np.array([
     [-1,1,-1],
     [-1,-1,1],
     [-1,-1,-1]
-]).T * 15.5*10**(-2) / 2
+]).T * 91.2*10**(-3) / 2
 
 # The position of the source:
-p_true = np.array([[5.5, 3, 1]]).T
+p_true = np.array([[5.5, 3, 2]]).T
 # The absorption-factor of the walls:
 α = 0.5
 
@@ -57,11 +57,11 @@ f_s, audio_anechoic = wavfile.read("./sounds/345__anton__handclaps.wav")
 # f_s, audio_anechoic_original = wavfile.read("./sounds/78508__joedeshon__referee_whistle_01.wav")
 # f_s, audio_anechoic_original = wavfile.read("./sounds/418564__14fpanskabubik_lukas__whistle.wav")
 # f_s, audio_anechoic_original = wavfile.read("./pyroomacoustics/examples/input_samples/cmu_arctic_us_aew_a0001.wav")
-audio_anechoic = signal.resample(audio_anechoic, audio_anechoic.shape[0]//2)
-f_s = f_s//2
+audio_anechoic = signal.resample(audio_anechoic, audio_anechoic.shape[0]//4)
+f_s = f_s//4
 
 audio_anechoic = audio_anechoic/audio_anechoic.max()
-audio_anechoic = audio_anechoic[0:180000//2]
+audio_anechoic = audio_anechoic[0:180000//4]
 
 def set_up_room(σ2):
     """
@@ -148,28 +148,28 @@ for i_noise in range(n_noises):
     audio_reverb = room.mic_array.signals.T
     length = audio_reverb.shape[0]
 
-    # # Make the frame from all microphones.
-    # start = np.clip(np.argmax(audio_reverb[:,0]) - F, 0, None) + F//2
-    # end = start + F
-    # x = audio_reverb[start:end, :]
-
-    # For the first few frames, only 
-    start = 0
-    end = 0
-    for i_start in range(0, 85900*F//F, F):
-        start = i_start
-        end = start + F
-
-        # Make the frame from all microphones.
-        x = audio_reverb[start:end, :]
-
-        # Calculate the noise in this frame.
-        estimator.calculate_noise(x)
-
-    # Make the last frame.
-    start = start + F
-    end = end + F
+    # Make the frame from all microphones.
+    start = np.clip(np.argmax(audio_reverb[:,0]) - F, 0, None) + F//2
+    end = start + F
     x = audio_reverb[start:end, :]
+
+    # # For the first few frames, only 
+    # start = 0
+    # end = 0
+    # for i_start in range(0, 85900*F//F, F):
+    #     start = i_start
+    #     end = start + F
+
+    #     # Make the frame from all microphones.
+    #     x = audio_reverb[start:end, :]
+
+    #     # Calculate the noise in this frame.
+    #     estimator.calculate_noise(x)
+
+    # # Make the last frame.
+    # start = start + F
+    # end = end + F
+    # x = audio_reverb[start:end, :]
 
     # Estimate the direction of the source.
     θ, φ = estimator.estimate_direction(
@@ -205,9 +205,9 @@ for i_noise in range(n_noises):
 
 axs[1,0].set_xlabel("Azimuth ($\degree$)")
 axs[1,0].set_ylabel("Elevation ($\degree$)")
-fig.suptitle("The Energy-Map of SRP-PHAT with a Clap".format(
+fig.suptitle("The Energy-Map against Noise with a Clap".format(
     noises[i_noise]
 ))
 fig.subplots_adjust(hspace = 0.3)
-plt.savefig("./main_method/noise/clap/map.png", dpi = 512)
+plt.savefig("./main_method/noise/clap/map.png", dpi = 1024)
 plt.show()

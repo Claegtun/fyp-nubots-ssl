@@ -35,10 +35,10 @@ r_m = np.array([
     [-1,1,-1],
     [-1,-1,1],
     [-1,-1,-1]
-]).T * 15.5*10**(-2) / 2
+]).T * 91.2*10**(-3) / 2
 
 # The position of the source:
-p_true = np.array([[5.5, 3, 1]]).T
+p_true = np.array([[5.5, 3, 2]]).T
 # The absorption-factor of the walls:
 α = 0.5
 
@@ -163,7 +163,7 @@ for i_frequency in range(n_frequencies):
     for i_run in range(n_runs):
 
         # Simulate the response from the source to the array.
-        room.simulate(snr = 10)
+        room.simulate(snr = 0)
 
         # Load the output of the simulation. Each channel is from one 
         # microphone.

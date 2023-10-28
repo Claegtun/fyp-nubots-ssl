@@ -13,7 +13,7 @@ plt.rcParams.update({'font.sans-serif':'FreeSerif'})
 data = np.loadtxt("./main_method/delay/head/logs/angles.csv", delimiter=',')
 
 # Set the true position of the source.
-p_true = np.array([5.0, 3, 1])
+p_true = np.array([6.5, 3.5, 2.5])
 centre = np.array([5, 5, 1])
 r_true = p_true - centre
 θ_true = np.arctan2(r_true[1], r_true[0])
@@ -34,7 +34,7 @@ for i_noise in range(n_noises):
     θ_var[i_noise] = np.var(θ)
     φ_var[i_noise] = np.var(φ)
 
-noises = np.arange(25, -25, -5)
+noises = np.arange(25,-25,-5)
 
 # Plot the results for the azimuth.
 fig, axs = plt.subplots(2, 2, sharex=True)
@@ -53,9 +53,9 @@ axs[1,1].plot(noises, np.rad2deg(φ_var), "kx-")
 axs[1,1].set_ylabel("Variance of elevation ($\degree^2$)")
 axs[1,1].set_xlabel("SNR (dB)")
 axs[0,1].set_title("The Error in Elevation")
-plt.suptitle("The Error in SRP-PHAT with a Clap")
+plt.suptitle("The Simulated Error against Noise with Delays along the Head")
 fig.set_figheight(5)
 fig.set_figwidth(8)
 plt.subplots_adjust(wspace = 0.28)
-plt.savefig("./main_method/delay/head/plots.png", dpi = 512)
+plt.savefig("./main_method/delay/head/plots.png", dpi = 1024)
 plt.show()

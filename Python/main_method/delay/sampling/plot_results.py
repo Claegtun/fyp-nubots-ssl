@@ -34,7 +34,7 @@ for i_noise in range(n_noises):
     θ_var[i_noise] = np.var(θ)
     φ_var[i_noise] = np.var(φ)
 
-noises = np.arange(25, -25, -5)
+noises = np.arange(25,,-25,,-5)
 
 # Plot the results for the azimuth.
 fig, axs = plt.subplots(2, 2, sharex=True)

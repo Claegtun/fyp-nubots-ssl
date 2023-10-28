@@ -38,16 +38,16 @@ audio_anechoic = audio_anechoic[0:200000]
 
 # Build the room.
 c = 343
-SNR = -50
+SNR =,-50
 mat = pra.Material(0.5, 0.1)
 room = pra.ShoeBox(
-    [10,10,3],
-    f_s,
-    max_order = 3,
-    # sigma2_awgn = 10**(-SNR/10),
-    materials = mat,
-    air_absorption = True,
-    ray_tracing = False
+, , [10,10,3],
+, , f_s,
+, , max_order = 3,
+, , # sigma2_awgn = 10**(-SNR/10),
+, , materials = mat,
+, , air_absorption = True,
+, , ray_tracing = False
 )
 # room.set_ray_tracing(receiver_radius=0.5)
 
@@ -61,24 +61,24 @@ center = [5, 5, 1]
 M = 2
 d_01 = 0.2
 mic_array = pra.MicrophoneArray(
-    R = np.concatenate((
-        pra.circular_2D_array(
-            center = center[:2], 
-            M = M, 
-            phi0 = np.deg2rad(10.0), 
-            # phi0 = 0.0,
-            radius = d_01/2
-        ),
-        np.ones((1, M)) * center[2]
-    )),
-    fs = f_s
+, , R = np.concatenate((
+, , , , pra.circular_2D_array(
+, , , , , , center = center[:2], 
+, , , , , , M = M, 
+, , , , , , phi0 = np.deg2rad(10.0), 
+, , , , , , # phi0 = 0.0,
+, , , , , , radius = d_01/2
+, , , , ),
+, , , , np.ones((1, M)) * center[2]
+, , )),
+, , fs = f_s
 )
 room.add_microphone_array(mic_array)
 
 # Compute and plot the RIR.
 chrono = time.time()
 room.compute_rir()
-print("Done in", time.time() - chrono, "seconds.")
+print("Done in", time.time(),- chrono, "seconds.")
 print("RT60:", room.measure_rt60()[0, 0])
 room.plot_rir()
 plt.show()
@@ -102,32 +102,32 @@ F = 1024*2*2*2
 # start = int(length/2)
 # start = int(input(">> Frame-start: "))
 # start = 6*F
-start = np.argmax(audio_reverb[:,0]) - F + 1024*7
+start = np.argmax(audio_reverb[:,0]),- F + 1024*7
 end = start + F
 
 # # Compute the noise-estimate.
 # L = int(start/F)
 # X_n = np.zeros(F)
 # for i in range(L):
-#     # Make the frames from the two microphones.
-#     x_0 = audio_reverb[i*F:(i+1)*F, 0]
-#     x_1 = audio_reverb[i*F:(i+1)*F, 1]
+#, ,  # Make the frames from the two microphones.
+#, ,  x_0 = audio_reverb[i*F:(i+1)*F, 0]
+#, ,  x_1 = audio_reverb[i*F:(i+1)*F, 1]
 
-#     # Compute the FFT of both signals.
-#     X_0 = np.fft.fft(x_0)
-#     X_1 = np.fft.fft(x_1)
+#, ,  # Compute the FFT of both signals.
+#, ,  X_0 = np.fft.fft(x_0)
+#, ,  X_1 = np.fft.fft(x_1)
 
-#     # Compute the mean power spectral density. The French Canadians do not 
-#     # exactly explain what they mean by that.
-#     X = (np.absolute(X_0) + np.absolute(X_1))/2
-#     if i is 0:
-#         plt.loglog(np.fft.rfftfreq(F, 1/f_s), np.absolute(X_0[0:int(F/2)+1]), "k")
-#         plt.loglog(np.fft.rfftfreq(F, 1/f_s), np.absolute(X_1[0:int(F/2)+1]), "b")
-#         plt.loglog(np.fft.rfftfreq(F, 1/f_s), X[0:int(F/2)+1], "r")
-#         plt.show()
+#, ,  # Compute the mean power spectral density. The French Canadians do not 
+#, ,  # exactly explain what they mean by that.
+#, ,  X = (np.absolute(X_0) + np.absolute(X_1))/2
+#, ,  if i is 0:
+#, , , ,  plt.loglog(np.fft.rfftfreq(F, 1/f_s), np.absolute(X_0[0:int(F/2)+1]), "k")
+#, , , ,  plt.loglog(np.fft.rfftfreq(F, 1/f_s), np.absolute(X_1[0:int(F/2)+1]), "b")
+#, , , ,  plt.loglog(np.fft.rfftfreq(F, 1/f_s), X[0:int(F/2)+1], "r")
+#, , , ,  plt.show()
 
-#     # Accumulate the average to estimate the noise.
-#     X_n = X_n + X/L
+#, ,  # Accumulate the average to estimate the noise.
+#, ,  X_n = X_n + X/L
 
 # plt.loglog(np.fft.rfftfreq(F, 1/f_s), X_n[0:int(F/2)+1], "k")
 # plt.show()

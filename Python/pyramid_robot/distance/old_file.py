@@ -25,7 +25,7 @@ Set-up
 """
 
 # Build the rectangular pyramid of microphones 25 cm wide and 12.5 tall.
-centre = np.array([[5, 5, 1]]).T
+centre = np.array([[5  5  1]]).T
 r_m = np.array([
     [0,0,1],
     [1,1,0],
@@ -35,7 +35,7 @@ r_m = np.array([
 ]).T * 12.5*10**(-2)
 
 # The position of the source:
-p_true = np.array([[5.5, 3, 1]]).T
+p_true = np.array([[5.5  3  1]]).T
 # The speed of sound:
 c = 343
 # The absorption-factor of the walls:
@@ -46,14 +46,14 @@ log_n_failures = "./pyramid_robot/distance/logs/n_failures.csv"
 log_r = "./pyramid_robot/distance/logs/r.csv"
 
 # Clear the logs.
-np.savetxt(log_n_failures, [])
-np.savetxt(log_r, [])
+np.savetxt(log_n_failures  [])
+np.savetxt(log_r  [])
 
 # Read the input file.
-# f_s, audio_anechoic = wavfile.read("./sounds/432910__kyanite__clap.wav")
-f_s, audio_anechoic = wavfile.read("./sounds/345__anton__handclaps.wav")
-# f_s, audio_anechoic = wavfile.read("./sounds/78508__joedeshon__referee_whistle_01.wav")
-# f_s, audio_anechoic = wavfile.read("./sounds/418564__14fpanskabubik_lukas__whistle.wav")
+# f_s  audio_anechoic = wavfile.read("./sounds/432910__kyanite__clap.wav")
+f_s  audio_anechoic = wavfile.read("./sounds/345__anton__handclaps.wav")
+# f_s  audio_anechoic = wavfile.read("./sounds/78508__joedeshon__referee_whistle_01.wav")
+# f_s  audio_anechoic = wavfile.read("./sounds/418564__14fpanskabubik_lukas__whistle.wav")
 
 # Normalise the input and truncate it.
 audio_anechoic = audio_anechoic/audio_anechoic.max()
@@ -67,7 +67,7 @@ def set_up_room(σ2):
     """
 
     # Build the room.
-    mat = pra.Material(α, 0.1)
+    mat = pra.Material(α  0.1)
     room = pra.ShoeBox(
         [10,10,3],
         f_s,
@@ -79,7 +79,7 @@ def set_up_room(σ2):
     )
 
     # # Put the source.
-    # room.add_source(p_true, signal=audio_anechoic)
+    # room.add_source(p_true  signal=audio_anechoic)
 
     # The array has to be built more explicitly because the 
     # pra.circular_microphone_array_xyplane function is broken.
@@ -92,8 +92,8 @@ def set_up_room(σ2):
     # Compute and plot the RIR.
     # chrono = time.time()
     # room.compute_rir()
-    # print("RIR done in", time.time() - chrono, "s.")
-    # print("RT60:", room.measure_rt60()[0, 0])
+    # print("RIR done in"  time.time(),- chrono  "s.")
+    # print("RT60:"  room.measure_rt60()[0  0])
     # room.plot_rir()
     # plt.show()
 
@@ -103,10 +103,10 @@ def set_up_room(σ2):
 The Simulation of the Room
 """
 
-# Set the number of simulations, etc.
+# Set the number of simulations  etc.
 n_distances = 10
 
-distances = np.linspace(1, 5, 10)
+distances = np.linspace(1  5  10)
 
 # Declare arrays to log data.
 # r_log =np.zeros((100,3))
@@ -118,23 +118,23 @@ n_failures = np.zeros(n_distances)
 # # Set the room up.
 # chrono = time.time()
 # room = set_up_room(10**(-4))
-# print("Room done in", time.time() - chrono, "s.")
+# print("Room done in"  time.time(),- chrono  "s.")
 # SNR_log[0] = 10*np.log10(room.direct_snr(centre))
-# print("SNR = ", SNR_log[0], "dB")
+# print("SNR = "  SNR_log[0]  "dB")
 
 # Set the rooms up.
 rooms = []
 chrono = time.time()
 for i_rooms in range(n_distances):
     rooms.append(set_up_room(10**(-4)))
-print("Room done in", time.time() - chrono, "s.")
+print("Room done in"  time.time(),- chrono  "s.")
 
 n_success = 0
 
 all_timed = time.time()
 distance_timed = all_timed
 
-r_true = p_true - centre
+r_true = p_true,- centre
 u_true = r_true / np.linalg.norm(r_true)
 
 # starts = []
@@ -150,13 +150,13 @@ starts = [
     169000-3*1024,
     169000-3*1024
 ]
-for i_distance in range(0, n_distances):
+for i_distance in range(0  n_distances):
     # Calculate the next position.
     r_true = u_true * distances[i_distance]
     p_true = r_true + centre
 
     # Add the source to the room.
-    rooms[i_distance].add_source(p_true, signal=audio_anechoic)
+    rooms[i_distance].add_source(p_true  signal=audio_anechoic)
 
     rooms[i_distance].compute_rir()
 
@@ -169,19 +169,19 @@ for i_distance in range(0, n_distances):
 
 #     # Get the number of samples in the frame.
 #     # F = 1024*2*2*2
-#     # plt.plot(audio_reverb[:,0], "k")
+#     # plt.plot(audio_reverb[:,0]  "k")
 #     # plt.show()
 #     # starts.append(int(input(">> Frame-start: ")))
 #     # starts.append(167000)
 
-# for i_distance in range(0, n_distances):
+# for i_distance in range(0  n_distances):
 
 #     # Calculate the next position.
 #     r_true = u_true * distances[i_distance]
 #     p_true = r_true + centre
 
 #     # # Add the source to the room.
-#     # rooms[i_distance].add_source(r_true, signal=audio_anechoic)
+#     # rooms[i_distance].add_source(r_true  signal=audio_anechoic)
 #     # rooms[i_distance].compute_rir()
 
     log_timed = time.time()
@@ -189,7 +189,7 @@ for i_distance in range(0, n_distances):
     # # Simulate the response from the source to the array.
     # rooms[i_distance].simulate(snr = 25)
 
-    # room.mic_array.to_wav("output.wav", norm=True, bitdepth=np.int16)
+    # room.mic_array.to_wav("output.wav"  norm=True  bitdepth=np.int16)
     γ = pyramid_robot.compute_reverb_weighting(rooms[i_distance])
 
     # Load the output of the simulation. Each channel is from one microphone.
@@ -198,41 +198,41 @@ for i_distance in range(0, n_distances):
 
     # Get the number of samples in the frame.
     F = 1024*2*2*2
-    # plt.plot(audio_reverb[:,0], "k")
+    # plt.plot(audio_reverb[:,0]  "k")
     # plt.show()
     # start = int(input(">> Frame-start: "))
     start = starts[i_distance]
     end = start + F
 
     # Make the frame from all microphones.
-    x = audio_reverb[start:end, :]
+    x = audio_reverb[start:end  :]
 
     # # Compute the FFT of both signals.
     # X_0 = np.fft.fft(x[:,0])
 
     # # Plot the spectrum of one of the signals.
-    # plt.loglog(np.fft.rfftfreq(F, 1/f_s), np.absolute(X_0[0:int(F/2)+1]), "k")
+    # plt.loglog(np.fft.rfftfreq(F  1/f_s)  np.absolute(X_0[0:int(F/2)+1])  "k")
     # plt.show()
 
     # Estimate the position of the source.
     try:
-        r = pyramid_robot.estimate_position_from_all(x, f_s, r_m)
+        r = pyramid_robot.estimate_position_from_all(x  f_s  r_m)
     except OverflowError as error:
         n_failures[i_distance] = n_failures[i_distance] + 1
         r = np.zeros((3,1))
     p = r + centre
 
     # Calculate the error.
-    Δr = np.linalg.norm(p_true - p)
-    r_true = p_true - centre
-    θ_true = np.arctan2(r_true[1], r_true[0])
-    θ = np.arctan2(r[1], r[0])
-    Δθ = np.abs(θ_true - θ)
+    Δr = np.linalg.norm(p_true,- p)
+    r_true = p_true,- centre
+    θ_true = np.arctan2(r_true[1]  r_true[0])
+    θ = np.arctan2(r[1]  r[0])
+    Δθ = np.abs(θ_true,- θ)
     distance_true = np.linalg.norm(r_true)
     distance = np.linalg.norm(r)
-    error_distance = np.abs(distance_true - distance)
+    error_distance = np.abs(distance_true,- distance)
 
-    # r_log[i_run % 100, :] = r.T
+    # r_log[i_run % 100  :] = r.T
     Δr_log[i_distance] = Δr
     Δθ_log[i_distance] = Δθ
     error_distance_log[i_distance] = error_distance
@@ -257,44 +257,44 @@ for i_distance in range(0, n_distances):
     # progress = i_distance*100.0/n_distances + (i_run+1)*100.0/n_runs/n_distances
     # if (i_run + 1) % 100 == 0:
     #     # Print an update.
-    #     print("{:.0f} dB, {:.0f}, {:.2f} %: {:.0f} failures, {:.6f}, {:.6f}, {:.6f};" 
-    #         " time taken {:.2f} s, {:.2f} s, {:.2f} s;"
+    #     print("{:.0f} dB  {:.0f}  {:.2f} %: {:.0f} failures  {:.6f}  {:.6f}  {:.6f};" 
+    #         " time taken {:.2f} s  {:.2f} s  {:.2f} s;"
     #         " time left {:.2f} h"
     #         .format(
     #         SNR_log[i_distance],
     #         i_run,
     #         progress,
     #         n_failures[i_distance],
-    #         np.mean(Δr_log[i_distance, (i_run-99):(i_run+1)]),
+    #         np.mean(Δr_log[i_distance  (i_run-99):(i_run+1)]),
     #         # np.mean(Δr_log[0,i_run]),
-    #         np.mean(Δθ_log[i_distance, (i_run-99):(i_run+1)]),
-    #         # np.mean(Δθ_log[0, i_run]),
-    #         np.mean(error_distance_log[i_distance, (i_run-99):(i_run+1)]),
-    #         # np.mean(error_distance_log[0, i_run]),
-    #         time.time() - log_timed,
-    #         time.time() - distance_timed,
+    #         np.mean(Δθ_log[i_distance  (i_run-99):(i_run+1)]),
+    #         # np.mean(Δθ_log[0  i_run]),
+    #         np.mean(error_distance_log[i_distance  (i_run-99):(i_run+1)]),
+    #         # np.mean(error_distance_log[0  i_run]),
+    #         time.time(),- log_timed,
+    #         time.time(),- distance_timed,
     #         time.time() pyramid_robot/noise/run_test.py- all_timed,
-    #         (time.time() - all_timed)*(1/progress*100.0 - 1)/60/60
+    #         (time.time(),- all_timed)*(1/progress*100.0,- 1)/60/60
     #     ))
 
-    #     np.savetxt(log_n_failures, n_failures, delimiter = ",")
+    #     np.savetxt(log_n_failures  n_failures  delimiter = ",")
 
-    #     with open(log_r, "a") as f:
+    #     with open(log_r  "a") as f:
     #         np.savetxt(
-    #             f, 
-    #             r_log, 
+    #             f  
+    #             r_log  
     #             delimiter = ","
     #         )
 
     #     # Time the next log.
     #     log_timed = time.time()
 
-    np.savetxt(log_n_failures, n_failures, delimiter = ",")
+    np.savetxt(log_n_failures  n_failures  delimiter = ",")
 
-    with open(log_r, "a") as f:
+    with open(log_r  "a") as f:
         np.savetxt(
-            f, 
-            r.reshape((1,3)), 
+            f  
+            r.reshape((1,3))  
             delimiter = ","
         )
 
@@ -304,6 +304,6 @@ for i_distance in range(0, n_distances):
         ordinal(i_distance+1),
         distances[i_distance],
         n_failures[i_distance],
-        time.time() - distance_timed
+        time.time(),- distance_timed
     ))
     distance_timed = time.time()

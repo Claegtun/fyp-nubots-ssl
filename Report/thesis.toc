@@ -1,70 +1,115 @@
-\contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Background}{4}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Scope}{5}{section.1.2}%
-\contentsline {chapter}{\numberline {2}Literature-Review}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Overview of Methods}{7}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}The Far Field and the Near Field}{8}{subsection.2.1.1}%
-\contentsline {section}{\numberline {2.2}Time-Difference of Arrival}{9}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Distance}{10}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Reverberation}{10}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Multiple Sources}{11}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Literature Examples}{11}{subsection.2.2.4}%
-\contentsline {subsubsection}{Valin et al., 2003, Robust Sound Source Localization Using a Microphone Array on a Mobile Robot}{11}{section*.3}%
-\contentsline {subsubsection}{Hu et al., 2009, Estimation of Sound Source Number and Directions Under a Multi-Source Environment}{13}{section*.6}%
-\contentsline {subsubsection}{Chen \& Xu, 2019, A Sound Source Localization Device Based on Rectangular Pyramid Structure for Mobile Robot}{14}{section*.8}%
-\contentsline {subsubsection}{Bechler et al., 2004, System for Robust 3D Speaker Tracking Using Microphone Array Measurements}{16}{section*.11}%
-\contentsline {subsubsection}{Kim et al., 2008, Robust Estimation of Sound Direction for Robot Interface}{16}{section*.12}%
-\contentsline {subsubsection}{Manamperi et al., 2022, Drone Audition: Sound Source Localization Using On-Board Microphones}{17}{section*.13}%
-\contentsline {subsubsection}{Mahajan \& Walworth, 2001, 3D Position Sensing Using the Differences in the Time-of-Flights from a Wave Source to Various Receivers}{18}{section*.16}%
-\contentsline {section}{\numberline {2.3}Beam-forming}{18}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Delay-and-Sum}{19}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Steered Response Power}{20}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Frequency and Width}{21}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Literature Examples}{21}{subsection.2.3.4}%
-\contentsline {subsubsection}{Valin et al., 2004, Localization of Simultaneous Moving Sound Sources for Mobile Robot Using a Frequency- Domain Steered Beamformer Approach}{21}{section*.17}%
-\contentsline {subsubsection}{Valin et al., 2007, Robust Localization and Tracking of Simultaneous Moving Sound Sources Using Beamforming and Particle Filtering}{22}{section*.19}%
-\contentsline {subsubsection}{Badali et al., 2009, Evaluating Real-Time Audio Localization Algorithms for Artificial Audition in Robotics}{24}{section*.22}%
-\contentsline {subsubsection}{Salvati et al., 2019, Power Method for Robust Diagonal Unloading Localization Beamforming}{25}{section*.25}%
-\contentsline {subsubsection}{Zhang et al., 2021, An Improved Multiple Sound Source Localization Method Using a Uniform Concentric Circular Microphone Array}{26}{section*.28}%
-\contentsline {subsubsection}{Basiri et al., 2016, On-Board Relative Bearing Estimation for Teams of Drones Using Sound}{27}{section*.30}%
-\contentsline {subsubsection}{Tamai et al., 2005, Three Ring Microphone Array for 3D Sound Localization and Separation for Mobile Robot Audition}{28}{section*.33}%
-\contentsline {subsubsection}{Mattos \& Grant, 2004, Passive Sonar Applications: Target Tracking and Navigation of an Autonomous Robot}{29}{section*.34}%
-\contentsline {section}{\numberline {2.4}MUSIC}{29}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Literature Examples}{31}{subsection.2.4.1}%
-\contentsline {subsubsection}{Ishi et al., 2009, Evaluation of a MUSIC-Based Real-Time Sound Localization of Multiple Sound Sources in Real Noisy Environments}{31}{section*.35}%
-\contentsline {subsubsection}{Nakamura et al., 2012, Real-Time Super-Resolution Sound Source Localization for Robots}{31}{section*.37}%
-\contentsline {section}{\numberline {2.5}Discussion of the Literature}{32}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Accuracy and Estimation}{33}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Dimensions}{33}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}Noise and Reverberation}{34}{subsection.2.5.3}%
-\contentsline {subsection}{\numberline {2.5.4}Computation}{34}{subsection.2.5.4}%
-\contentsline {chapter}{\numberline {3}Simulation}{35}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Software}{35}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Python}{35}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Pyroomacoustics}{35}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Sounds}{36}{subsection.3.1.3}%
-\contentsline {section}{\numberline {3.2}Evaluation of Examples in the Literature}{36}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Rectangular Pyramid Array with TDOA}{36}{subsection.3.2.1}%
-\contentsline {subsubsection}{Algorithm}{36}{section*.39}%
-\contentsline {subsubsection}{Experimental Method}{39}{section*.41}%
-\contentsline {subsubsection}{Performance against Noise}{40}{section*.43}%
-\contentsline {subsubsection}{Performance against Distance}{44}{section*.49}%
-\contentsline {subsubsection}{Discussion}{45}{section*.50}%
-\contentsline {subsection}{\numberline {3.2.2}SRP-PHAT}{45}{subsection.3.2.2}%
-\contentsline {subsubsection}{Algorithm}{45}{section*.51}%
-\contentsline {subsubsection}{Experimental Method}{46}{section*.53}%
-\contentsline {subsubsection}{Stastical Performance against Noise}{47}{section*.54}%
-\contentsline {subsubsection}{Visualisation of the Energy-Map}{50}{section*.59}%
-\contentsline {subsubsection}{Discussion}{52}{section*.62}%
-\contentsline {chapter}{\numberline {4}Electronics Design}{54}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Overall Design}{54}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Microphones}{54}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Sensitivity and Dynamic Range}{55}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Interface}{55}{subsection.4.2.2}%
-\contentsline {subsubsection}{Analogue through an ADC}{56}{section*.63}%
-\contentsline {subsubsection}{PDM}{56}{section*.64}%
-\contentsline {subsubsection}{I{2}S and Other Serial Interfaces}{57}{section*.65}%
-\contentsline {section}{\numberline {4.3}Anti-aliasing Filter}{57}{section.4.3}%
-\contentsline {section}{\numberline {4.4}External ADC Chip}{57}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Processor}{58}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Conclusion}{59}{chapter.5}%
+\contentsline {chapter}{\numberline {1}Introduction}{6}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Background}{6}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}NUbots}{6}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Applications}{7}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Scope}{8}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Literature-Review and Theory}{10}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Overview of Methods}{11}{section.2.1}%
+\contentsline {section}{\numberline {2.2}The far Field and the near Field}{11}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Time-Difference of Arrival}{11}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Distance}{12}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Reverberation}{13}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Multiple Sources}{13}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Literature Examples}{14}{subsection.2.3.4}%
+\contentsline {subsubsection}{Valin et al., 2003, Robust Sound Source Localization Using a Microphone Array on a Mobile Robot}{14}{section*.6}%
+\contentsline {subsubsection}{Chen \& Xu, 2019, A Sound Source Localization Device Based on Rectangular Pyramid Structure for Mobile Robot}{16}{section*.9}%
+\contentsline {subsubsection}{Manamperi et al., 2022, Drone Audition: Sound Source Localization Using On-Board Microphones}{18}{section*.12}%
+\contentsline {section}{\numberline {2.4}Beam-forming}{19}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Delay-and-Sum}{20}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Steered Response Power}{21}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Literature Examples}{22}{subsection.2.4.3}%
+\contentsline {subsubsection}{Valin et al., 2004, Localization of Simultaneous Moving Sound Sources for Mobile Robot Using a Frequency- Domain Steered Beamformer Approach}{22}{section*.15}%
+\contentsline {subsubsection}{Valin et al., 2007, Robust Localization and Tracking of Simultaneous Moving Sound Sources Using Beamforming and Particle Filtering}{23}{section*.17}%
+\contentsline {subsubsection}{Badali et al., 2009, Evaluating Real-Time Audio Localization Algorithms for Artificial Audition in Robotics}{24}{section*.20}%
+\contentsline {subsubsection}{Salvati et al., 2019, Power Method for Robust Diagonal Unloading Localization Beamforming}{26}{section*.23}%
+\contentsline {subsubsection}{Basiri et al., 2016, On-Board Relative Bearing Estimation for Teams of Drones Using Sound}{27}{section*.26}%
+\contentsline {section}{\numberline {2.5}MUSIC}{28}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Literature Examples}{30}{subsection.2.5.1}%
+\contentsline {subsubsection}{Ishi et al., 2009, Evaluation of a MUSIC-Based Real-Time Sound Localization of Multiple Sound Sources in Real Noisy Environments}{30}{section*.29}%
+\contentsline {subsubsection}{Nakamura et al., 2012, Real-Time Super-Resolution Sound Source Localization for Robots}{31}{section*.31}%
+\contentsline {section}{\numberline {2.6}Discussion of the Literature}{32}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Preliminary Simulations}{33}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Software}{33}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Python}{33}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Pyroomacoustics}{33}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Sounds}{34}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Evaluation of Examples in the Literature}{34}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Rectangular Pyramid Array with TDOA}{34}{subsection.3.2.1}%
+\contentsline {subsubsection}{Algorithm}{34}{section*.33}%
+\contentsline {subsubsection}{Experimental Method}{36}{section*.34}%
+\contentsline {subsubsection}{Performance against Noise}{37}{section*.36}%
+\contentsline {subsubsection}{Performance against Distance}{42}{section*.42}%
+\contentsline {subsubsection}{Discussion}{43}{section*.43}%
+\contentsline {subsection}{\numberline {3.2.2}SRP-PHAT}{43}{subsection.3.2.2}%
+\contentsline {subsubsection}{Algorithm}{43}{section*.44}%
+\contentsline {subsubsection}{Experimental Method}{44}{section*.46}%
+\contentsline {subsubsection}{Stastical Performance against Noise}{45}{section*.47}%
+\contentsline {subsubsection}{Visualisation of the Energy-Map}{48}{section*.52}%
+\contentsline {subsubsection}{Discussion}{49}{section*.55}%
+\contentsline {section}{\numberline {3.3}Further Study into SRP-PHAT}{50}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Experimental Method}{50}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Effect of the Sampling Frequency}{50}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Effect of the Frame's Length}{52}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Rudimentry Analysis of Computation}{54}{subsection.3.3.4}%
+\contentsline {chapter}{\numberline {4}Proposed System}{56}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Algorithm}{56}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Chosen Parameters}{57}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Confidence}{57}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Chosen Geometry}{58}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Simulation of the Proposed System}{60}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Experimental Method}{60}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Performance against Noise}{61}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Performance against Distance}{64}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Effect of Delay}{65}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Discussion}{68}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Electronics Design}{69}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Overall Needs}{69}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Research of Microphones}{70}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Sensitivity and Dynamic Range}{70}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Interface}{71}{subsection.6.2.2}%
+\contentsline {subsubsection}{Analogue through an ADC}{71}{section*.69}%
+\contentsline {subsubsection}{PDM}{72}{section*.70}%
+\contentsline {subsubsection}{I\textsuperscript {2}S and Other Serial Interfaces}{72}{section*.71}%
+\contentsline {subsection}{\numberline {6.2.3}Anti-aliasing Filter}{72}{subsection.6.2.3}%
+\contentsline {section}{\numberline {6.3}Chosen Components}{73}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Microphone}{73}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Preamplifier}{73}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Difference-Amplifier}{73}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}External ADC Chip}{74}{subsection.6.3.4}%
+\contentsline {subsection}{\numberline {6.3.5}Processor}{74}{subsection.6.3.5}%
+\contentsline {subsection}{\numberline {6.3.6}Other Components}{75}{subsection.6.3.6}%
+\contentsline {section}{\numberline {6.4}Chosen Design}{75}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Overall Design}{75}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Filtering and Sampling}{76}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}Dynamic Range}{76}{subsection.6.4.3}%
+\contentsline {section}{\numberline {6.5}Printed Circuit-Boards}{78}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Motherboard}{78}{subsection.6.5.1}%
+\contentsline {subsubsection}{Layers}{78}{section*.75}%
+\contentsline {subsection}{\numberline {6.5.2}Daughterboard}{79}{subsection.6.5.2}%
+\contentsline {chapter}{\numberline {7}Firmware Design}{81}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Overall Design}{81}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Parallel Interface}{82}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Digital Filter}{82}{section.7.3}%
+\contentsline {section}{\numberline {7.4}FFT and Other Mathematical Functions}{84}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Testing}{85}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Firmware}{85}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Computation and Timing}{85}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Signal-processing}{86}{subsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.1.3}Preliminary Energy-map}{87}{subsection.8.1.3}%
+\contentsline {chapter}{\numberline {9}Physical Experiments}{89}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Experimental Set-up}{89}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Effect of Distance}{89}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}Experimental Method}{90}{subsection.9.2.1}%
+\contentsline {section}{\numberline {9.3}Effect of Angle}{90}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}Experimental Method}{90}{subsection.9.3.1}%
+\contentsline {section}{\numberline {9.4}Effect of Type}{90}{section.9.4}%
+\contentsline {subsection}{\numberline {9.4.1}Experimental Method}{90}{subsection.9.4.1}%
+\contentsline {chapter}{\numberline {10}Post-processing}{91}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Extended Kalman Filter}{91}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Visualisation}{91}{section.10.2}%
+\contentsline {chapter}{\numberline {11}Conclusion}{92}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Progress}{92}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Findings}{92}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Future Work}{92}{section.11.3}%
+\contentsline {chapter}{Appendices}{98}{section*.86}%
+\contentsline {chapter}{\numberline {A}Schematics of Electronics}{99}{appendix.1.A}%

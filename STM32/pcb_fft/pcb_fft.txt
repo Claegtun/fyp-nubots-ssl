@@ -1,0 +1,44 @@
+Configuration	pcb_fft
+STM32CubeMX 	6.9.0
+Date	10/23/2023
+MCU	STM32H723VGTx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+PERIPHERALS	MODES	FUNCTIONS	PINS
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : pcb_fft
+Project Folder : /home/clayton/Documents/university/fifth_year/second_semester/fyp-nubots-ssl/STM32/pcb_fft
+Toolchain / IDE : STM32CubeIDE
+Firmware Package Name and Version : STM32Cube FW_H7 V1.11.1
+
+
+Code Generation Settings : 
+STM32Cube MCU packages and embedded software packs : Copy only the necessary library files
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : No
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : 
+
+
+
+
+

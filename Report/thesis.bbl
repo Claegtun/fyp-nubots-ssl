@@ -1,23 +1,68 @@
 \begin{thebibliography}{10}
 
+\bibitem{noauthor_comprehensive_nodate}
+Comprehensive {Decibel} {Chart} of {Common} {Sound} {Sources}.
+
+\bibitem{noauthor_decibel_nodate}
+Decibel {Table} - {SPL} - {Loudness} {Comparison} {Chart}.
+
+\bibitem{noauthor_sisonic_nodate}
+{SiSonic} {Design} {Guide}.
+
+\bibitem{noauthor_filter_2002}
+Filter {Basics}: {Anti}-{Aliasing}, January 2002.
+
 \bibitem{noauthor_handclaps_2005}
 handclaps, March 2005.
 
-\bibitem{argentieri_prototyping_2005}
-S.~Argentieri, P.~Danes, and P.~Soueres.
-\newblock Prototyping {Filter}-{Sum} {Beamformers} for {Sound} {Source}
-  {Localization} in {Mobile} {Robotics}.
-\newblock In {\em Proceedings of the 2005 {IEEE} {International} {Conference}
-  on {Robotics} and {Automation}}, pages 3551--3556, April 2005.
-\newblock ISSN: 1050-4729.
+\bibitem{noauthor_very_2009}
+Very low noise microphone preamplifier with 2.0 {V} bias output and active low
+  standby mode, August 2009.
 
-\bibitem{argentieri_experimental_2005}
-S.~Argentieri, P.~Danes, P.~Soueres, and P.~Lacroix.
-\newblock An experimental testbed for sound source localization with mobile
-  robots using optimized wideband beamformers.
-\newblock In {\em 2005 {IEEE}/{RSJ} {International} {Conference} on
-  {Intelligent} {Robots} and {Systems}}, pages 2536--2541, August 2005.
-\newblock ISSN: 2153-0866.
+\bibitem{noauthor_tms320c5515_2013}
+{TMS320C5515} {Fixed}-{Point} {Digital} {Signal} {Processor}, October 2013.
+
+\bibitem{noauthor_spw2430hr5h-b_2014}
+{SPW2430HR5H}-{B}, February 2014.
+
+\bibitem{noauthor_a78mxx_2015}
+µ{A78Mxx} {Positive}-{Voltage} {Regulators}, January 2015.
+
+\bibitem{noauthor_tlv27x_2016}
+{TLV27x} {Family} of 550-µ{A}/{Ch}, 3-{MHz}, {Rail}-to-{Rail} {Output}
+  {Operational} {Amplifiers}, November 2016.
+
+\bibitem{noauthor_sph1642ht5h-1_2017}
+{SPH1642HT5H}-1, November 2017.
+
+\bibitem{noauthor_digital_2018}
+Digital signal processing for {STM32} microcontrollers using {CMSIS}, February
+  2018.
+
+\bibitem{noauthor_interfacing_2019}
+Interfacing {PDM} digital microphones using {STM32} {MCUs} and {MPUs}, July
+  2019.
+
+\bibitem{noauthor_precision_2020}
+Precision 500 {mA} regulators, September 2020.
+
+\bibitem{noauthor_8-channel_2021}
+8-{Channel} {DAS} with 16-{Bit}, 800 {kSPS} {Bipolar} {Input}, {Simultaneous}
+  {Sampling} {ADC}, April 2021.
+
+\bibitem{noauthor_arm_2021}
+Arm {Cortex}-{M7} 32-bit 550 {MHz} {MCU}, up to 1 {MB} {Flash}, 564 {KB} {RAM},
+  {Ethernet}, {USB}, 3x {FD}-{CAN}, {Graphics}, 2x 16-bit {ADCs}, December
+  2021.
+
+\bibitem{noauthor_stm32h723733_2021}
+{STM32H723}/733, {STM32H725}/735 and {STM32H730} {Value} line advanced
+  {Arm}®-based 32-bit {MCUs}, December 2021.
+
+\bibitem{abbott_decibels_nodate}
+David Abbott.
+\newblock Decibels and sound levels.
+\newblock In {\em Understanding {Sound}}.
 
 \bibitem{argentieri_survey_2015}
 S.~Argentieri, P.~Danès, and P.~Souères.
@@ -25,21 +70,12 @@ S.~Argentieri, P.~Danès, and P.~Souères.
   array processing methods.
 \newblock {\em Computer Speech \& Language}, 34(1):87--112, 2015.
 
-\bibitem{argentieri_modal_2006}
-Sylvain Argentieri, Patrick Danes, and Philippe Soueres.
-\newblock Modal {Analysis} {Based} {Beamforming} for {Nearfield} or {Farfield}
-  {Speaker} {Localization} in {Robotics}.
-\newblock In {\em 2006 {IEEE}/{RSJ} {International} {Conference} on
-  {Intelligent} {Robots} and {Systems}}, pages 866--871, October 2006.
-\newblock ISSN: 2153-0866.
-
 \bibitem{badali_evaluating_2009}
 Anthony Badali, Jean-Marc Valin, François Michaud, and Parham Aarabi.
 \newblock Evaluating {Real}-{Time} {Audio} {Localization} {Algorithms} for
   {Artificial} {Audition} in {Robotics}.
 \newblock In {\em 2009 {IEEE}/{RSJ} {International} {Conference} on
   {Intelligent} {Robots} and {Systems}}, pages 2033--2038, October 2009.
-\newblock ISSN: 2153-0866.
 
 \bibitem{basiri_-board_2016}
 Meysam Basiri, Felix Schill, Pedro Lima, and Dario Floreano.
@@ -67,14 +103,12 @@ M.S. Brandstein and H.F. Silverman.
 \newblock In {\em 1997 {IEEE} {International} {Conference} on {Acoustics},
   {Speech}, and {Signal} {Processing}}, volume~1, pages 375--378 vol.1, April
   1997.
-\newblock ISSN: 1520-6149.
 
 \bibitem{brutti_multiple_2010}
 Alessio Brutti, Maurizio Omologo, and Piergiorgio Svaizer.
 \newblock Multiple source localization based on acoustic map de-emphasis.
 \newblock {\em EURASIP Journal on Audio, Speech, and Music Processing},
   2010:1--17, 2010.
-\newblock Publisher: Springer.
 
 \bibitem{chen_sound_2019}
 Guoliang Chen and Yang Xu.
@@ -94,13 +128,24 @@ T.~Gustafsson, B.D. Rao, and M.~Trivedi.
 \newblock {\em IEEE Transactions on Speech and Audio Processing},
   11(6):791--803, November 2003.
 
+\bibitem{horowitz_1351_2015}
+Paul Horowitz and Winfield Hill.
+\newblock 13.5.1 {Digitizing}: aliasing, sampling rate, and sampling depth.
+\newblock In {\em The {Art} of {Electronics}}, pages 901, 902. Cambridge
+  University Press, 3 edition, 2015.
+
+\bibitem{horowitz_514_2015}
+Paul Horowitz and Winfield Hill.
+\newblock 5.14 {Difference} {Amplifier}.
+\newblock In {\em The {Art} of {Electronics}}, pages 348--356. Cambridge
+  University Press, 3 edition, 2015.
+
 \bibitem{hu_estimation_2009}
 Jwu-Sheng Hu, Chia-Hsing Yang, and Cheng-Kang Wang.
 \newblock Estimation of {Sound} {Source} {Number} and {Directions} {Under} a
   {Multi}-{Source} {Environment}.
 \newblock In {\em 2009 {IEEE}/{RSJ} {International} {Conference} on
   {Intelligent} {Robots} and {Systems}}, pages 181--186, October 2009.
-\newblock ISSN: 2153-0866.
 
 \bibitem{ishi_evaluation_2009}
 Carlos~T. Ishi, Olivier Chatot, Hiroshi Ishiguro, and Norihiro Hagita.
@@ -108,7 +153,6 @@ Carlos~T. Ishi, Olivier Chatot, Hiroshi Ishiguro, and Norihiro Hagita.
   of {Multiple} {Sound} {Sources} in {Real} {Noisy} {Environments}.
 \newblock In {\em 2009 {IEEE}/{RSJ} {International} {Conference} on
   {Intelligent} {Robots} and {Systems}}, pages 2027--2032, October 2009.
-\newblock ISSN: 2153-0866.
 
 \bibitem{ishi_effects_2011}
 Carlos~T. Ishi, Dong Liang, Hiroshi Ishiguro, and Norihiro Hagita.
@@ -116,26 +160,20 @@ Carlos~T. Ishi, Dong Liang, Hiroshi Ishiguro, and Norihiro Hagita.
   real noisy environments.
 \newblock In {\em 2011 {IEEE}/{RSJ} {International} {Conference} on
   {Intelligent} {Robots} and {Systems}}, pages 550--555, September 2011.
-\newblock ISSN: 2153-0866.
-
-\bibitem{kim_robust_2008}
-Cheol-Taek Kim, Tae-Yong Choi, ByongSuk Choi, and Ju-Jang Lee.
-\newblock Robust {Estimation} of {Sound} {Direction} for {Robot} {Interface}.
-\newblock In {\em 2008 {IEEE} {International} {Conference} on {Robotics} and
-  {Automation}}, pages 3475--3480, May 2008.
-\newblock ISSN: 1050-4729.
 
 \bibitem{kwon_analysis_2010}
 Byoungho Kwon, Youngjin Park, and Youn-sik Park.
 \newblock Analysis of the {GCC}-{PHAT} technique for multiple sources.
 \newblock In {\em {ICCAS} 2010}, pages 2070--2073, 2010.
 
-\bibitem{mahajan_3d_2001}
-A.~Mahajan and M.~Walworth.
-\newblock 3d {Position} {Sensing} {Using} the {Differences} in the
-  {Time}-of-{Flights} from a {Wave} {Source} to {Various} {Receivers}.
-\newblock {\em IEEE Transactions on Robotics and Automation}, 17(1):91--94,
-  February 2001.
+\bibitem{lewis_analog_nodate}
+Jerad Lewis.
+\newblock Analog and {Digital} {MEMS} {Microphone} {Design} {Considerations}.
+
+\bibitem{lewis_understanding_nodate}
+Jerad Lewis.
+\newblock Understanding {Microphone} {Sensitivity}.
+\newblock {\em AnalogDialogue}, 46(May 2012).
 
 \bibitem{manamperi_drone_2022}
 Wageesha Manamperi, Thushara~D. Abhayapala, Jihui Zhang, and Prasanga~N.
@@ -145,14 +183,11 @@ Wageesha Manamperi, Thushara~D. Abhayapala, Jihui Zhang, and Prasanga~N.
 \newblock {\em IEEE/ACM Transactions on Audio, Speech, and Language
   Processing}, 30:508--519, 2022.
 
-\bibitem{mattos_passive_2004}
-L.~Mattos and E.~Grant.
-\newblock Passive {Sonar} {Applications}: {Target} {Tracking} and {Navigation}
-  of an {Autonomous} {Robot}.
-\newblock In {\em {IEEE} {International} {Conference} on {Robotics} and
-  {Automation}, 2004. {Proceedings}. {ICRA} '04. 2004}, volume~5, pages
-  4265--4270 Vol.5, April 2004.
-\newblock ISSN: 1050-4729.
+\bibitem{mckeown_fft_2013}
+Mark McKeown.
+\newblock {FFT} {Implementation} on the {TMS320VC5505}, {TMS320C5505}, and
+  {TMS320C5515} {DSPs}.
+\newblock Technical report, Texas Instruments, January 2013.
 
 \bibitem{nakamura_intelligent_2009}
 Keisuke Nakamura, Kazuhiro Nakadai, Futoshi Asano, Yuji Hasegawa, and Hiroshi
@@ -160,7 +195,6 @@ Keisuke Nakamura, Kazuhiro Nakadai, Futoshi Asano, Yuji Hasegawa, and Hiroshi
 \newblock Intelligent sound source localization for dynamic environments.
 \newblock In {\em 2009 {IEEE}/{RSJ} {International} {Conference} on
   {Intelligent} {Robots} and {Systems}}, pages 664--669, October 2009.
-\newblock ISSN: 2153-0866.
 
 \bibitem{nakamura_intelligent_2011}
 Keisuke Nakamura, Kazuhiro Nakadai, Futoshi Asano, and Gökhan Ince.
@@ -168,7 +202,6 @@ Keisuke Nakamura, Kazuhiro Nakadai, Futoshi Asano, and Gökhan Ince.
   multimodal human tracking.
 \newblock In {\em 2011 {IEEE}/{RSJ} {International} {Conference} on
   {Intelligent} {Robots} and {Systems}}, pages 143--148, September 2011.
-\newblock ISSN: 2153-0866.
 
 \bibitem{nakamura_real-time_2012}
 Keisuke Nakamura, Kazuhiro Nakadai, and Gökhan Ince.
@@ -176,7 +209,6 @@ Keisuke Nakamura, Kazuhiro Nakadai, and Gökhan Ince.
   {Robots}.
 \newblock In {\em 2012 {IEEE}/{RSJ} {International} {Conference} on
   {Intelligent} {Robots} and {Systems}}, pages 694--699, October 2012.
-\newblock ISSN: 2153-0866.
 
 \bibitem{rascon_lightweight_2015}
 Caleb Rascon, Gibran Fuentes-Pineda, and Ivan Meza.
@@ -202,13 +234,14 @@ Daniele Salvati, Carlo Drioli, and Gian~Luca Foresti.
   {Beamforming}.
 \newblock {\em IEEE Signal Processing Letters}, 26(5):725--729, May 2019.
 
-\bibitem{tamai_three_2005}
-Y.~Tamai, Y.~Sasaki, S.~Kagami, and H.~Mizoguchi.
-\newblock Three {Ring} {Microphone} {Array} for {3D} {Sound} {Localization} and
-  {Separation} for {Mobile} {Robot} {Audition}.
-\newblock In {\em 2005 {IEEE}/{RSJ} {International} {Conference} on
-  {Intelligent} {Robots} and {Systems}}, pages 4172--4177, August 2005.
-\newblock ISSN: 2153-0866.
+\bibitem{sennequier_pre-amplifying_2015}
+Pierre Sennequier.
+\newblock Pre-amplifying the analog output of a {MEMS} microphone, January
+  2015.
+
+\bibitem{simmons_microphones_2021}
+Greg Simmons.
+\newblock Microphones: {Sensitivity}, June 2021.
 
 \bibitem{valin_localization_2004}
 J.-M. Valin, F.~Michaud, B.~Hadjou, and J.~Rouat.
@@ -218,7 +251,6 @@ J.-M. Valin, F.~Michaud, B.~Hadjou, and J.~Rouat.
 \newblock In {\em {IEEE} {International} {Conference} on {Robotics} and
   {Automation}, 2004. {Proceedings}. {ICRA} '04. 2004}, volume~1, pages
   1033--1038 Vol.1, April 2004.
-\newblock ISSN: 1050-4729.
 
 \bibitem{valin_robust_2003}
 J.-M. Valin, F.~Michaud, J.~Rouat, and D.~Letourneau.
@@ -233,13 +265,5 @@ Jean-Marc Valin, François Michaud, and Jean Rouat.
 \newblock Robust {Localization} and {Tracking} of {Simultaneous} {Moving}
   {Sound} {Sources} {Using} {Beamforming} and {Particle} {Filtering}.
 \newblock {\em Robotics and Autonomous Systems}, 55:216--228, March 2007.
-
-\bibitem{zhang_improved_2021}
-Yuting Zhang, Hongwei Zhang, and Honghai Liu.
-\newblock An {Improved} {Multiple} {Sound} {Source} {Localization} {Method}
-  {Using} a {Uniform} {Concentric} {Circular} {Microphone} {Array}.
-\newblock In {\em 2021 11th {International} {Conference} on {Intelligent}
-  {Control} and {Information} {Processing} ({ICICIP})}, pages 392--397,
-  December 2021.
 
 \end{thebibliography}

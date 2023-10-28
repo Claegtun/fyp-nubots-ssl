@@ -35,30 +35,31 @@ r_m = np.array([
     [-1,1,-1],  # NW bottom
     [-1,-1,1],  # SW top
     [-1,-1,-1]  # SW bottom
-]).T * 15.5*10**(-2) / 2
+]).T * 91.2*10**(-3) / 2
 
 # The position of the source:
 p_true = np.array([[6.5, 3.5, 2.5]]).T
 # The absorption-factor of the walls:
 α = 0.5
 
-D = 15.5*10**(-2)*np.sqrt(3)
+D = 91.2*10**(-3)*np.sqrt(3)
 c = 343
 
-def delay_along_arc(β):
+def delay_along_arc(β, r_i):
     r_true = p_true - centre
     d_true = np.linalg.norm(r_true)
-    return D*(β - np.sin(β))/2/c + (np.linalg.norm([d_true,D/2]) - d_true)/c
+    l_true = np.linalg.norm(r_true-r_i)
+    return (D*β/2 + np.linalg.norm([d_true,D/2]) - l_true)/c
 
 delay = np.array([
     0,
-    delay_along_arc(np.deg2rad(19)),
+    delay_along_arc(np.deg2rad(19),r_m[:,1]),
     0,
     0,
-    delay_along_arc(np.deg2rad(19)),
-    delay_along_arc(np.pi/2),
+    delay_along_arc(np.deg2rad(19),r_m[:,4]),
+    delay_along_arc(np.pi/2,r_m[:,5]),
     0,
-    delay_along_arc(np.deg2rad(19))
+    delay_along_arc(np.deg2rad(19),r_m[:,7])
 ])
 
 # Name the log files.
@@ -73,11 +74,11 @@ f_s, audio_anechoic = wavfile.read("./sounds/345__anton__handclaps.wav")
 # f_s, audio_anechoic = wavfile.read("./sounds/78508__joedeshon__referee_whistle_01.wav")
 # f_s, audio_anechoic = wavfile.read("./sounds/418564__14fpanskabubik_lukas__whistle.wav")
 # f_s, audio_anechoic_original = wavfile.read("./pyroomacoustics/examples/input_samples/cmu_arctic_us_aew_a0001.wav")
-audio_anechoic = signal.resample(audio_anechoic, audio_anechoic.shape[0]//2)
-f_s = f_s//2
+audio_anechoic = signal.resample(audio_anechoic, audio_anechoic.shape[0]//4)
+f_s = f_s//4
 
 audio_anechoic = audio_anechoic/audio_anechoic.max()
-audio_anechoic = audio_anechoic[171500//2:173000//2]
+audio_anechoic = audio_anechoic[171500//4:173000//4]
 
 def set_up_room(σ2):
     """

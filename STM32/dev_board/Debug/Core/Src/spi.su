@@ -1,3 +1,6 @@
-../Core/Src/spi.c:31:6:MX_SPI1_Init	8	static
-../Core/Src/spi.c:72:6:HAL_SPI_MspInit	240	static
-../Core/Src/spi.c:145:6:HAL_SPI_MspDeInit	16	static
+../Core/Src/spi.c:37:6:MX_SPI1_Init	8	static
+../Core/Src/spi.c:78:6:MX_SPI2_Init	8	static
+../Core/Src/spi.c:119:6:MX_SPI3_Init	8	static
+../Core/Src/spi.c:160:6:MX_SPI4_Init	8	static
+../Core/Src/spi.c:201:6:HAL_SPI_MspInit	280	static
+../Core/Src/spi.c:477:6:HAL_SPI_MspDeInit	16	static

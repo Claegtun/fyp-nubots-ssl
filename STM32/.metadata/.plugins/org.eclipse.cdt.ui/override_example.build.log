@@ -1,0 +1,17 @@
+18:36:03 **** Incremental Build of configuration Debug for project override_example ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32H723xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "override_example.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/clayton/Documents/university/fifth_year/second_semester/fyp-nubots-ssl/STM32/override_example/STM32H723ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="override_example.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: override_example.elf
+ 
+arm-none-eabi-size   override_example.elf 
+arm-none-eabi-objdump -h -S  override_example.elf  > "override_example.list"
+   text	   data	    bss	    dec	    hex	filename
+  13256	     24	   1720	  15000	   3a98	override_example.elf
+Finished building: default.size.stdout
+ 
+Finished building: override_example.list
+ 
+
+18:36:03 Build Finished. 0 errors, 0 warnings. (took 374ms)
+

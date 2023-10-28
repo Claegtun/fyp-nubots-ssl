@@ -43,7 +43,7 @@ class srp_phat:
     def make_spherical_grid(self, N_ev):
         """
         @brief  Makes the spherical grid as described in the papers by the French 
-                Canadians, namely by tesselating an icosahedron.
+                Canadians  namely by tesselating an icosahedron.
         @param  N_ev: the number of evolutions,
         @return ndarray (3,?): an array of the points,
         """
@@ -111,7 +111,7 @@ class srp_phat:
             for j in range(self.M):
                 if i == j:
                     continue
-                τ[i,j] = np.dot(self.r_m[:,j] - self.r_m[:,i], u) \
+                τ[i,j] = np.dot(self.r_m[:,j]-self.r_m[:,i], u) \
                     * self.f_s / self.c
         return τ
 
@@ -144,8 +144,8 @@ class srp_phat:
         F = X_0.shape[0]
 
         # Make a weighting based the spectral noise.
-        w = (self.Y <= self.Y_N) + (self.Y > self.Y_N)*(self.Y/self.Y_N)**0.99
-        # w = 1
+        # w = (self.Y <= self.Y_N) + (self.Y > self.Y_N)*(self.Y/self.Y_N)**0.99
+        w = 1
 
         # Compute the spectral weighting, i.e. PHAT.
         # ψ = 1 / (np.absolute(X_0) * np.absolute(X_1))
@@ -215,7 +215,7 @@ class srp_phat:
         @return tuple: the estimated azimuth and elevation in radians,
         """
 
-        self.calculate_noise(x)
+        # self.calculate_noise(x)
 
         # Compute the FFT of all signals.
         # chrono = time.time()
