@@ -1,2 +1,2 @@
-../Core/Src/srp.c:16:6:compute_gcc_phat	32	static
-../Core/Src/srp.c:51:11:compute_beam_energy	20	static
+../Core/Src/srp.c:16:6:compute_gcc_phat	10256	static
+../Core/Src/srp.c:54:11:compute_beam_energy	20	static

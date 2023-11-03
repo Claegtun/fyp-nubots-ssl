@@ -10,6 +10,6 @@
 
 #include "arm_math.h"
 
-extern float32_t coefficients[64];
+extern const float32_t coefficients[64];
 
 #endif /* INC_COEFFICIENTS_H_ */

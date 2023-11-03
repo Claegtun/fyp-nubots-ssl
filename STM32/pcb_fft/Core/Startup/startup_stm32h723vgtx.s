@@ -93,6 +93,40 @@ LoopFillZerobss:
   cmp r2, r4
   bcc FillZerobss
 
+/*
+  ldr r0, =_sts0
+  ldr r1, =_ets0
+  ldr r2, =_sits0
+  movs r3, #0
+  b LoopCopyTableSection0Init
+
+CopyTableSection0Init:
+  ldr r4, [r2, r3]
+  str r4, [r0, r3]
+  adds r3, r3, #4
+
+LoopCopyTableSection0Init:
+  adds r4, r0, r3
+  cmp r4, r1
+  bcc CopyTableSection0Init
+
+  ldr r0, =_sts1
+  ldr r1, =_ets1
+  ldr r2, =_sits1
+  movs r3, #0
+  b LoopCopyTableSection1Init
+
+CopyTableSection1Init:
+  ldr r4, [r2, r3]
+  str r4, [r0, r3]
+  adds r3, r3, #4
+
+LoopCopyTableSection1Init:
+  adds r4, r0, r3
+  cmp r4, r1
+  bcc CopyTableSection1Init
+*/
+
 /* Call static constructors */
     bl __libc_init_array
 /* Call the application's entry point.*/

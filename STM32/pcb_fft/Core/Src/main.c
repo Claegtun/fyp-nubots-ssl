@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "dma.h"
+#include "fmac.h"
 #include "tim.h"
 #include "usb_device.h"
 #include "gpio.h"
@@ -31,6 +32,7 @@
 #include "string.h"
 #include "srp.h"
 #include "tables.h"
+#include "fir.h"
 
 /* USER CODE END Includes */
 
@@ -46,10 +48,10 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-//#define SET_TEST() LED_0_GPIO_Port->BSRR = LED_0_Pin
-//#define RESET_TEST() LED_0_GPIO_Port->BSRR = (uint32_t)LED_0_Pin << 16U
-#define SET_TEST() ;
-#define RESET_TEST() ;
+#define SET_TEST() LED_0_GPIO_Port->BSRR = LED_0_Pin
+#define RESET_TEST() LED_0_GPIO_Port->BSRR = (uint32_t)LED_0_Pin << 16U
+//#define SET_TEST() ;
+//#define RESET_TEST() ;
 
 /* USER CODE END PM */
 
@@ -67,6 +69,7 @@ volatile static uint8_t adc_parallel_dma_flag;
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 void DMA_TIM8_callback(DMA_HandleTypeDef* hdma);
+void DMA_TIM23_callback(DMA_HandleTypeDef* hdma);
 
 /* USER CODE END PFP */
 
@@ -82,6 +85,7 @@ void DMA_TIM8_callback(DMA_HandleTypeDef* hdma);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+	__HAL_RCC_D2SRAM2_CLK_ENABLE();
 
   /* USER CODE END 1 */
 
@@ -98,24 +102,34 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
+  /* DMA1_Stream5_IRQn interrupt configuration */
 
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_DMA_Init();
-  MX_TIM3_Init();
   MX_TIM4_Init();
   MX_TIM5_Init();
   MX_TIM8_Init();
   MX_USB_DEVICE_Init();
   MX_TIM2_Init();
+  MX_FMAC_Init();
+  MX_TIM3_Init();
+  MX_TIM23_Init();
   /* USER CODE BEGIN 2 */
 
   // Allocate the memory for the DMA buffers.
 	// + 256 KB
+  volatile uint16_t* working_buffer;
+  volatile uint16_t* filling_buffer;
 	volatile uint16_t* buffer_0 = malloc(8*8*1024*2);
 	volatile uint16_t* buffer_1 = malloc(8*8*1024*2);
+
+	volatile uint16_t* frst_working_buffer;
+	volatile uint16_t* frst_filling_buffer;
+	volatile uint16_t* frst_buffer_0 = malloc(512*2);
+	volatile uint16_t* frst_buffer_1 = malloc(512*2);
 
   // Make the RFFT instance.
   arm_rfft_fast_instance_f32 fft;
@@ -131,6 +145,8 @@ int main(void)
 
 	arm_fir_decimate_instance_q15 fir;
 	arm_fir_decimate_init_q15(&fir, 64, 8, q_coefficients, state, 1024);
+
+	fir_set_up();
 
 	// Allocate the memory for the deinterleaved data.
 	// + 128 KB
@@ -203,13 +219,22 @@ int main(void)
 
 	__HAL_TIM_ENABLE_DMA(&htim5, TIM_DMA_CC1);
 	htim5.hdma[TIM_DMA_ID_CC1]->XferCpltCallback = DMA_TIM8_callback;
-	HAL_DMA_Start_IT(htim5.hdma[TIM_DMA_ID_CC1], (uint32_t)&GPIOD->IDR + 0, (uint32_t)buffer_0, 1024*8*8-1);
+
+	//__HAL_TIM_ENABLE_DMA(&htim23, TIM_DMA_UPDATE);
+	//htim5.hdma[TIM_DMA_ID_UPDATE]->XferCpltCallback = DMA_TIM23_callback;
 
 	// Start the SCLK timer, the nCS timer, and the CONVST timer respectively.
 	HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim23, TIM_CHANNEL_1);
 	HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
 	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
 	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
+
+	filling_buffer = buffer_0;
+	frst_filling_buffer = frst_buffer_0;
+	HAL_DMA_Start_IT(htim5.hdma[TIM_DMA_ID_CC1], (uint32_t)&GPIOD->IDR + 0, (uint32_t)filling_buffer, 1024*8*8-1);
+	//HAL_DMA_Start_IT(htim5.hdma[TIM_DMA_ID_UPDATE], (uint32_t)&GPIOD->IDR + 0, (uint32_t)frst_filling_buffer, 512);
+
 	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
 
   /* USER CODE END 2 */
@@ -222,34 +247,72 @@ int main(void)
   	//HAL_Delay(500);
 
   	if (adc_parallel_dma_flag == 1) {
+
+  		char header[6] = "\r\n[\r\n";
+			char footer[6] = "\r\n]\r\n";
+			char str[128] = "";
+
+  		adc_parallel_dma_flag = 0;
+
+  		if (filling_buffer == buffer_0) {
+  			filling_buffer = buffer_1;
+  			working_buffer = buffer_0;
+  		} else if (filling_buffer == buffer_1) {
+  			filling_buffer = buffer_0;
+  			working_buffer = buffer_1;
+  		}
+
+  		if (frst_filling_buffer == frst_buffer_0) {
+				frst_filling_buffer = frst_buffer_1;
+				frst_working_buffer = frst_buffer_0;
+			} else if (frst_filling_buffer == frst_buffer_1) {
+				frst_filling_buffer = frst_buffer_0;
+				frst_working_buffer = frst_buffer_1;
+			}
+
+  		SET_TEST();
+  		HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+  		HAL_TIM_PWM_Start(&htim23, TIM_CHANNEL_1);
+			HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
+			HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+			HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
+
+  		HAL_DMA_Abort_IT(htim5.hdma[TIM_DMA_ID_CC1]);
+  		HAL_DMA_Start_IT(htim5.hdma[TIM_DMA_ID_CC1], (uint32_t)&GPIOD->IDR + 0, (uint32_t)filling_buffer, 1024*8*8-1);
+  		//HAL_DMA_Start_IT(htim5.hdma[TIM_DMA_ID_UPDATE], (uint32_t)&GPIOD->IDR + 0, (uint32_t)frst_filling_buffer, 512);
+
+			HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+  		RESET_TEST();
+
   		// Deinterleave the raw data.
   		SET_TEST();
 			/*for (int32_t i = 0; i < 8*8*1024; i++) {
 				oversampled[i%8][i/((int32_t)8)] = buffer_0[i];
 			}*/
+#define DEINTERLEAVING_OFFSET 1
   		for (int32_t i = 0; i < 8*1024; i ++) {
-  			oversampled[0][i] = buffer_0[i*8 + 0];
+  			oversampled[0][i] = working_buffer[i*8 + 0 + DEINTERLEAVING_OFFSET];
   		}
   		for (int32_t i = 0; i < 8*1024; i ++) {
-				oversampled[1][i] = buffer_0[i*8 + 1];
+				oversampled[1][i] = working_buffer[i*8 + 1 + DEINTERLEAVING_OFFSET];
 			}
   		for (int32_t i = 0; i < 8*1024; i ++) {
-				oversampled[2][i] = buffer_0[i*8 + 2];
+				oversampled[2][i] = working_buffer[i*8 + 2 + DEINTERLEAVING_OFFSET];
 			}
   		for (int32_t i = 0; i < 8*1024; i ++) {
-				oversampled[3][i] = buffer_0[i*8 + 3];
+				oversampled[3][i] = working_buffer[i*8 + 3 + DEINTERLEAVING_OFFSET];
 			}
   		for (int32_t i = 0; i < 8*1024; i ++) {
-				oversampled[4][i] = buffer_0[i*8 + 4];
+				oversampled[4][i] = working_buffer[i*8 + 4 + DEINTERLEAVING_OFFSET];
 			}
   		for (int32_t i = 0; i < 8*1024; i ++) {
-				oversampled[5][i] = buffer_0[i*8 + 5];
+				oversampled[5][i] = working_buffer[i*8 + 5 + DEINTERLEAVING_OFFSET];
 			}
   		for (int32_t i = 0; i < 8*1024; i ++) {
-				oversampled[6][i] = buffer_0[i*8 + 6];
+				oversampled[6][i] = working_buffer[i*8 + 6 + DEINTERLEAVING_OFFSET];
 			}
   		for (int32_t i = 0; i < 8*1024; i ++) {
-				oversampled[7][i] = buffer_0[i*8 + 7];
+				oversampled[7][i] = working_buffer[i*8 + 0];
 			}
 			RESET_TEST();
 
@@ -257,19 +320,47 @@ int main(void)
 			// + 16 KB
 			q15_t* decimated[8];
 			for (int16_t i = 0; i < 8; i++)
-				decimated[i] = (q15_t*)(D3_SRAM_BASE + 1024*2*i);
+				decimated[i] = (q15_t*)(D3_SRAM_BASE + 0x00000000 + 1024*2*i);
 
+#define DSP_FIR
+#ifdef DSP_FIR
 			// Decimate the deinterleaved oversampled data.
 			SET_TEST();
 			for (int8_t i = 0; i < 8; i ++)
 				arm_fir_decimate_q15(&fir, (q15_t*)oversampled[i], decimated[i], 8192);
 			RESET_TEST();
+#else
+			uint16_t fir_input[8192];
+			uint16_t fir_output[8192];
+			for (int16_t i = 0; i < 8192; i++)
+				fir_input[i] = 0;
+			fir_input[32] = 0x7FFF;
+			fir_input[33] = 0x7FFF;
+
+			SET_TEST();
+			uint16_t fir_data_length = 4*8192;
+			fir_preload();
+			fir_filter((int16_t*)working_buffer, fir_data_length, (int16_t*)working_buffer, fir_data_length);
+			RESET_TEST();
+
+			for (int i = 0; i < 2; i ++) {
+				CDC_Transmit_HS((uint8_t*)header, strlen(header));
+				HAL_Delay(1);
+				for (int i = 0; i < 8192; i++) {
+					sprintf(str, ",%d", (int16_t)fir_output[i]);
+					CDC_Transmit_HS((uint8_t*)str, strlen(str));
+					HAL_Delay(1);
+				}
+				CDC_Transmit_HS((uint8_t*)footer, strlen(footer));
+				HAL_Delay(1);
+			}
+#endif
 
 			// Allocate the memory for the time-domain data.
 			// + 32 KB
 			float32_t* x[8];
 			for (int16_t i = 0; i < 8; i++)
-				x[i] = (float32_t*)(D1_DTCMRAM_BASE + 1024*4*i);
+				x[i] = (float32_t*)(D1_DTCMRAM_BASE + 0x00004000 + 1024*4*i);
 
 			// Convert the data from fixed-point to floating-point.
 			SET_TEST();
@@ -277,10 +368,16 @@ int main(void)
 				arm_q15_to_float(decimated[i], x[i], 1024);
 			RESET_TEST();
 
-			char header[3] = "\r\nH\r\n";
-			char str[64] = "";
 			/*for (int j = 0; j < 8; j++) {
-
+				CDC_Transmit_HS((uint8_t*)header, strlen(header));
+				HAL_Delay(1);
+				for (int i = 0; i < 1024; i++) {
+					sprintf(str, ",%f", x[j][i]);
+					CDC_Transmit_HS((uint8_t*)str, strlen(str));
+					HAL_Delay(1);
+				}
+				CDC_Transmit_HS((uint8_t*)footer, strlen(footer));
+				HAL_Delay(1);
 			}*/
 
 			// Allocate the memory for the frequency-domain data.
@@ -308,12 +405,12 @@ int main(void)
 			}
 			RESET_TEST();
 
-			CDC_Transmit_HS((uint8_t*)header, strlen(header));
+			/*CDC_Transmit_HS((uint8_t*)header, strlen(header));
 			for (int i = 0; i < 512; i++) {
 				sprintf(str, "%f,", abs_X[0][i]);
 				CDC_Transmit_HS((uint8_t*)str, strlen(str));
 				HAL_Delay(1);
-			}
+			}*/
 
 			// Allocate the memory for the complex conjugates.
 			// + 32 KB
@@ -343,33 +440,58 @@ int main(void)
 				}
 			}
 
-			CDC_Transmit_HS((uint8_t*)header, strlen(header));
+			//CDC_Transmit_HS((uint8_t*)header, strlen(header));
+			//HAL_Delay(1);
 
 			// Draw the energy-map.
-			float32_t E, E_max = 0;
-			uint16_t g_max = 0;
+			volatile float32_t E, E_max = 0;
+			volatile uint16_t g_max = 0;
+			float32_t E_grid[2562];
 			SET_TEST();
 			for (int g = 0; g < 2562; g++) {
-				E = compute_beam_energy(&fft, g, R, tau, i_R);
-				sprintf(str, "%f,", E);
-				CDC_Transmit_HS((uint8_t*)str, strlen(str));
-				HAL_Delay(1);
-				if (E >= E_max) {
-					E_max = E;
+				E_grid[g] = compute_beam_energy(&fft, g, R, tau, i_R);
+				//sprintf(str, "%f,", E);
+				//CDC_Transmit_HS((uint8_t*)str, strlen(str));
+				//HAL_Delay(1);
+				if (E_grid[g] >= E_max) {
+					E_max = E_grid[g];
 					g_max = g;
 				}
 			}
 			RESET_TEST();
 
-			/*float32_t theta, phi;
-			theta = grid[0][g_max]*180.0/3.1415/2.0;
-			phi = grid[1][g_max]*180.0/3.1415/2.0;
+			volatile float32_t theta, phi;
+			theta = grid[0][g_max]*180.0/3.1415;
+			phi = grid[1][g_max]*180.0/3.1415;
 
-			float32_t robert_frost;
-			robert_frost = theta;
-			robert_frost = phi;*/
-
-			adc_parallel_dma_flag = 1;
+			SET_TEST();
+			if (E_max >= 9.0) {
+				sprintf(str, "E = %.2f, theta = %.2f, phi = %.2f\r\n", E_max, theta, phi);
+				CDC_Transmit_HS((uint8_t*)str, strlen(str));
+				HAL_Delay(1);
+				/*if (
+						((theta > -1.0) && (theta < 1.0)) &&
+						((phi > 44) && (phi < 46))
+				){
+					for (int g = 0; g < 2562; g++) {
+						sprintf(str, "%.2f,", E_grid[g]);
+						CDC_Transmit_HS((uint8_t*)str, strlen(str));
+						HAL_Delay(1);
+					}
+					for (int j = 0; j < 8; j++) {
+						CDC_Transmit_HS((uint8_t*)header, strlen(header));
+						HAL_Delay(1);
+						for (int i = 0; i < 1024; i+=2) {
+							sprintf(str, ",%.2f+%.2fj", X[j][i],X[j][i+1]);
+							CDC_Transmit_HS((uint8_t*)str, strlen(str));
+							HAL_Delay(1);
+						}
+						CDC_Transmit_HS((uint8_t*)footer, strlen(footer));
+						HAL_Delay(1);
+					}
+				}*/
+			}
+			RESET_TEST();
   	}
 
     /* USER CODE END WHILE */
@@ -461,8 +583,22 @@ void DMA_TIM8_callback(DMA_HandleTypeDef* hdma) {
 	if (hdma == htim5.hdma[TIM_DMA_ID_CC1]) {
 		adc_parallel_dma_flag = 1;
 		//HAL_GPIO_TogglePin(SIG_0_GPIO_Port, SIG_0_Pin);
+		HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_1);
+		HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_1);
+		HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
+		HAL_TIM_PWM_Stop(&htim8, TIM_CHANNEL_1);
+		HAL_TIM_PWM_Stop(&htim23, TIM_CHANNEL_1);
+		HAL_TIM_PWM_Stop(&htim5, TIM_CHANNEL_1);
 	}
 }
+
+void DMA_TIM23_callback(DMA_HandleTypeDef* hdma) {
+	if (hdma == htim5.hdma[TIM_DMA_ID_UPDATE]) {
+		int robert_frost = 0;
+		//HAL_GPIO_TogglePin(SIG_0_GPIO_Port, SIG_0_Pin);
+	}
+}
+
 
 /* USER CODE END 4 */
 

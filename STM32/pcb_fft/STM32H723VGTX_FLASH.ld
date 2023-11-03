@@ -117,16 +117,6 @@ SECTIONS
     KEEP (*(.fini_array*))
     PROVIDE_HIDDEN (__fini_array_end = .);
   } >FLASH
-  
-  .tables_section :
-  {
-    *(tables_data_0);
-  } >RAM_D2
-  
-  .tables_section (NOLOAD):
-  {
-    *(tables_data_1);
-  } >RAM_D3
 
   /* used by the startup to initialize data */
   _sidata = LOADADDR(.data);

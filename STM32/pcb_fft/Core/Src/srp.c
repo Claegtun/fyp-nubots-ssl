@@ -22,18 +22,21 @@ void compute_gcc_phat(
 		float32_t* abs_X_1,
 		float32_t* conj_X_1
 ) {
-	float32_t* divisor = malloc(512*4);
+	//float32_t* divisor = malloc(512*4);
+	float32_t divisor[512];
 	SET_TEST();
 	arm_mult_f32(abs_X_0, abs_X_1, divisor, 512);
 	RESET_TEST();
 
-	float32_t* mult_X = malloc(512*4*2);
+	//float32_t* mult_X = malloc(512*4*2);
+	float32_t mult_X[512*2];
 	SET_TEST();
 	arm_cmplx_mult_cmplx_f32(X_0, conj_X_1, mult_X, 512);
 	RESET_TEST();
 
 	SET_TEST();
-	float32_t* chi = malloc(512*4*2);
+	//float32_t* chi = malloc(512*4*2);
+	float32_t chi[512*2];
 	for (int i = 0; i < 2*512; i++) {
 		chi[i] = mult_X[i] / divisor[i/2];
 	}
@@ -43,9 +46,9 @@ void compute_gcc_phat(
 	arm_rfft_fast_f32(fft, chi, R, 1);
 	RESET_TEST();
 
-	free(divisor);
-	free(mult_X);
-	free(chi);
+	//free(divisor);
+	//free(mult_X);
+	//free(chi);
 }
 
 float32_t compute_beam_energy(
@@ -69,7 +72,8 @@ float32_t compute_beam_energy(
 				E += R[
 				  i_R[j][i]
 				][
-					(((uint16_t)tau[ i_R[j][i] ][g] ^ 0xFFFF) + 0x0001) & 0x03FF
+					//(((uint16_t)tau[ i_R[j][i] ][g] ^ 0xFFFF) + 0x0001) & 0x03FF
+					((uint16_t)tau[ i_R[j][i] ][g]) & 0x03FF
 				];
 			}
 		}
